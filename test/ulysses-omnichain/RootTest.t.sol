@@ -1184,8 +1184,6 @@ contract RootTest is DSTestPlus, BridgeAgentConstants {
 
         Settlement memory settlement = multicallBridgeAgent.getSettlementEntry(settlementNonce);
 
-        console2.log("Status after fallback:", settlement.status == STATUS_FAILED ? "Failed" : "Success");
-
         require(settlement.status == STATUS_SUCCESS, "Settlement status should be success.");
 
         // Get some gas.

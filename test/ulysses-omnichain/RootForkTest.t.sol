@@ -1813,11 +1813,12 @@ contract RootForkTest is LzForkTest {
         uint256 _depositOut
     ) public {
         // Input restrictions
-        _amount %= type(uint256).max / 1 ether;
+        _amount %= type(uint128).max;
 
         vm.assume(
-            _user != address(0) && _user != address(arbitrumPort) && _amount > _deposit && _amount >= _amountOut
-                && _amount - _amountOut >= _depositOut && _depositOut < _amountOut
+            _user != address(0) && _user != address(arbitrumPort) && _user != address(rootPort)
+                && _amount > _deposit && _amount >= _amountOut && _amount - _amountOut >= _depositOut
+                && _depositOut < _amountOut
         );
 
         //Set up
@@ -2606,8 +2607,6 @@ contract RootForkTest is LzForkTest {
 
         // check this address balance
         require(MockERC20(newAvaxAssetFtmLocalToken).balanceOf(address(this)) == 0, "Tokens should be received");
-
-        console2.log("Done testRetryDepositNotEnoughGasForSettlement.");
     }
 
     function testRetrySettlement() public {
