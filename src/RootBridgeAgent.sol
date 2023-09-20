@@ -27,7 +27,8 @@ import {IRootPort as IPort} from "./interfaces/IRootPort.sol";
 import {VirtualAccount} from "./VirtualAccount.sol";
 import {DeployRootBridgeAgentExecutor, RootBridgeAgentExecutor} from "./RootBridgeAgentExecutor.sol";
 
-/// @title  Root Bridge Agent Contract
+/// @title Root Bridge Agent Contract
+/// @author MaiaDAO
 contract RootBridgeAgent is IRootBridgeAgent, BridgeAgentConstants {
     using SafeTransferLib for address;
     using ExcessivelySafeCall for address;

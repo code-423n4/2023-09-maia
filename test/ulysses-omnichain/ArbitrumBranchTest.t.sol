@@ -507,6 +507,51 @@ contract ArbitrumBranchTest is DSTestPlus {
         arbitrumCoreRouter.addLocalToken(ftmGlobalToken, gasParams);
     }
 
+    function testAddBridgeAgentArbitrum() public {
+        //Get some gas
+        hevm.deal(address(this), 2 ether);
+
+        //Create Root Bridge Agent
+        MulticallRootRouter testMulticallRouter;
+        testMulticallRouter = new MulticallRootRouter(
+            rootChainId,
+            address(rootPort),
+            multicallAddress
+        );
+
+        // Create Bridge Agent
+        RootBridgeAgent testRootBridgeAgent = RootBridgeAgent(
+            payable(RootBridgeAgentFactory(bridgeAgentFactory).createBridgeAgent(address(testMulticallRouter)))
+        );
+
+        //Initialize Router
+        testMulticallRouter.initialize(address(testRootBridgeAgent));
+
+        //Create Branch Router in FTM
+        BaseBranchRouter arbTestRouter = new BaseBranchRouter();
+
+        //Allow new branch from root
+        testRootBridgeAgent.approveBranchBridgeAgent(rootChainId);
+
+        //Create Branch Bridge Agent
+        rootCoreRouter.addBranchToBridgeAgent{value: 2 ether}(
+            address(testRootBridgeAgent),
+            address(localBranchBridgeAgentFactory),
+            address(testMulticallRouter),
+            address(this),
+            rootChainId,
+            [GasParams(6_000_000, 15 ether), GasParams(1_000_000, 0)]
+        );
+
+        console2.log("new branch bridge agent", localPortAddress.bridgeAgents(2));
+
+        BranchBridgeAgent arbTestBranchBridgeAgent = BranchBridgeAgent(payable(localPortAddress.bridgeAgents(2)));
+
+        arbTestRouter.initialize(address(arbTestBranchBridgeAgent));
+
+        require(testRootBridgeAgent.getBranchBridgeAgent(rootChainId) == address(arbTestBranchBridgeAgent));
+    }
+
     function testDepositToPort() public {
         // Set up
         testAddLocalTokenArbitrum();

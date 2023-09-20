@@ -3,6 +3,8 @@ pragma solidity ^0.8.0;
 
 import {Ownable} from "solady/auth/Ownable.sol";
 
+import {SafeTransferLib} from "solady/utils/SafeTransferLib.sol";
+
 import {IBranchRouter as IRouter} from "./interfaces/IBranchRouter.sol";
 
 import {BranchBridgeAgent} from "./BranchBridgeAgent.sol";
@@ -25,6 +27,7 @@ library DeployBranchBridgeAgentExecutor {
  *         and interactions with external contracts should be reverted and caught.
  */
 contract BranchBridgeAgentExecutor is Ownable, BridgeAgentConstants {
+    using SafeTransferLib for address;
     /*///////////////////////////////////////////////////////////////
                               CONSTRUCTOR
     //////////////////////////////////////////////////////////////*/
@@ -86,7 +89,7 @@ contract BranchBridgeAgentExecutor is Ownable, BridgeAgentConstants {
             IRouter(_router).executeSettlement{value: msg.value}(_payload[PARAMS_SETTLEMENT_OFFSET:], sParams);
         } else {
             // Send reamininig native / gas token to recipient
-            _recipient.call{value: address(this).balance}("");
+            _recipient.safeTransferETH(address(this).balance);
         }
     }
 
@@ -120,7 +123,7 @@ contract BranchBridgeAgentExecutor is Ownable, BridgeAgentConstants {
             );
         } else {
             // Send reamininig native / gas token to recipient
-            _recipient.call{value: address(this).balance}("");
+            _recipient.safeTransferETH(address(this).balance);
         }
     }
 }
