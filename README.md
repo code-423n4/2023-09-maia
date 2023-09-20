@@ -1,4 +1,4 @@
-# Maia DAO audit details
+# Maia DAO - Ulysses audit details
 - Total Prize Pool: $100,000 USDC 
   - HM awards: $69,712.50 USDC 
   - Analysis awards: $4,225 USDC 
@@ -9,10 +9,10 @@
   - Lookout awards: $6,000 USDC 
   - Scout awards: $500 USDC 
 - Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/2023-09-Maia/submit)
+- Submit findings [using the C4 form](https://code4rena.com/contests/2023-09-maia-dao-ulysses/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts September 22, 2023 20:00 UTC 
-- Ends September 29, 2023 20:00 UTC 
+- Ends October 06, 2023 20:00 UTC 
 
 ## Automated Findings / Publicly Known Issues
 
