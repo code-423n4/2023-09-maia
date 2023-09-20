@@ -1,0 +1,9 @@
+[profile.default]
+src = 'src'
+out = 'out'
+libs = ['lib']
+solc = "0.8.19"
+via_ir = true
+
+# Necessary for testing
+gas_price = 10000

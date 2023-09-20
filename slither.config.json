@@ -1,0 +1,13 @@
+{
+  "filter_paths": "lib",
+  "solc_args": "--optimize --optimize-runs 1000000 --via-ir",
+  "solc_remaps": [
+    "forge-std/=lib/forge-std/src/",
+    "solmate/=lib/solmate/src/",
+    "ds-test/=lib/forge-std/lib/ds-test/src/",
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "solady/=lib/solady/src/",
+    "@lib/=lib/",
+    "@omni/=src/"
+  ]
+}
