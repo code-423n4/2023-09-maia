@@ -124,13 +124,28 @@ There are three audits, two of them featuring Ulysses:
 
 _List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus._
 
-| Contract                                                   | SLOC | Purpose                | Libraries used                                           |
-| ---------------------------------------------------------- | ---- | ---------------------- | -------------------------------------------------------- |
-| [contracts/folder/sample.sol](contracts/folder/sample.sol) | 123  | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| Contract | SLOC | Purpose | Libraries Used |
+| --- | --- | --- | --- |
+| [src/ArbitrumBranchBridgeAgent.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/ArbitrumBranchBridgeAgent.sol) | 56 | This contract is used for interfacing with Users/Routers acting as a middleman. |  |
+| [src/ArbitrumBranchPort.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/ArbitrumBranchPort.sol) | 60 | Ulysses `Port` implementation for Arbitrum Branch Chain deployment | [solady](https://github.com/vectorized/solady) |
+| [src/ArbitrumCoreBranchRouter.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/ArbitrumCoreBranchRouter.sol) | 76 | Core Branch Router implementation for Arbitrum deployment. | [solmate](https://github.com/transmissions11/solmate) |
+| [src/MulticallRootRouter.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/MulticallRootRouter.sol) | 323 | Root Router implementation for interfacing with third-party dApps present in the Root Omnichain Environment. | [solady](https://github.com/vectorized/solady) |
+| [src/CoreRootRouter.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/CoreRootRouter.sol) | 257 | Core Root Router implementation for Root Environment deployment. | [solady](https://github.com/vectorized/solady), [solmate](https://github.com/transmissions11/solmate) |
+| [src/RootBridgeAgentExecutor.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/RootBridgeAgentExecutor.sol) | 198 | This contract is used for requesting token settlement clearance and executing transaction requests from the branch chains. | [solady](https://github.com/vectorized/solady) |
+| [src/CoreBranchRouter.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/CoreBranchRouter.sol) | 147 | Core Branch Router implementation for deployment in Branch Chains. | [solmate](https://github.com/transmissions11/solmate) |
+| [src/RootBridgeAgent.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/RootBridgeAgent.sol) | 710 | Responsible for interfacing with Users and Routers acting as a middleman. | [solady](https://github.com/vectorized/solady) |
+| [src/VirtualAccount.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/VirtualAccount.sol) | 94 | A Virtual Account allows users to manage assets and perform interactions remotely. | [solady](https://github.com/vectorized/solady), [solmate](https://github.com/transmissions11/solmate), [@openzeppelin/contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) |
+| [src/BranchPort.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/BranchPort.sol) | 288 | This contract is used to manage the deposit and withdrawal of underlying assets from the Branch Chain in response to Branch Bridge Agents' requests. | [solady](https://github.com/vectorized/solady), [solmate](https://github.com/transmissions11/solmate) |
+| [src/MulticallRootRouterLibZip.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/MulticallRootRouterLibZip.sol) | 12 | Root Router implementation for interfacing with third-party dApps present in the Root Omnichain Environment. | [solady](https://github.com/vectorized/solady) |
+| [src/BranchBridgeAgent.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/BranchBridgeAgent.sol) | 553 | Contract for deployment in Branch Chains of Omnichain System, responsible for interfacing with Users and Routers. |  |
+| [src/BaseBranchRouter.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/BaseBranchRouter.sol) | 117 | Base Branch Contract for interfacing with Branch Bridge Agents. | [solady](https://github.com/vectorized/solady), [solmate](https://github.com/transmissions11/solmate) |
+| [src/RootPort.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/RootPort.sol) | 327 | This contract is used to manage the deposit and withdrawal of assets between the Root Omnichain Environment and every Branch Chain in response to Root Bridge Agents requests. | [solady](https://github.com/vectorized/solady) |
+| [src/BranchBridgeAgentExecutor.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/BranchBridgeAgentExecutor.sol) | 61 | This contract is used for requesting token deposit clearance and executing transactions in response to requests from the root environment. | [solady](https://github.com/vectorized/solady) |
+
 
 ## Out of scope
 
-_List any files/contracts that are out of scope for this audit._
+Everything out of ["./src/"](https://github.com/code-423n4/2023-09-maia/tree/main/src) is out of scope: ["lib/"](https://github.com/code-423n4/2023-09-maia/tree/main/src) and ["test/"](https://github.com/code-423n4/2023-09-maia/tree/main/src).
 
 # Additional Context
 
@@ -168,6 +183,7 @@ _List specific areas to address - see [this blog post](https://medium.com/code4r
 ## Main invariants
 
 - The total balance of any given Virtualized Liquidity Token should never be greater than the amount of Underlying Tokens deposited in the asset's origin chain Branch Port.
+- A Deposit / Settlement can never be redeemable and retryable at the same time.
 
 ## Scoping Details
 
@@ -176,7 +192,7 @@ _List specific areas to address - see [this blog post](https://medium.com/code4r
 ```
 - If you have a public code repo, please share it here:
 - How many contracts are in scope?:  50
-- Total SLoC for these contracts?:  4266
+- Total SLoC for these contracts?:  4281
 - How many external imports are there?: 33
 - How many separate interfaces and struct definitions are there for the contracts within scope?:  42
 - Does most of your code generally use composition or inheritance?:   Inheritance
@@ -199,8 +215,6 @@ _Provide every step required to build the project from a fresh git clone, as wel
 
 _Note: Many wardens run Slither as a first pass for testing. Please document any known errors with no workaround._
 
-# Tests
-
 **Here is an example of a full script to run the first time you build the contracts in both Windows and Linux:**
 
 - Remove `.example` from the provided `.env` file and edit the uncommented `RPC` and `RPC_API_KEY` values to your preferences. These values will be used by our fork testing suite.
@@ -213,8 +227,6 @@ forge snapshot --diff
 ```
 
 Default gas prixe is 10,000, but you can change it by adding `--gas-price <gas price>` to the command or by setting the `gas_price` property in the [foundry.toml](https://github.com/code-423n4/2023-05-maia/tree/main/foundry.toml) file.
-
-Tests don't compile with --via-ir, but contracts do and will be deployed with --via-ir. Compilation settings that will be used are in [hardhat.config.ts](https://github.com/code-423n4/2023-05-maia/tree/main/hardhat.config.ts).
 
 ### Install and First Build
 
