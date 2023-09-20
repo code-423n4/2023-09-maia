@@ -140,7 +140,7 @@ Unless there is the need to upgrade and migrate any component of Ulysses via gov
 - How many separate interfaces and struct definitions are there for the contracts within scope?:  42
 - Does most of your code generally use composition or inheritance?:   Inheritance
 - How many external calls?:   17
-- What is the overall line coverage percentage provided by your tests?: 67%
+- What is the overall line coverage percentage provided by your tests?: 69%
 - Is this an upgrade of an existing system?: False
 - Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): Uses L2, Multi-Chain, Side-Chain, ERC-20 Token, Timelock function
 - Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:   Yes

@@ -1644,6 +1644,25 @@ contract RootTest is DSTestPlus, BridgeAgentConstants {
         );
     }
 
+    function testAddChain() public {
+        // Number of tokens before
+        uint256 tokensLength = hTokenFactory.getHTokens().length;
+
+        // Add new chain
+        rootPort.addNewChain(address(0xBABA), 123, "GasToken", "GTKN", 18, address(0xFAFA), address(0xDADA));
+
+        require(rootPort.isChainId(123), "new chain not added");
+
+        require(hTokenFactory.getHTokens().length == tokensLength + 1);
+    }
+
+    function testAddChainAlreadyAdded() public {
+        hevm.expectRevert(abi.encodeWithSignature("AlreadyAddedChain()"));
+
+        // Add new chain
+        rootPort.addNewChain(address(0xBABA), 42161, "GasToken", "GTKN", 18, address(0xFAFA), address(0xDADA));
+    }
+
     //////////////////////////////////////   HELPERS   //////////////////////////////////////
 
     function testCreateDepositSingle(
@@ -1695,253 +1714,6 @@ contract RootTest is DSTestPlus, BridgeAgentConstants {
         );
 
         require(deposit.status == 0, "Deposit status should be succesful.");
-    }
-
-    function encodeSystemCall(
-        address payable _fromBridgeAgent,
-        address payable _toBridgeAgent,
-        uint32 _nonce,
-        bytes memory _data,
-        GasParams memory _gasParams,
-        uint16 _srcChainIdId
-    ) private {
-        //Get some gas
-        hevm.deal(lzEndpointAddress, _gasParams.gasLimit + _gasParams.remoteBranchExecutionGas);
-
-        //Encode Data
-        bytes memory inputCalldata = abi.encodePacked(bytes1(0x00), _nonce, _data);
-
-        // Prank into user account
-        hevm.startPrank(lzEndpointAddress);
-
-        _toBridgeAgent.call{value: _gasParams.remoteBranchExecutionGas}("");
-        RootBridgeAgent(_toBridgeAgent).lzReceive{gas: _gasParams.gasLimit}(
-            _srcChainIdId, abi.encodePacked(_toBridgeAgent, _fromBridgeAgent), 1, inputCalldata
-        );
-
-        // Prank out of user account
-        hevm.stopPrank();
-    }
-
-    function encodeCallNoDeposit(
-        address payable _fromBridgeAgent,
-        address payable _toBridgeAgent,
-        uint32 _nonce,
-        bytes memory _data,
-        GasParams memory _gasParams,
-        uint16 _srcChainIdId
-    ) private {
-        //Get some gas
-        hevm.deal(lzEndpointAddress, _gasParams.gasLimit + _gasParams.remoteBranchExecutionGas);
-        //Encode Data
-        bytes memory inputCalldata = abi.encodePacked(bytes1(0x01), _nonce, _data);
-
-        // Prank into user account
-        hevm.startPrank(lzEndpointAddress);
-
-        _toBridgeAgent.call{value: _gasParams.remoteBranchExecutionGas}("");
-        RootBridgeAgent(_toBridgeAgent).lzReceive{gas: _gasParams.gasLimit}(
-            _srcChainIdId, abi.encodePacked(_toBridgeAgent, _fromBridgeAgent), 1, inputCalldata
-        );
-
-        // Prank out of user account
-        hevm.stopPrank();
-    }
-
-    function encodeCallWithDeposit(
-        address payable _fromBridgeAgent,
-        address payable _toBridgeAgent,
-        uint32 _nonce,
-        address _hToken,
-        address _token,
-        uint256 _amount,
-        uint256 _deposit,
-        uint16 _dstChainId,
-        bytes memory _data,
-        GasParams memory _gasParams,
-        uint16 _srcChainIdId
-    ) private {
-        //Get some gas
-        hevm.deal(lzEndpointAddress, _gasParams.gasLimit + _gasParams.remoteBranchExecutionGas);
-
-        //Encode Data
-        bytes memory inputCalldata =
-            abi.encodePacked(bytes1(0x02), _nonce, _hToken, _token, _amount, _deposit, _dstChainId, _data);
-
-        // Prank into user account
-        hevm.startPrank(lzEndpointAddress);
-
-        _toBridgeAgent.call{value: _gasParams.remoteBranchExecutionGas}("");
-        RootBridgeAgent(_toBridgeAgent).lzReceive{gas: _gasParams.gasLimit}(
-            _srcChainIdId, abi.encodePacked(_toBridgeAgent, _fromBridgeAgent), 1, inputCalldata
-        );
-
-        // Prank out of user account
-        hevm.stopPrank();
-    }
-
-    function encodeCallWithDepositMultiple(
-        address payable _fromBridgeAgent,
-        address payable _toBridgeAgent,
-        uint32 _nonce,
-        address,
-        address[] memory _hTokens,
-        address[] memory _tokens,
-        uint256[] memory _amounts,
-        uint256[] memory _deposits,
-        uint16 _dstChainId,
-        bytes memory _data,
-        GasParams memory _gasParams,
-        uint16 _srcChainIdId
-    ) private {
-        //Get some gas
-        hevm.deal(lzEndpointAddress, _gasParams.gasLimit + _gasParams.remoteBranchExecutionGas);
-
-        //Encode Data for cross-chain call.
-        bytes memory inputCalldata = abi.encodePacked(
-            bytes1(0x03), uint8(_hTokens.length), _nonce, _hTokens, _tokens, _amounts, _deposits, _dstChainId, _data
-        );
-
-        // Prank into user account
-        hevm.startPrank(lzEndpointAddress);
-
-        _toBridgeAgent.call{value: _gasParams.remoteBranchExecutionGas}("");
-        RootBridgeAgent(_toBridgeAgent).lzReceive{gas: _gasParams.gasLimit}(
-            _srcChainIdId, abi.encodePacked(_toBridgeAgent, _fromBridgeAgent), 1, inputCalldata
-        );
-
-        // Prank out of user account
-        hevm.stopPrank();
-    }
-
-    function _encodeSystemCall(uint32 _nonce, bytes memory _data, uint128 _rootExecGas, uint128 _remoteExecGas)
-        internal
-        pure
-        returns (bytes memory inputCalldata)
-    {
-        // Encode Data
-        inputCalldata = abi.encodePacked(bytes1(0x00), _nonce, _data, _rootExecGas, _remoteExecGas);
-    }
-
-    function _encodeNoDeposit(uint32 _nonce, bytes memory _data, uint128 _rootExecGas, uint128 _remoteExecGas)
-        internal
-        pure
-        returns (bytes memory inputCalldata)
-    {
-        // Encode Data
-        inputCalldata = abi.encodePacked(bytes1(0x01), _nonce, _data, _rootExecGas, _remoteExecGas);
-    }
-
-    function _encodeNoDepositSigned(
-        uint32 _nonce,
-        address _user,
-        bytes memory _data,
-        uint128 _rootExecGas,
-        uint128 _remoteExecGas
-    ) internal pure returns (bytes memory inputCalldata) {
-        // Encode Data
-        inputCalldata = abi.encodePacked(bytes1(0x04), _user, _nonce, _data, _rootExecGas, _remoteExecGas);
-    }
-
-    function _encode(
-        uint32 _nonce,
-        address _hToken,
-        address _token,
-        uint256 _amount,
-        uint256 _deposit,
-        uint16 _dstChainId,
-        bytes memory _data,
-        uint128 _rootExecGas,
-        uint128 _remoteExecGas
-    ) internal pure returns (bytes memory inputCalldata) {
-        // Encode Data
-        inputCalldata = abi.encodePacked(
-            bytes1(0x02), _nonce, _hToken, _token, _amount, _deposit, _dstChainId, _data, _rootExecGas, _remoteExecGas
-        );
-    }
-
-    function _encodeSigned(
-        uint32 _nonce,
-        address _user,
-        address _hToken,
-        address _token,
-        uint256 _amount,
-        uint256 _deposit,
-        uint16 _dstChainId,
-        bytes memory _data,
-        uint128 _rootExecGas,
-        uint128 _remoteExecGas
-    ) internal pure returns (bytes memory inputCalldata) {
-        // Encode Data
-        inputCalldata = abi.encodePacked(
-            bytes1(0x05),
-            _user,
-            _nonce,
-            _hToken,
-            _token,
-            _amount,
-            _deposit,
-            _dstChainId,
-            _data,
-            _rootExecGas,
-            _remoteExecGas
-        );
-    }
-
-    function _encodeMultiple(
-        uint32 _nonce,
-        address[] memory _hTokens,
-        address[] memory _tokens,
-        uint256[] memory _amounts,
-        uint256[] memory _deposits,
-        uint16 _dstChainId,
-        bytes memory _data,
-        uint128 _rootExecGas,
-        uint128 _remoteExecGas
-    ) internal pure returns (bytes memory inputCalldata) {
-        // Encode Data
-        inputCalldata = abi.encodePacked(
-            bytes1(0x03),
-            uint8(_hTokens.length),
-            _nonce,
-            _hTokens,
-            _tokens,
-            _amounts,
-            _deposits,
-            _dstChainId,
-            _data,
-            _rootExecGas,
-            _remoteExecGas
-        );
-    }
-
-    function _encodeMultipleSigned(
-        uint32 _nonce,
-        address _user,
-        address[] memory _hTokens,
-        address[] memory _tokens,
-        uint256[] memory _amounts,
-        uint256[] memory _deposits,
-        uint16 _dstChainId,
-        bytes memory _data,
-        uint128 _rootExecGas,
-        uint128 _remoteExecGas
-    ) internal pure returns (bytes memory inputCalldata) {
-        // Encode Data
-        inputCalldata = abi.encodePacked(
-            bytes1(0x06),
-            _user,
-            uint8(_hTokens.length),
-            _nonce,
-            _hTokens,
-            _tokens,
-            _amounts,
-            _deposits,
-            _dstChainId,
-            _data,
-            _rootExecGas,
-            _remoteExecGas
-        );
     }
 }
 
