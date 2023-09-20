@@ -1,47 +1,3 @@
-# ✨ So you want to run an audit
-
-This `README.md` contains a set of checklists for our audit collaboration.
-
-Your audit will use two repos: 
-- **an _audit_ repo** (this one), which is used for scoping your audit and for providing information to wardens
-- **a _findings_ repo**, where issues are submitted (shared with you after the audit) 
-
-Ultimately, when we launch the audit, this repo will be made public and will contain the smart contracts to be reviewed and all the information needed for audit participants. The findings repo will be made public after the audit report is published and your team has mitigated the identified issues.
-
-Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the audit sponsor (⭐️)**.
-
----
-
-# Repo setup
-
-## ⭐️ Sponsor: Add code to this repo
-
-- [ ] Create a PR to this repo with the below changes:
-- [ ] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 48 business hours prior to audit start time.**
-- [ ] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
-
-
----
-
-## ⭐️ Sponsor: Edit this `README.md` file
-
-- [ ] Modify the contents of this `README.md` file. Describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2022-08-foundation#readme))
-- [ ] Review the Gas award pool amount. This can be adjusted up or down, based on your preference - just flag it for Code4rena staff so we can update the pool totals across all comms channels.
-- [ ] Optional / nice to have: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] [This checklist in Notion](https://code4rena.notion.site/Key-info-for-Code4rena-sponsors-f60764c4c4574bbf8e7a6dbd72cc49b4#0cafa01e6201462e9f78677a39e09746) provides some best practices for Code4rena audits.
-
-## ⭐️ Sponsor: Final touches
-- [ ] Review and confirm the details in the section titled "Scoping details" and alert Code4rena staff of any changes.
-- [ ] Check that images and other files used in this README have been uploaded to the repo as a file and then linked in the README using absolute path (e.g. `https://github.com/code-423n4/yourrepo-url/filepath.png`)
-- [ ] Ensure that *all* links and image/file paths in this README use absolute paths, not relative paths
-- [ ] Check that all README information is in markdown format (HTML does not render on Code4rena.com)
-- [ ] Remove any part of this template that's not relevant to the final version of the README (e.g. instructions in brackets and italic)
-- [ ] Delete this checklist and all text above the line below when you're ready.
-
----
-
 # Maia DAO audit details
 - Total Prize Pool: $100,000 USDC 
   - HM awards: $69,712.50 USDC 
@@ -115,15 +71,6 @@ There are three audits, two of them featuring Ulysses:
 
 # Scope
 
-[ ⭐️ SPONSORS: add scoping and technical details here ]
-
-- [ ] In the table format shown below, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each _For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc)._
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
-
-_List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus._
-
 | Contract | SLOC | Purpose | Libraries Used |
 | --- | --- | --- | --- |
 | [src/ArbitrumBranchBridgeAgent.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/ArbitrumBranchBridgeAgent.sol) | 56 | This contract is used for interfacing with Users/Routers acting as a middleman. |  |
@@ -145,35 +92,33 @@ _List all files in scope in the table below (along with hyperlinks) -- and feel 
 
 ## Out of scope
 
-Everything out of ["./src/"](https://github.com/code-423n4/2023-09-maia/tree/main/src) is out of scope: ["lib/"](https://github.com/code-423n4/2023-09-maia/tree/main/src) and ["test/"](https://github.com/code-423n4/2023-09-maia/tree/main/src).
+Everything out of ["src"](https://github.com/code-423n4/2023-09-maia/tree/main/src) is out of scope, namely ["lib"](https://github.com/code-423n4/2023-09-maia/tree/main/src) and ["test"](https://github.com/code-423n4/2023-09-maia/tree/main/src).
 
 # Additional Context
 
 ### Describe any novel or unique curve logic or mathematical models implemented in the contracts
-  - Branch / Root Bridge Agent and Bridge Agent Executor packed payload decoding and encoding.
+Branch / Root Bridge Agent and Bridge Agent Executor packed payload decoding and encoding.
 
 ### Please list specific ERC20 that your protocol is anticipated to interact with. Could be "any" (literally anything, fee on transfer tokens, ERC777 tokens and so forth) or a list of tokens you envision using on launch.
-  - Arbitrum's deployment of UniswapV3 and Balancer.
+Arbitrum's deployment of UniswapV3 and Balancer.
 
 ### Please list specific ERC721 that your protocol is anticipated to interact with.
-  - Virtual Account should be able to keep and use UniswapV3 NFT's.
+Virtual Account should be able to keep and use UniswapV3 NFT's.
 
 ### Which blockchains will this code be deployed to, and are considered in scope for this audit?
-  - Root contracts are to be deploye on Arbitrum and Branch contracts in several L1 and L2 networks such as Ethereum mainnet, Polygon, Base and Optimism
+Root contracts are to be deploye on Arbitrum and Branch contracts in several L1 and L2 networks such as Ethereum mainnet, Polygon, Base and Optimism
 
 ### Please list all trusted roles (e.g. operators, slashers, pausers, etc.), the privileges they hold, and any conditions under which privilege escalation is expected/allowable:
-  - Only our governance has access to key admin state changing functions present in the `RootPort` and `CoreRootRouter` and the Root Bridge Agent deployer (referred to in the codebase as manager) is responsible for allowing new branch chains to connect to their Root Bridge Agent in order to prevent griefing.
+Only our governance has access to key admin state changing functions present in the `RootPort` and `CoreRootRouter` and the Root Bridge Agent deployer (referred to in the codebase as manager) is responsible for allowing new branch chains to connect to their Root Bridge Agent in order to prevent griefing.
 
 ### In the event of a DOS, could you outline a minimum duration after which you would consider a finding to be valid? This question is asked in the context of most systems' capacity to handle DoS attacks gracefully for a certain period.
-  - Unless there is the need to upgrade and migrate any component of Ulysses via governance ( e.g. Bridge Agents or Core Routers) downtime should be negligeble to ensure assets are available at any time to their different users.
+Unless there is the need to upgrade and migrate any component of Ulysses via governance ( e.g. Bridge Agents or Core Routers) downtime should be negligeble to ensure assets are available at any time to their different users.
 
 ### Is any part of your implementation intended to conform to any EIP's? If yes, please list the contracts in this format:
   - `ERC20hTokenBranch`: Should comply with `ERC20/EIP20`
   - `ERC20hTokenRoot`: Should comply with `ERC20/EIP20`
 
 ## Attack ideas (Where to look for bugs)
-
-_List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example_
 
 - Double spending of deposit and settlement nonces / assets (Bridge Agents and Bridge Agent Executors).
 - Griefing of user deposits and settlements (Bridge Agents).
@@ -186,8 +131,6 @@ _List specific areas to address - see [this blog post](https://medium.com/code4r
 - A Deposit / Settlement can never be redeemable and retryable at the same time.
 
 ## Scoping Details
-
-[ ⭐️ SPONSORS: please confirm/edit the information below. ]
 
 ```
 - If you have a public code repo, please share it here:
@@ -210,10 +153,6 @@ _List specific areas to address - see [this blog post](https://medium.com/code4r
 ```
 
 # Tests
-
-_Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report._
-
-_Note: Many wardens run Slither as a first pass for testing. Please document any known errors with no workaround._
 
 **Here is an example of a full script to run the first time you build the contracts in both Windows and Linux:**
 
