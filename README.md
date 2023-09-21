@@ -97,6 +97,28 @@ There are three audits, two of them featuring Ulysses:
 | [src/factories/ERC20hTokenBranchFactory.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/factories/ERC20hTokenBranchFactory.sol) | 51 | Factory contract allowing for permissionless deployment of new Branch hTokens in Branch Chains of Ulysses Omnichain Liquidity Protocol. | [solady](https://github.com/vectorized/solady) |
 | [src/factories/ERC20hTokenRootFactory.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/factories/ERC20hTokenRootFactory.sol) | 47 | Factory contract allowing for permissionless deployment of new Root hTokens in the Root Chain of Ulysses Omnichain Liquidity Protocol. | [solmate](https://github.com/transmissions11/solmate), [solady](https://github.com/vectorized/solady) |
 | [src/factories/ArbitrumBranchBridgeAgentFactory.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/factories/ArbitrumBranchBridgeAgentFactory.sol) | 52 | Factory contract for allowing permissionless deployment of new Arbitrum Branch Bridge Agents. |  |
+| [src/interfaces/BridgeAgentStructs.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/BridgeAgentStructs.sol) | 77 | File with Bridge Agent Structs |  |
+| [src/interfaces/IRootBridgeAgent.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IRootBridgeAgent.sol) | 99 | Interface for Root Bridge Agent Contract. |  |
+| [src/interfaces/BridgeAgentConstants.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/BridgeAgentConstants.sol) | 23 | Interface for Bridge Agent Constants. |  |
+| [src/interfaces/IERC20hTokenBranchFactory.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IERC20hTokenBranchFactory.sol) | 9 | Interface for ERC20 hToken Branch Factory. |  |
+| [src/interfaces/IPortStrategy.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IPortStrategy.sol) | 5 | Interface to be implemented by Brach Port Strategy contracts. |  |
+| [src/interfaces/ICoreBranchRouter.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/ICoreBranchRouter.sol) | 10 | Interface for Core Branch Router. |  |
+| [src/interfaces/IERC20hTokenBranch.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IERC20hTokenBranch.sol) | 5 | Interface for ERC20 hToken Branch. |  |
+| [src/interfaces/IBranchBridgeAgent.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IBranchBridgeAgent.sol) | 90 | Interface for Branch Bridge Agent. |  |
+| [src/interfaces/IBranchBridgeAgentFactory.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IBranchBridgeAgentFactory.sol) | 8 | Interface for Branch Bridge Agent Factory. |  |
+| [src/interfaces/IRootPort.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IRootPort.sol) | 124 | Interfaces for Root Port. |  |
+| [src/interfaces/ILayerZeroEndpoint.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/ILayerZeroEndpoint.sol) | 42 | Interface for LayerZero Endpoint. |  |
+| [src/interfaces/IERC20hTokenRoot.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IERC20hTokenRoot.sol) | 9 | Interface for ERC20 hToken Root. |  |
+| [src/interfaces/IBranchPort.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IBranchPort.sol) | 70 | Interface for Branch Port. |  |
+| [src/interfaces/IVirtualAccount.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IVirtualAccount.sol) | 22 | Interface for Virtual Account. | [@openzeppelin/contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) |
+| [src/interfaces/IArbitrumBranchPort.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IArbitrumBranchPort.sol) | 10 | Interface for Arbitrum Branch Port. |  |
+| [src/interfaces/ILayerZeroUserApplicationConfig.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/ILayerZeroUserApplicationConfig.sol) | 7 | Interface for LayerZero User Application Config. |  |
+| [src/interfaces/IMulticall2.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IMulticall2.sol) | 12 | Interface for Multicall2. |  |
+| [src/interfaces/IBranchRouter.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IBranchRouter.sol) | 31 | Interface for Branch Router. |  |
+| [src/interfaces/IRootBridgeAgentFactory.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IRootBridgeAgentFactory.sol) | 4 | Interface for Root Bridge Agent Factory. |  |
+| [src/interfaces/IERC20hTokenRootFactory.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IERC20hTokenRootFactory.sol) | 8 | Interface for ERC20 hToken Root Factory |  |
+| [src/interfaces/IRootRouter.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IRootRouter.sol) | 27 | Interface for Root Router. |  |
+| [src/interfaces/ILayerZeroReceiver.sol](https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/ILayerZeroReceiver.sol) | 4 | Interface for LayerZero Receiver. |  |
 
 
 ## Out of scope
