@@ -13,7 +13,7 @@ src/BranchBridgeAgent.sol
 src/BaseBranchRouter.sol
 src/RootPort.sol
 src/BranchBridgeAgentExecutor.sol
-src/factories/ArbitrumBranchBridgeAgent.sol
+src/factories/ArbitrumBranchBridgeAgentFactory.sol
 src/factories/BranchBridgeAgentFactory.sol
 src/factories/ERC20hTokenBranchFactory.sol
 src/factories/ERC20hTokenRootFactory.sol
