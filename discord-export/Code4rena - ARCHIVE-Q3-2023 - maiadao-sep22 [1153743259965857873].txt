@@ -1,0 +1,5801 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q3-2023 / maiadao-sep22
+==============================================================
+
+[09/20/2023 14:44] kartoonjoy (pinned)
+👋 Hello and welcome to the audit channel for the $100,000 USDC **Maia DAO - Ulysses** audit!
+
+📆 Audit opens 09/22/2023 20:00 (20:00 UTC) and runs through 10/06/2023 20:00 (20:00 UTC) (14 days).
+
+Please give a warm welcome to the Maia DAO team, particularly @0xbuzzlightyear and @0xBugsy, who will be available for questions either here in the channel or via DM in the UTC+2 timezone(s).
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://code4rena.com/contests/2023-09-maia-dao-ulysses#top
+
+{Embed}
+https://code4rena.com/contests/2023-09-maia-dao-ulysses
+Code4rena
+Code4rena is a competitive audit platform that finds more high-severity vulnerabilities, more quickly than any other auditing method.
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/c4-og-banner-6A046.png
+
+{Reactions}
+🖖 (19) 🫡 (5) 🙌 (2) 🦅 ❤️‍🔥 (2) 
+
+[09/20/2023 15:18] kartoonjoy
+Pinned a message.
+
+
+[09/20/2023 15:53] 0xvj
+this codebase is different from codebase in the previous c4 contest?
+
+
+[09/20/2023 20:52] 0xbuzzlightyear
+It is the ulysses-omnichain section of the codebase migrated from anycall to layerzero
+
+{Reactions}
+👍 (10) 
+
+[09/20/2023 21:46] ustas.eth
+There was an audit of Maia before?
+
+
+[09/20/2023 21:49] 0xbuzzlightyear
+https://code4rena.com/reports/2023-05-maia
+#deleted-channel
+
+{Embed}
+https://code4rena.com/reports/2023-05-maia
+Code4rena
+Code4rena is a competitive audit platform that finds more high-severity vulnerabilities, more quickly than any other auditing method.
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/c4-og-banner-606CD.png
+
+{Reactions}
+4739_Skeletor (2) 
+
+[09/20/2023 22:15] banditx0x
+@0xbuzzlightyear  How much overlap is there between this Ulysses audit and the Ulysses section of the previous MaiaDao audit?
+
+
+[09/21/2023 13:14] 0xbuzzlightyear (pinned)
+The general flows and architecture are the same. The main changes are in BrigdeAgents, which are the ones that interact with the messaging layer (handle cross chain messages). Instead of using Uniswap V3 to swap between different gas hTokens we take advantage of Layerzero's adapterParams version 2 and use the airdrop feature to have gas for multiple hops: https://layerzero.gitbook.io/docs/evm-guides/advanced/relayer-adapter-parameters#airdrop
+
+{Embed}
+https://layerzero.gitbook.io/docs/evm-guides/advanced/relayer-adapter-parameters
+Relayer Adapter Parameters
+Advanced relayer usage, and usage of _adapterParams
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/https%253A%252F%252F1064219394-files.gitbo-D5C9E
+
+{Reactions}
+👍 (27) 👀 (7) 
+
+[09/22/2023 18:02] 0xstalin
+https://tenor.com/view/lfg-batman-gif-24589308
+
+{Embed}
+https://tenor.com/view/lfg-batman-gif-24589308
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/lfg-batman-42B77.png
+
+{Reactions}
+4739_Skeletor (12) 🔋 (2) pepemarching (3) 
+
+[09/22/2023 20:26] 0xnirlin
+Sock?:thisisfine:
+
+{Reactions}
+🧦 (10) 😂 (10) code4rena (4) 
+
+[09/23/2023 00:58] bowtiedvirus
+Anybody able to get the project to compile? Been waiting a while. ~~Maybe I'm running out of RAM 😉~~
+
+
+[09/23/2023 01:41] 0xnevi
+@0xbuzzlightyear is arbitrum the only root chain?
+
+{Reactions}
+checkmark 
+
+[09/23/2023 01:51] 0xbuzzlightyear
+It's compiling with via ir. Comment/Remove this if you are not comparing gas costs:
+https://github.com/code-423n4/2023-09-maia/blob/main/foundry.toml#L6
+
+
+[09/23/2023 01:51] 0xbuzzlightyear
+yes
+
+{Reactions}
+👍 
+
+[09/23/2023 03:16] mrosas
+Are root contracts only deployed once?
+
+
+[09/23/2023 03:16] mrosas
+rootrouter and root port
+
+
+[09/23/2023 05:20] blckhv
+@0xbuzzlightyear can you check your dms when possible
+
+
+[09/23/2023 06:03] saint6704
+@0xbuzzlightyear  sent you FR
+
+
+[09/23/2023 06:04] mosharaf
+is this one kind of a fix review ?
+
+
+[09/23/2023 06:05] mosharaf
+This part of the code was audited in the previous MAIA contest ig .
+
+
+[09/23/2023 06:14] kaveyjoe
+https://discord.com/channels/810916927919620096/1153743259965857873/1154405312195989554
+
+{Reactions}
+thankyou (2) 
+
+[09/23/2023 06:21] kartoonjoy
+Pinned a message.
+
+
+[09/23/2023 06:36] blutorque
+hey, where to start from?
+
+
+[09/23/2023 06:39] nmirchev8
+Docs! 😄
+
+{Reactions}
+🙌 (6) 😂 (8) 
+
+[09/23/2023 06:47] albertwh1te
+https://v2-docs.maiadao.io/protocols/Ulysses/introduction
+
+{Reactions}
+✅ 
+
+[09/23/2023 07:25] nmirchev8
+What does hTokens stands for? (any token, or some specific)
+
+
+[09/23/2023 07:29] 0x11singh99
+given previous audits are of current codebase on c4 or those audits are of other part which is not currenlty not in scope ? @0xbuzzlightyear
+
+
+[09/23/2023 07:50] _3agle
+I guess they are like cTOKENS in compound. For e.g. - hUSDC
+
+{Reactions}
+👍 (2) 
+
+[09/23/2023 08:34] 0xbuzzlightyear
+Yes, only once
+
+
+[09/23/2023 08:34] mrosas
+As in root routers and ports will be deployed once?
+
+
+[09/23/2023 08:34] 0xbuzzlightyear
+Hermes Tokens
+hTokens
+
+{Reactions}
+👍 (4) 
+
+[09/23/2023 08:35] 0xbuzzlightyear
+Yes, they are deployed once
+
+
+[09/23/2023 08:35] 0xbuzzlightyear
+Same in each branch
+
+
+[09/23/2023 08:40] zhaojie
+I dm you @0xbuzzlightyear
+
+
+[09/23/2023 08:58] plamkata
+So users interact only with the agents
+
+
+[09/23/2023 09:00] hisoul22
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-23_at_17.00.11-4FB1C.png
+
+
+[09/23/2023 09:00] hisoul22
+@ptsanev and routers
+
+{Reactions}
+checkmark (4) 
+
+[09/23/2023 09:38] mrosas
+What are strategy tokens?
+
+
+[09/23/2023 10:09] catscanaudit
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-0EB76.png
+
+{Reactions}
+😂 (15) 
+
+[09/23/2023 10:09] catscanaudit
+The magic number
+
+
+[09/23/2023 10:29] 0xbuzzlightyear
+Branch Ports allows governance to add strategies that use a portion of its reserves to earn yield. It's the token for a given strategy.
+
+
+[09/23/2023 10:36] mrosas
+So it's a governance token, is it different than htokens?
+
+
+[09/23/2023 11:07] 0xnirlin
+Meow
+
+
+[09/23/2023 11:09] catscanaudit
+Haha hey buddy
+
+
+[09/23/2023 11:16] 0xbuzzlightyear
+No, it is the underlying address of an hToken. So if an hToken from mainnetWETH has a strategy enabled in its branch (in mainnet), then the strategy token would be WETH.
+Our governance contracts are the only way to add/remove new strategies
+
+An hToken is an omnichain/multichain wrapper of tokens deposited in branch ports, representing/enabling virtualized liquidity:
+https://v2-docs.maiadao.io/protocols/Ulysses/overview/omnichain/virtual-liquidity
+
+
+[09/23/2023 11:17] mrosas
+If the strategy is false?
+
+
+[09/23/2023 11:17] saint6704
+this number was intensional
+
+
+[09/23/2023 11:17] mrosas
+I dont understand, what is strategy
+
+
+[09/23/2023 11:21] 0xbuzzlightyear
+A strategy is a revenue source, for example would be a contract that would deposit WETH in AAVE to earn yield.
+If a token doesn't have a strategy, then the whole balance sits in the Port not doing anything or earning any extra yield.
+
+{Reactions}
+👍 (7) 
+
+[09/23/2023 11:24] mrosas
+Oh I get it
+
+
+[09/23/2023 11:37] mrosas
+When you deposit to port, what are the difference of 'assets'  and Global Token?
+```
+    function depositToPort(address _depositor, address _recipient, address _underlyingAddress, uint256 _deposit)
+        external
+        override
+        lock
+        requiresBridgeAgent
+    {
+        // Save root port address to memory
+        address _rootPortAddress = rootPortAddress;
+
+        // Get global token address from root port
+        address _globalToken = IRootPort(_rootPortAddress).getLocalTokenFromUnderlying(_underlyingAddress, localChainId);
+
+        // Check if the global token exists
+        if (_globalToken == address(0)) revert UnknownGlobalToken();
+
+        // Deposit Assets to Port
+        _underlyingAddress.safeTransferFrom(_depositor, address(this), _deposit);
+
+        // Request Minting of Global Token
+        IRootPort(_rootPortAddress).mintToLocalBranch(_recipient, _globalToken, _deposit);
+    }
+```
+
+
+[09/23/2023 11:38] plamkata
+Where can we find the dependency versions
+
+
+[09/23/2023 11:44] viktor_cortess
+Hi, does anyone get this message? Message:  failed to extract foundry config:
+foundry config error: Unknown evm version: paris for setting `evm_version`
+
+
+[09/23/2023 11:54] mrosas
+Did you add your infura api key to ur .env?
+
+
+[09/23/2023 12:00] sp1cymeatball
+just delete the evm_version line inside the foundry.toml or update your foundry
+
+
+[09/23/2023 12:02] albertwh1te
+check your local svm version
+
+
+[09/23/2023 12:06] mrosas
+What is the difference of underlyingAddress and global token? is global token ulysses unified token?
+
+
+[09/23/2023 12:49] __melonwater
+No, they are different. You can think global token as the bridged version of token on arb (root chain)
+
+{Reactions}
+checkmark 
+
+[09/23/2023 12:52] castle_chain
+what is the meaning of the path `rootBridgeAgentPath` is this mean that this is the path from the rootBridgeAgent--->rootBridge --> rootBridgeAgent-->branchBridgeAgent ?? or I am wrong ?
+
+
+[09/23/2023 12:52] castle_chain
+https://github.com/code-423n4/2023-09-maia/blob/c0dc3550e0754571b82d7bfd8f0282ac8fa5e42f/src/BranchBridgeAgent.sol#L62-L64
+
+{Embed}
+https://github.com/code-423n4/2023-09-maia/blob/c0dc3550e0754571b82d7bfd8f0282ac8fa5e42f/src/BranchBridgeAgent.sol
+2023-09-maia/src/BranchBridgeAgent.sol at c0dc3550e0754571b82d7bfd8...
+Contribute to code-423n4/2023-09-maia development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/4b4c860f-0a03-4a05-8611-8ed7356aab79-2C343
+
+
+[09/23/2023 13:32] sovaslava9
+Question about ports (https://v2-docs.maiadao.io/protocols/Ulysses/overview/omnichain/ports). Root - is situated in ethereum mainnet?  Brach==blockchain?
+
+
+[09/23/2023 13:36] mrosas
+Then what does underlyingAddress token  also known as the asset is?
+
+
+[09/23/2023 14:09] _3doc_
+try `foundryup`
+
+
+[09/23/2023 14:14] _3doc_
+If I got this right. Root is arbitrum, everything else is a branch; Arbitrum has a local branch too that is special because it does not need the L0 bridge as it’s on the root network already
+
+{Reactions}
+🙏🏼 (5) 👍 (3) 🔥 (2) checkmark (2) 
+
+[09/23/2023 15:30] viktor_cortess
+thanks, for some reason it works in WSL, but in Powershell returns another foundry version and doesn't understand foundryup command
+
+
+[09/23/2023 15:32] ustas.eth
+There's no foundryup on Windows
+
+
+[09/23/2023 15:48] _polex
+Is there any diagram of the workflow to have a clear image of what the user interacts to and what other things are called under the hood?
+
+{Reactions}
+👍 
+
+[09/23/2023 15:57] sovaslava9
+Why we need to Factory of bridges, if we deploy only 1 bridge on each chain?
+
+
+[09/23/2023 16:01] sovaslava9
+Or in 1 blockchain could be many bridge agents for each other chain?
+
+
+[09/23/2023 16:07] pfapostol
+there is with git bash
+
+
+[09/23/2023 16:21] 0xbugsy
+It's one of the parameters for layer zero's `lzSend` method its the destination and origin addresses of the cross-chain call encodedPacked
+
+
+[09/23/2023 16:22] 0xbugsy
+Exactly, anyone can deploy their bridge agents using the factory and connect them to any of the chains Ulysses is deployed on attaching custom routers to each bridge agent for calldata execution
+
+
+[09/23/2023 16:36] saint6704
+@0xBugsy sent you a fr
+
+
+[09/23/2023 17:39] aamirusmani1552
+hey does given previous audit reports belong to same codebase?
+
+
+[09/23/2023 18:38] hex.byte
+@0xBugsy sent you a fr
+
+
+[09/23/2023 18:47] hex.byte
+@/devs When we say the ports hold the tokens for each omnichain token, do we mean the htoken/nativeToken pair for a blockchain (say "Z") where the `nativeToken` is the native token of this blockchain-Z?
+
+
+[09/23/2023 18:49] hex.byte
+Is this like, hToken is your main trade currency whereas each chain branch port holds its own vault which has the nativeToken/hToken pool?
+
+
+[09/23/2023 18:59] hex.byte
+So there is a virtual pool for every branch chain that exists (the port) and the root port holds a mapping/balance-sheet of the balances of each branch port.
+
+Say if a user from SOL/hToken pair pool wishes to withdraw into USDC so you add that value to the SOL/hToken pair from say Arbitrum and send the desired USDC on say Optimism?
+
+
+[09/23/2023 18:59] hex.byte
+Just throwing my thoughts, please correct me if I'm wrong.
+
+
+[09/23/2023 19:18] 0xstalin
+the previous audit covered the 4 protocol composing Maia, including the ulysses protocol, but in this contest there were a couple of changes to ulysses, I believe the biggest change is about the crosschain messages, it was migrated from anychain to layerzero, plus I think in this contest there are included the fixes for the vulnerabilities reported in the previous audit
+
+
+[09/23/2023 19:19] aamirusmani1552
+oh ok
+
+
+[09/23/2023 19:20] aamirusmani1552
+thanks
+
+{Reactions}
+🫡 
+
+[09/23/2023 19:37] sovaslava9
+Why in ArbitrumCoreBranchRouter.sol in constructor we pass address(0) to CoreBranchRouter's constructor?
+
+
+[09/23/2023 19:37] 0xaadhi
+Can't see the automated findings.
+
+
+[09/23/2023 19:39] 0xstalin
+The bot didn't find anything?
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-2F30B.png
+
+
+[09/23/2023 19:40] sovaslava9
+https://github.com/code-423n4/2023-09-maia/blob/main/bot-report.md empty..
+
+
+[09/23/2023 19:43] itsmetechjay
+Looks like the winning bot submission didn’t paste correctly. We are investigating and will post a note here once it’s available.
+
+
+[09/23/2023 20:11] hex.byte
+I thought Root is Arbitrum as confirmed above, then why do we have 2 different contracts i.e. one for Arbitrum and one for "Root"?
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-72CAC.png
+
+
+[09/23/2023 20:14] 0xstalin
+The Root Chain is indeed deployed in Arbitrum, but at the same time Arbtitrum itself is a Branch Chain of the Root Chain, you can think of the Root Chain as a virtualized environment handling the liquidity of all the Branch Chains
+
+{Reactions}
+😮 (5) 🫡 (4) checkmark 
+
+[09/23/2023 20:22] hex.byte
+Can you please also help me understand the difference between core and root branch contracts? I understand the difference b/w arbitrum and "root", how is core unique here?
+
+
+[09/23/2023 20:23] hex.byte
+Also, the "Base" branch router, is this the one that will be used to spin up for other chains?
+
+
+[09/23/2023 20:25] 0xstalin
+Core has nothing to do with Root, Core is like the final implementation of a Router, BaseBranchRouter is the Base implementation for a router, CoreBranchRouter is the final contract for routers that willl be deployed to a Branch, and CoreRootRouter will be routers deployed to the Root Chain
+
+
+[09/23/2023 20:27] 0xstalin
+You can think of that as, CoreRouters extending from BaseRouter, and each CoreRouter has some additional logic and/or overrides logic from the BaseRouter to meet the requirements depending if the Router is been deployed to a Branch or to the Root chain
+
+
+[09/23/2023 20:29] hex.byte
+Oh, but the actual contract that gets deployed are the core ones right? Or - different chains can deploy their own implementation of the base router contracts as well?
+
+
+[09/23/2023 20:29] 0xstalin
+I believe that only Core contracts are deployed, but prob @0xBugsy or @0xbuzzlightyear can help us to confirm this 🙂
+
+
+[09/23/2023 20:31] 0xstalin
+I don't exactly understand what do you mean by this 😦 Could you elaborate a little bit more?
+
+
+[09/23/2023 20:50] itsmetechjay (pinned)
+**Automated Findings / Publicly Known Issues**
+
+Automated findings output for the audit can be found [here](https://gist.github.com/itsmetechjay/9bcacd6e8beea0abaf9590abc6b1d10e).
+
+*Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
+
+{Reactions}
+pepehandshake 
+
+[09/23/2023 20:50] itsmetechjay
+Pinned a message.
+
+
+[09/23/2023 21:13] hex.byte
+Will wait for the team then 👀
+
+
+[09/23/2023 21:14] hex.byte
+I meant are the contract customizable, like, using the base contracts - is there a scope for customizing any functions? Overriding perhaps? Idk.
+
+
+[09/23/2023 22:04] castle_chain
+what is the difference between the function `callOut` and the function `callOutSinged`
+https://github.com/code-423n4/2023-09-maia/blob/c0dc3550e0754571b82d7bfd8f0282ac8fa5e42f/src/BranchBridgeAgent.sol#L262
+
+
+[09/23/2023 22:12] hisoul22
+callOut:  Function to perform a call to the Root Omnichain Router without token deposit.
+
+
+[09/23/2023 22:13] hisoul22
+callOutSigned: Perform a call to the Root Omnichain Router without token deposit with msg.sender information.
+
+
+[09/23/2023 22:14] hisoul22
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-24_at_06.13.40-3B380.png
+
+{Reactions}
+checkmark 🙏 (2) 
+
+[09/23/2023 22:14] hisoul22
+@castle_chain
+
+
+[09/23/2023 22:34] alcueca (pinned)
+Hi all, I'm a bit late to the party, but I'm going to be judging this and I thought I would give a heads up if what to expect as a warden.
+
+1. Only a considerable (10%+ of the whole protocol) loss of funds or permanent disabling of core functionality is a High.
+2. A DoS for users other than the attacker, minor loss of funds, or a considerable loss of funds that requires a specific scenario is a Medium.
+3. Anything else that requires a code fix is QA grade-a.
+4. A documentation or comment fix is QA grade-b.
+
+Governance attacks, and opinions on how the protocol could be better are an "analysis" submission.
+
+ChatGPT sucks at finding vulnerabilities, but for the love of God, if you use it, check that what it says makes sense.
+
+On the other hand, if your writing skills are not great, use chatGPT to rewrite your submission. Make it readable and use simple language.
+
+If there are Highs, there will be duplicates. Submissions without PoC will be more likely to be considered insufficient quality or get a partial reward.
+
+Check the bot results, don't waste your time submitting duplicates.
+
+Follow these simple guidelines, I'll be a happier judge, and you'll get better results. Good luck.
+
+{Reactions}
+thankyou (30) 🫡 (17) 📌 (4) 👀 (3) pepoloveleaf (2) 
+
+[09/23/2023 22:41] pabloeksdi
+pin?
+
+{Reactions}
+checkmark 
+
+[09/23/2023 23:01] itsmetechjay
+Pinned a message.
+
+
+[09/24/2023 02:50] mrosas
+what are underlying assets?
+
+
+[09/24/2023 03:16] 0xstalin
+Are the `localAddress` tokens the same as the shares in an ERC4626 vault?
+
+
+[09/24/2023 03:17] coffiasd
+What’s the relationship between previous maiadao contest audit on c4 and this contest
+
+
+[09/24/2023 03:37] _3agle
+Check this out: https://discord.com/channels/810916927919620096/1153743259965857873/1154405312195989554
+
+
+[09/24/2023 03:38] mrosas
+Does the rootbridge agent owns the branch router and port?
+
+
+[09/24/2023 03:59] mrosas
+What are the difference of global and local token? Global is used for cross chain and local token are used for the same chain?
+
+
+[09/24/2023 04:08] mrosas
+Any difference of core and base branch router?
+
+
+[09/24/2023 04:31] mrosas
+There isnt a documentation stating the difference of Arbitrum branch router and port against branch router and branchport
+
+
+[09/24/2023 04:32] hex.byte
+Yup, there's a bit of confusion around that.
+
+
+[09/24/2023 04:32] hex.byte
+Waiting for devs for some insight over here.
+
+
+[09/24/2023 04:32] mrosas
+How does the user flow works? Interact with which router or agent first?
+
+
+[09/24/2023 04:33] hex.byte
+There's supposed to be a "root" instance which connects all the branch instances. This root instance is supposed to be operating on arbitrum chain - apart from the local arbitrum instance as well.
+
+
+[09/24/2023 04:34] 0xkarl98
+sorry to interrupt , i run forge install and there is no return
+
+
+[09/24/2023 04:34] 0xkarl98
+anything i did wrong ?
+
+
+[09/24/2023 04:35] 0xkarl98
+i delete the .example from .env and edit my api key , as suggested
+
+
+[09/24/2023 04:35] 0xkarl98
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-CBF8E.png
+
+
+[09/24/2023 04:36] hex.byte
+Think of it like a company say Google - Arbitrum (taking example of a city) has the HQ as well as a local branch (other local office) and other chains (cities) might have their local instances (local offices) as well but the balance-sheet (to say) for all these different branches is maintained on the root instance on arbitrum.
+
+{Reactions}
+checkmark 
+
+[09/24/2023 04:37] hex.byte
+Hey @0xStalin , may I text you in dm pls?
+
+
+[09/24/2023 04:41] _3agle
+So, It means I can lock USDC in any chain and then use it's virtualized version (hUSDC?) on another chain?
+
+{Reactions}
+✅ (3) checkmark 
+
+[09/24/2023 04:41] hex.byte
+That's what I understood as well.
+
+
+[09/24/2023 04:45] 0xkarl98
+so that's the virtualized version
+
+
+[09/24/2023 04:45] 0xkarl98
+is that cross-chain mint actually ?
+
+
+[09/24/2023 04:47] 0xkarl98
+anyone knows what's wrong on my end
+
+
+[09/24/2023 04:47] 0xkarl98
+i don't think it's intended to be so
+
+
+[09/24/2023 05:01] albertwh1te
+Yes you are right.
+
+{Reactions}
+👍 
+
+[09/24/2023 05:13] mrosas
+From the user pov, if they want to swap, which router will they interact with local or arbitrum?
+
+Also can u explain the difference of local (underlying asset) and global tokens?
+
+
+[09/24/2023 05:13] 0xstalin
+sure, happy to help in anything I can
+
+
+[09/24/2023 05:14] hex.byte
+They will interact with the "local" one - however on arbitrum - the arbitrum contracts should be the "local" one. If I'm not wrong.
+
+
+[09/24/2023 05:14] 0xstalin
+I understand that if the users wants to swap from arbitrum, they'd interact with ArbitrumPort, if the swap is in any other chain they'd interact with BranchPort
+
+
+[09/24/2023 05:14] hex.byte
+Sent you a fr ser
+
+
+[09/24/2023 05:16] mrosas
+Let's wait for dev to confirm
+
+
+[09/24/2023 05:18] albertwh1te
+On arb:  ArbitrumCoreBranchRouter
+On others: CoreBranchRouter
+
+
+[09/24/2023 05:19] _3agle
+@albertwhite , just curious, are you with the dev team
+
+
+[09/24/2023 05:19] albertwh1te
+No I am not
+
+
+[09/24/2023 05:20] albertwh1te
+Please correct me if I'm wrong.
+
+
+[09/24/2023 05:21] _3agle
+I am not sure, let's see what the devs have to say
+
+
+[09/24/2023 06:06] _3agle
+I have created a rough diagram of the Ulysses architecture, hope it helps:
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/MaiaDAO_-_Ulysses-460FE.jpg
+
+{Reactions}
+thankyou (23) 💯 (11) 
+
+[09/24/2023 07:26] mrosas
+What are the difference of global and local token? Global is used for cross chain and local token are used for the same chain?
+
+
+[09/24/2023 07:27] mrosas
+Are they Ulysses Unified Tokens?
+
+
+[09/24/2023 07:35] _3agle
+sorry, I’m not sure about that
+
+
+[09/24/2023 07:41] mrosas
+ngl, i think the documentation can be better
+
+{Reactions}
+👆 (4) 
+
+[09/24/2023 07:42] blutorque
+wait wht, if the poc not necessary for the simple exploit but someone still do submit that, s/he get double points!! Is it so?
+
+
+[09/24/2023 08:01] mrosas
+What are underlying assets??
+
+
+[09/24/2023 08:19] _3agle
+@0xBugsy @0xbuzzlightyear sent a FR
+
+
+[09/24/2023 08:26] mrosas
+Same here
+
+
+[09/24/2023 08:27] alcueca
+Yes, PoCs prove to yourself that a vulnerability is actually real, and reveal your assumptions to sponsor and judge. Skipping PoCs based on an arbitrary complexity threshold means that on average you will submit more invalid reports than someone that PoCs all their submissions.
+
+Those wardens that go the extra mile to make sure they submit a minimal number of invalid reports are rewarded by getting higher payouts in their valid submissions than wardens that take an easier approach that wastes sponsors, lookouts and judges time.
+
+{Reactions}
+👍 (8) 👍🏼 (4) 
+
+[09/24/2023 08:45] ustas.eth
+Who can I write to talk about found issues? Don't want to miss the severity rating
+
+
+[09/24/2023 08:46] ustas.eth
+@0xbuzzlightyear sent you a FR
+
+
+[09/24/2023 09:24] saint6704
+Hey what's the difference when we call `callout()` in `RootBridgeAgent.sol` and `callout()` in `BranchBridgeAgent.sol`
+
+
+[09/24/2023 09:33] saint6704
+Is `callout()` in `BranchBridgeAgent.sol` for depositing crossChain and `callout()` in `rootBridgeAgent.sol` used for settlement crossChain?
+
+
+[09/24/2023 09:48] plamkata
+When you want to initiate an action a chain other than Arbitirum, aka the root chain, you would be interacting with the branch contracts, which would make cross-chain messages to the root to update global state and execute your action. You can call the root contracts or the arbitirum contracts to execute a certain action and send it as a cross-chain message to one of the branches, for example bridging tokens
+
+{Reactions}
+🙏🏾 
+
+[09/24/2023 09:48] plamkata
+It depends what is your source chain
+
+
+[09/24/2023 10:19] nmirchev8
+Is there an explanation about underlying and global tokens yet?
+
+
+[09/24/2023 10:29] mrosas
+nope lol
+
+{Reactions}
+😥 
+
+[09/24/2023 10:29] nmirchev8
+Global address is the token address on the root chain? (on arb)
+Local address is the token address on a given branch chain
+And underlying is something with the wrapped hToken version, or?
+
+
+[09/24/2023 10:29] mrosas
+ive been asking for quite some time too
+
+{Reactions}
+🤞 
+
+[09/24/2023 10:32] 0xarz
+the unified liquidity is out of scope?
+
+
+[09/24/2023 10:51] mrosas
+Developers, if I want to initate a swap, which functions will be called? Pleaes list down the functions. The documentation is ambiguous
+
+
+[09/24/2023 10:51] mrosas
+Thanks
+
+
+[09/24/2023 11:05] 0xbuzzlightyear
+I apologize for the absence in the last 24h, will get to every question and please let us know if we ever miss anything or you want us to repeat it in other words. thanks for your patience!
+
+{Reactions}
+hi5 (8) 
+
+[09/24/2023 11:13] sovaslava9
+Why function ArbitrumBranchBridgeAgent.withdrawFromPort() is payable?
+
+
+[09/24/2023 11:13] bronze_pickaxe
+DM'ed @0xbuzzlightyear 🫡
+
+
+[09/24/2023 11:18] 0xbuzzlightyear
+Each port is essentially an omnichain/multichain token wrapper. You can deposit native tokens and make it bridgeable using our environment.
+
+{Reactions}
+🔥 
+
+[09/24/2023 11:25] 0xbuzzlightyear (pinned)
+Each token is unique, so USDC from Arbitrum and Optimism are different. The codebase in scope does not allow any trading of hTokens, it is abstracted of it. In order to acquire native USDC from a different chain, there would need to be a liquidity pool enabling trading of different hTokens external to this system. If you do wish to learn more about it, look into Ulysses Tokens, but it is not in scope
+
+
+[09/24/2023 11:25] plamkata
+Can I get some help running the last 2 tests
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-A240F.png
+
+
+[09/24/2023 11:26] mrosas
+DM'ed @0xbuzzlightyear
+
+
+[09/24/2023 11:31] 0xbuzzlightyear
+It does need to create hTokens because it can use Arbitrum's native tokens or root factory for that purpose.
+
+
+[09/24/2023 11:34] _3agle
+First one fails because it is a Fuzz Test
+For Second One, You need to add your Infura API Key in `.env`
+
+{Reactions}
+checkmark 
+
+[09/24/2023 11:35] plamkata
+Got it ty
+
+
+[09/24/2023 11:39] 0xbuzzlightyear
+@0xStalin answered perfectly imo, just want to correct 1 thing:
+- `Core` is only relative to Routers that have "admin" permission and handle sensitive cross-chain communication between chains, like adding new tokens
+
+MutlicallRootRouters will be deployed as well for general usage, like anyone that wants to make an arbitrary number of calls in Arbitrum (in a non-signed tx as it does not use a virtual account)
+
+{Reactions}
+❤️ 
+
+[09/24/2023 11:45] 0xbuzzlightyear
+The `BaseBranchRouter` is indeed a used to extend `CoreBranchRouter`, but it can and will be deployed as it is. It is what we require for our system for now, it only allows for token bridging and not any arbitrary execution like MulticallRootRouter allows in the root/arbitrum
+
+
+[09/24/2023 11:48] 0xbuzzlightyear
+any tokens that are deposited in BranchPorts, like `wrapped gas tokens`, `USDC`, `USDT`, `DAI`, etc
+
+
+[09/24/2023 11:55] pxng0lin
+Anyone else having an issue compiling with forge build, 349 contracts, it just errors out
+```
+[⠃] Compiling...
+[⠒] Compiling 349 files with 0.8.18
+Error: 
+Solc exited with signal: 9 (SIGKILL)
+<empty output>
+```
+
+
+[09/24/2023 11:56] _3agle
+try `foundryup`
+
+
+[09/24/2023 11:57] 0xdemonnn
+If the root chain is in the Arbitrum network then does the interaction between ArbitrumBranch have to go through the root chain first or can it go directly to another chain? i.e for token swap, I'm a little confused with the arbitrum and root chains which both exist on the arbitrum network. Thanks before @0xbuzzlightyear
+
+
+[09/24/2023 11:58] mrosas
+They are wrapped in arbitrum?
+
+
+[09/24/2023 12:07] pxng0lin
+no difference unfortunately
+
+
+[09/24/2023 12:07] 0xbuzzlightyear
+Depends on what the interaction is:
+- if it is a signed call, then the user needs to start the bridgeAgent directly
+- If it is non-signed, then the user can choose between both bridgeAgent and BaseBranchRouter
+- If it is a system/admin call, like adding a new token, the user needs to use the CoreBranchRouter
+
+
+[09/24/2023 12:09] 0xbuzzlightyear
+you need to run `forge t` to build and run tests or `forge b` to just build
+
+
+[09/24/2023 12:12] mrosas
+What's the difference of signed or non signed tx
+
+
+[09/24/2023 12:12] 0xtendency
+Dm'd @0xbuzzlightyear
+
+
+[09/24/2023 12:17] 0xbuzzlightyear
+Since swapping should be a signed tx, users interact with the BridgeAgent of the chain in which they are in. If users are in Arbitrum they can use it's virtual account or Multicall2 contracts directly or go through ArbitrumBranchBridgeAgent
+
+
+[09/24/2023 12:17] 0xbuzzlightyear
+Underlying - token which lies in branch port
+Local token a.k.a. branch hToken - branch chain representation of a token deposited in some branch port
+Global token - root chain representation of a token deposited in a branch port used in ARBITRUM native dApps like uniswap or balancer
+
+{Reactions}
+🙌 (2) 
+
+[09/24/2023 12:19] 0xbuzzlightyear
+It is a branch chain 1:1 representation of a token deposited in the origin or any other branch port
+
+
+[09/24/2023 12:21] 0xbuzzlightyear
+CoreBranchRouters are only used for "system" calls, like adding new tokens or new bridgeAgents
+
+
+[09/24/2023 12:21] _3agle
+@0xbuzzlightyear Pls check DM
+
+
+[09/24/2023 12:22] mrosas
+@0xbuzzlightyear have dmed u too
+
+
+[09/24/2023 12:23] 0xbuzzlightyear
+Sorry for that, but we do appreciate the feedback, we will definitely take notes of everything here and improve it
+
+{Reactions}
+🙌 (4) 
+
+[09/24/2023 12:25] 0xbuzzlightyear
+I'll get to DMs asap, as soon as I get over pending messages in this chat. But please check this message from the judge: https://discord.com/channels/810916927919620096/1153743259965857873/1155271106551369838
+
+
+[09/24/2023 12:27] mrosas
+Am I right to say underlying tokens are the virtualize pegged tokens which is 1:1 to global tokens? E.g global tokens are like usdc, usdt etc. Anything that is available as ERC20?
+
+Can this local token be used with different branches?
+
+
+[09/24/2023 12:37] 0xbuzzlightyear
+The `callout()` function itself is to send a non-signed (not using virtual account) cross-chain message without any deposit. 
+With our current router implementations, callout can be called in `BranchBridgeAgent` and `BaseBranchRouter` to send a cross-chain messages. like requesting execution from the multicall2 contract. because there is no MulticallBranchRouter implemenations, callout in the root environment is only used for system calls that do not require token deposits, like adding new tokens and new bridgeAgents
+
+
+[09/24/2023 12:38] 0xbuzzlightyear
+here: https://discord.com/channels/810916927919620096/1153743259965857873/1155478170296926228
+
+
+[09/24/2023 12:38] 0xbuzzlightyear
+correct, it is out of scope
+
+{Reactions}
+thankyou 
+
+[09/24/2023 12:43] 0xbuzzlightyear
+Please check this messag first: https://discord.com/channels/810916927919620096/1153743259965857873/1155464926417133611
+
+But in order to do a swap from for example Optimism. The user should call `callOutSignedAndBridge` of a `BranchBridgeAgent` in Optimism. In `params` the user would pass the desired calls to be executed in Arbitrum by it's virtual account: like approving, swapping and bridging back if desired. In `depositParams` the user would pass the deired token deposit which will be used by it's virtual account in the desired execution according to `params`.
+In order for any swapping to occur, there needs to exist liquidity, which is not part of this scope.
+
+
+[09/24/2023 12:46] 0xbuzzlightyear
+Are you in the correct repo? Seems like 349 files is from the previous contest.
+
+C4 page for this contest:
+https://code4rena.com/contests/2023-09-maia-dao-ulysses#top
+Repo for this contest:
+https://github.com/code-423n4/2023-09-maia
+
+
+[09/24/2023 12:48] 0xkarl98
+@0xbuzzlightyear  sorry to interrupt you but. 
+
+why i run forge install , there isn't any response to it
+
+
+[09/24/2023 12:48] 0xkarl98
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-C0339.png
+
+
+[09/24/2023 12:52] 0xbuzzlightyear
+When executing calldata in root chain (arbitrum) Signed tx use the user's virtual account and non signed tx use multicall2 contract.
+In addition, in a signed tx, settlements created as linked to both the user's address and it's virtual account, so both addresses can redeem/retry/retrieve the settlement.
+
+
+[09/24/2023 12:54] 0xbuzzlightyear
+I am not sure if pegged is the correct term, but it is equivalent to that. Same as ETH and WETH
+
+
+[09/24/2023 12:55] 0xbugsy
+This was done reduce the code complexity and potential logic duplication across both set of contracts. ARBITRUM branch performs all the responsibilities any other branch would do like storing underlying tokens an forwarding request and the root contracts always validate said requests and relays them to other chains. Key differences of arbitrum branch contracts can be seen in the overwritten functions where for example layer zero is not used and the addition of global tokens is blocked since we are already in the root chain and have access to the root's global tokens. Let me know if I left anything else unanswered!
+
+{Reactions}
+👍 
+
+[09/24/2023 12:56] 0xbuzzlightyear
+Sorry, but I do not know what could be the issue. Please make sure you are in the correct directory, foundry is up to date, etc
+
+
+[09/24/2023 12:58] 0xdemonnn
+ahh i see, for now its clear. Thank you :hi5:
+
+
+[09/24/2023 13:01] 0xbuzzlightyear
+Answering this: `Can this local token be used with different branches?`
+Exactly see `addGlobalToken` execution flow for reference.
+
+
+[09/24/2023 13:04] debofx
+Run forge build instead
+
+{Reactions}
+checkmark 
+
+[09/24/2023 13:10] 0xkarl98
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-4D048.png
+
+
+[09/24/2023 13:10] 0xkarl98
+the forge build output is also looking weird
+
+
+[09/24/2023 13:11] 0xkarl98
+i've already run foundryup
+
+
+[09/24/2023 13:12] 0xblackskull
+did you commented out via_ir?
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-5A753.png
+
+
+[09/24/2023 13:12] 0xkarl98
+nope
+
+
+[09/24/2023 13:12] 0xkarl98
+i will try
+
+
+[09/24/2023 13:12] 0xblackskull
+try it
+
+
+[09/24/2023 13:13] 0xkarl98
+same
+
+
+[09/24/2023 13:13] 0xkarl98
+i also edit the infra key
+
+
+[09/24/2023 13:15] plamkata
+I kind of still don't fully get hTokens. Are they virtual tokens holding the same value as their underlying token in order to track it's balance? So in the case of USDC it would be hUSDC and when you bridge your USDC, you get minted hUSDC you can use to provide liquidity, as stated in the docs
+
+{Reactions}
+👍 (2) 
+
+[09/24/2023 13:15] plamkata
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-8B7C7.png
+
+
+[09/24/2023 13:26] hex.byte
+Aren't the Port contracts supposed to act as wallets?
+
+
+[09/24/2023 13:28] pabloeksdi
+Don't you mean vaults
+
+
+[09/24/2023 13:33] zhaojie
+the bridgeAgentAddress in CoreRootRouter is RootBridgeAgent or BranchBridgeAgent? @0xbuzzlightyear
+
+
+[09/24/2023 13:33] hex.byte
+Yup, vaults*
+
+
+[09/24/2023 13:33] zhaojie
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-C6DD6.png
+
+
+[09/24/2023 13:33] debofx
+Have a look at the c4 page gor this. There are some pre steps you should take.
+
+
+[09/24/2023 13:40] pabloeksdi
+From my understanding the user can either interact with the bridge agent or the base branch router
+
+{Reactions}
+👍 
+
+[09/24/2023 13:44] mrpotatomagic
+my understanding abt it is the same, @0xbuzzlightyear some clarification on this would help
+
+
+[09/24/2023 13:50] pxng0lin
+Ah what an idiot, I cd'd into the May one, STUPID! thanks!
+
+{Reactions}
+pepehandshake (4) 
+
+[09/24/2023 13:52] 0xkarl98
+i did read it , here is my current .env file
+
+
+[09/24/2023 13:54] 0xbuzzlightyear
+Yes, it is exactly that. A 1:1 is a bridgeable wrapper for any token. This is especially useful to create omnchain dAPPs on the root environment. Each token being unique makes it easier to build around them and adjust risk parameters. A lending and borrowing platform can allow a higher LTV for ETH from mainnet than from ETH from fantom
+
+
+[09/24/2023 13:55] 0xbuzzlightyear
+I would say Virtual Accounts are supposed to act as wallets. Ports are token sinks that have it's balances virtualized in the root environment (arbitrum)
+
+
+[09/24/2023 13:55] hex.byte
+So for every chain, there will be a local port which manages the functioning and a virtual account contract that actually holds the pool, right?
+
+
+[09/24/2023 13:56] 0xbuzzlightyear
+In CoreRootRouter, the bridgeAgentAddress is a RootBridgeAgent:
+https://github.com/code-423n4/2023-09-maia/blob/c0dc3550e0754571b82d7bfd8f0282ac8fa5e42f/test/ulysses-omnichain/helpers/CoreRootRouterHelper.t.sol#L43-L51
+
+{Reactions}
+👍 
+
+[09/24/2023 13:57] 0xnirlin
+Is POC compulsory?
+
+
+[09/24/2023 13:58] 0xtendency
+Is it assumed that the wrapped tokens will have the same decimal precision as the underlying token?
+e.g USDC dp == hUSDC decimal precision
+
+{Reactions}
+checkmark 
+
+[09/24/2023 14:01] 0xbuzzlightyear
+Please let us know if this cleared it up or any further explanation (or in other words) is needed:
+https://discord.com/channels/810916927919620096/1153743259965857873/1155502449025626182
+
+
+[09/24/2023 14:01] 0xkarl98
+yeah i just want to show that i did read the pre steps
+
+
+[09/24/2023 14:02] 0xkarl98
+sorry have deleted it
+
+
+[09/24/2023 14:02] albertwh1te
+decimal will be passed when create htoken
+
+{Reactions}
+checkmark 
+
+[09/24/2023 14:04] 0xbuzzlightyear
+Virtual Accounts are only in Root/Arbitrum
+
+Branch Ports hold the deposited balances into the system, the Root Ports keeps accounting of every deposit in every Branch Port
+
+
+[09/24/2023 14:05] kartoonjoy
+Pinned a message.
+
+
+[09/24/2023 14:06] alcueca
+If there are duplicates for a vulnerability (which happens most of the time), submissions with a PoC will get twice the reward than those without.
+
+
+[09/24/2023 14:06] 0xbuzzlightyear
+I would say to delete the repo and clone it again. Also, do clone the repo and do not download the ZIP file. There might be some issues when doing that with forge repos
+
+
+[09/24/2023 14:06] 0xkarl98
+yeah will try again
+
+
+[09/24/2023 14:10] hex.byte
+Awesome, thanks a lot. That helps clear this.
+
+{Reactions}
+pepehandshake 
+
+[09/24/2023 14:10] pabloeksdi
+As a PoC do you mean tests only?
+
+
+[09/24/2023 14:19] alcueca
+To simplify, yes.
+
+
+[09/24/2023 14:19] 0xkarl98
+it's still the same
+
+
+[09/24/2023 14:19] 0xkarl98
+the forge install not working
+
+
+[09/24/2023 14:20] alcueca
+A transaction in a tenderly fork executing the exploit would be even better, while not technically a test.
+
+{Reactions}
+🥲 (3) 
+
+[09/24/2023 14:21] 0xkarl98
+thought the same
+
+
+[09/24/2023 14:28] 0xbuzzlightyear
+pls double checked this: https://discord.com/channels/810916927919620096/1153743259965857873/1155487936415023166
+
+Because it is working for everyone else, I assume it is either something on your setup, like your foundry installation. Please consider creating an issue in foundry's repo: https://github.com/foundry-rs/foundry/issues/
+
+
+[09/24/2023 14:39] __melonwater
+hi, does this mean any submission without coded test poc will be marked as partial-50?
+
+
+[09/24/2023 14:43] 0xhelium
+I'am stuck in here
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-60D7E.png
+
+
+[09/24/2023 14:45] bronze_pickaxe
+remove or comment out `via_ir = true` from `foundry.toml`  and it will compile faster 🫡
+
+{Reactions}
+checkmark (5) 🔥 (3) 
+
+[09/24/2023 14:48] 0xkarl98
+yeah looks like only i have this issue
+
+{Reactions}
+prayingpepe 
+
+[09/24/2023 14:52] alcueca
+Yes, H/M submissions without PoC will get 50%. Which is the same as saying that H/M submissions with PoC will get 2x.
+
+
+[09/24/2023 15:05] __melonwater
+thanks for answering. I understand that poc will make submission easier to verify and reduce spams, but what if I've described everything clearly, without writing tests, will I still get partial-50? To me, reading code will create more value for sponsers than writing tests😀
+
+{Reactions}
+👍 (5) 🧐 
+
+[09/24/2023 15:06] jovemjeune
+For me I do not live any problem in compilation step. However the following tests fail : test/ulysses-omnichain/RootForkTest.t.sol:RootForkTest and  test/ulysses-omnichain/RootTest.t.sol:RootTest.
+
+
+[09/24/2023 15:07] jovemjeune
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/tests-51D41.png
+
+
+[09/24/2023 15:08] sp1cymeatball
+@0xbuzzlightyear can I wrap native tokens like ETH, or it should be their wrapped ERC20 versions ?
+
+
+[09/24/2023 15:20] debofx
+Are you running in root folder? Also, your os might have an update.
+
+
+[09/24/2023 15:31] albertwh1te
+Some fuzz test fail.
+Try again.
+
+{Reactions}
+checkmark 
+
+[09/24/2023 15:32] lsaudit
+hey, who should I DM here if I have some questions about codebase?
+
+
+[09/24/2023 15:35] kaveyjoe
+@0xbuzzlightyear @0xBugsy
+
+
+[09/24/2023 15:35] lsaudit
+thanks! I've sent DM
+
+
+[09/24/2023 16:18] debofx
+Import github repo into yours. Then git clone it, etc. And it should work. I think sec settings so you have to import the git clone url.
+
+
+[09/24/2023 16:40] castle_chain
+after the user deposit and the call has been sent to the root chain , does the user expect to receive any tokens that represent this deposit or there are any response of the root chain to the branch agent ??
+
+
+[09/24/2023 17:56] 0xstalin
+Is this table an accurate representation of what you mentioned here?
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-EABB0.png
+
+{Reactions}
+👍 (5) checkmark (2) chefskiss (3) 
+
+[09/24/2023 17:57] 0xstalin
+- Each Branch has a registry of its own Local Tokens, the so-called hToken that represents a 1:1 with the underlying deposited tokens
+- The Root Branch have the registry of all the local_to_global tokens of all the Branches?
+- Global tokens from other Branches can be added to the registry on the different Branches, let's say, Optimism at some point can be aware of the three hUSDC Global tokens?
+
+{Reactions}
+checkmark 👍 (2) 
+
+[09/24/2023 17:58] sp1cymeatball
+shouldn't hUSDC_Arbitrum be the only global token for USDC?
+
+
+[09/24/2023 20:50] minh___
+@0xbuzzlightyear @0xBugsy 
+Do you use the Visual Developer extension for VsCode?
+Have some problems with Syntax highlighting and the outline not loading properly for some files such as RootPort. Just keen to know if you have the same issues
+
+
+[09/24/2023 21:00] stoxophone
+Damn I knew auditing would be hard but I can't even get this to compile 🫠
+
+{Reactions}
+😂 (3) 🤣 (3) 
+
+[09/24/2023 21:01] castle_chain
+yeah , i have the same issue
+
+{Reactions}
+👍 👆 (2) 
+
+[09/24/2023 21:02] minh___
+probably an issue with the extension itself. not the first time I am encountering this problem, but never found the cause
+
+
+[09/24/2023 21:10] joshuajee
+install rust and foundry, follow the foundry instructions on working with existing project and do a git clone to get the project from github. Donnot download it from the browser
+
+
+[09/24/2023 21:17] alcueca
+I think I've been clear. I think that a PoC demonstrates higher effort and thoroughness, while being more helpful in determining the validity of a submission. For that reason, PoCs are rewarded.
+
+{Reactions}
+👍 (8) 💯 
+
+[09/24/2023 21:46] 0xbuzzlightyear
+Should be their wrapped ERC20 versions
+
+{Reactions}
+thankyou (2) 
+
+[09/24/2023 21:52] 0xbuzzlightyear
+there is no response, so if a user wants to retry the call or get their tokens back (because the call failed), they need to send a message to the root environment to make sure the call has not been executed yet. When this happens, the root sends a response to the branch making the deposit available for the user to withdraw
+
+
+[09/24/2023 21:55] 0xbuzzlightyear
+yes! Here is also a message explaining the differences in case you missed it: https://discord.com/channels/810916927919620096/1153743259965857873/1155478170296926228
+
+
+[09/24/2023 21:56] castle_chain
+the withdraw of the deposit will happen with this scenario ? 
+the root agent call the branch agent on the function  `executewithSettlement` to the executor , then the executor call the function `clearTokens` on the branch agent
+
+
+[09/24/2023 22:04] lsaudit
+hey @0xbuzzlightyear  - I've DM'd you, please check your messages in your free time
+
+{Reactions}
+checkmark 
+
+[09/24/2023 22:05] 0xbuzzlightyear
+No, because every USDC from each chain is different. hUSDC\_Arbitrum is USDC deposited in the ArbitrumBranchPort, hUSDC\_Optimism is USDC deposited in Optimism's BranchPort, and hUSDC\_Ethereum is USDC deposited in Ethereum's BranchPort. If you have one of these hUSDC, you can only withdraw the underlying USDC from the port it was deposited, so you know exactly where to withdraw and you also know that those tokens exist in that Port.
+Users cannot swap between USDC from different chains without any external liquidity, like in balancer or uniswap.
+
+{Reactions}
+👀 (4) 
+
+[09/24/2023 22:05] 0xbuzzlightyear
+Also not sure the cause, did not investigate, but thank you for pointing it out!
+
+
+[09/24/2023 22:06] 0xbuzzlightyear
+It is compiling with via-ir
+https://discord.com/channels/810916927919620096/1153743259965857873/1154958107252891680
+
+
+[09/24/2023 22:07] 0xstalin
+@0xbuzzlightyear I sent you a DM sir, please take a look at it when you have some time 🫡
+
+{Reactions}
+checkmark 
+
+[09/24/2023 22:10] stoxophone
+Appreciate the response! My problem was I was on shitty coffee shop internet and it was timing out trying to download solc 0.8.19. Compiling and running tests successfully now 👍
+
+{Reactions}
+pepehandshake (2) 
+
+[09/24/2023 22:10] maxwell4426
+Does maiadao accept all ERC20 tokens?
+
+{Reactions}
+checkmark 
+
+[09/24/2023 22:30] 0xbuzzlightyear
+"Settlements" are equivalent to "Deposits" but from root to branch. 
+First, in order to withdraw a "Deposit", the call needs to have not been executed in the root environment yet. The user needs to call `retrieveDeposit` in the branchBridgeAget that will perform a layerzero call to the rootBridgeAgent.
+It will be received in the root here: https://github.com/code-423n4/2023-09-maia/blob/c0dc3550e0754571b82d7bfd8f0282ac8fa5e42f/src/RootBridgeAgent.sol#L698-L716
+And will send a layerzero message back so the branchBridgeAgent it will set the deposit state as failed here: https://github.com/code-423n4/2023-09-maia/blob/c0dc3550e0754571b82d7bfd8f0282ac8fa5e42f/src/BranchBridgeAgent.sol#L680-L692
+Then the user can call `redeemDeposit` to get their tokens back: https://github.com/code-423n4/2023-09-maia/blob/c0dc3550e0754571b82d7bfd8f0282ac8fa5e42f/src/BranchBridgeAgent.sol#L433-L457
+
+Please let me know if I understood your question correctly and you are talking about withdrawing a deposit of a failed call and not withdrawing a deposit made in the past (and you have the tokens in root environment)
+
+{Reactions}
+👍 (4) 🦅 (2) 💯 (2) 
+
+[09/24/2023 22:31] pabloeksdi
+@0xbuzzlightyear check the thread whenever you're free
+
+{Reactions}
+checkmark 
+
+[09/24/2023 22:49] 0xfried
+If this was because of poisoning contracts, that is a known issue (the factory is permissionless).
+
+{Reactions}
+pepehandshake (6) 
+
+[09/24/2023 23:09] castle_chain
+so , is it possible to use global token on another chain that the underlying tokens have not been deposited on , in other words , can I use hUSDC_polygon on the mainnet and bridge the tokens to any other chain ?
+
+
+[09/24/2023 23:17] __melonwater
+yes
+
+
+[09/24/2023 23:22] castle_chain
+so in this function , to request to add the global token (usdc_polygon) on the branch of (ethereum) what should be the `globalAddress` ?
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_from_2023-09-24_19-20-34-324AB.png
+
+
+[09/24/2023 23:27] 0xbuzzlightyear
+Yes, you can bridge global tokens to any other chain, but won't be able to withdraw anything from the Port using that hToken there.
+
+
+[09/24/2023 23:32] 0xbuzzlightyear
+`globalAddress` is the address of the global token. In other words, the virtualized hToken that resides in the root environment deployed by `ERC20hTokenRootFactory`.
+
+You can double check by looking at the decoding made in CoreRootRouter here:
+https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/src/CoreRootRouter.sol#L336-L341
+And the internal function `_addGlobalToken` that is called with the decoded data:
+https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/src/CoreRootRouter.sol#L398-L440
+
+
+[09/24/2023 23:33] castle_chain
+so the `globalAddress` just exist on the root chain
+
+{Reactions}
+checkmark 
+
+[09/24/2023 23:35] castle_chain
+what does the function `addLocalToken` do ? does it add the hToken to the branch port or the Root port or both of them ?? 
+https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/src/CoreBranchRouter.sol#L62
+
+{Embed}
+https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/src/CoreBranchRouter.sol
+2023-09-maia/src/CoreBranchRouter.sol at f5ba4de628836b2a29f9b5fff5...
+Contribute to code-423n4/2023-09-maia development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/4b4c860f-0a03-4a05-8611-8ed7356aab79-2C343
+
+
+[09/24/2023 23:35] castle_chain
+@0xbuzzlightyear
+
+
+[09/24/2023 23:39] mangoeth
+I saw some comments about rlp encoding. Will all dynamic data structures be rlp encoded by the relayer once implemented? Also i sent a friend request.
+
+
+[09/24/2023 23:39] 0xbuzzlightyear
+`addLocalToken` is to add new tokens to the system. To create a global token in root environment for a new token to be deposited in a branch port
+
+{Reactions}
+👍 
+
+[09/24/2023 23:41] 0xbuzzlightyear
+It is an outdated comment, only compression/decompression used is in MulticallRootRouterLibZip that uses LibZip by solady. Prior to it's existence we used a RLP encoding library, that is the reason behind the comments
+
+
+[09/24/2023 23:42] mangoeth
+Oh are the tests using multicall for the virtual accounts old?
+
+
+[09/24/2023 23:54] 0xbuzzlightyear
+Virtual Accounts are multicall contracts that belong to an address, so only its owner and approved contracts are able to call it. Also uses the same structs
+
+I apologize, not sure if I understand the question question correctly, if I didn't do you mind puting it into other words?
+
+
+[09/25/2023 00:05] mangoeth
+All good, im a bit off topic i guess. I got curious on how the backend of a relayer would handle stuff like dobble event transmissions or how it would work in general with this setup. In the MulticallRoot.t.sol i saw many comments about rlp encoding for data structs holding other structs and arrays. So thats that. Thx for answering :floppaTUXEDO:
+
+{Reactions}
+pepoloveleaf 
+
+[09/25/2023 01:46] stoxophone
+Sent you both a FR @0xbuzzlightyear  and @0xBugsy
+
+
+[09/25/2023 02:01] irving6969
+sent u fr @0xbuzzlightyear @0xBugsy
+
+
+[09/25/2023 02:31] zhaojie
+The executeSettlement functions aren't implemented yet, are they?
+
+
+[09/25/2023 03:03] __melonwater
+not implemented in base router, and it can be implemented by custom routers
+
+{Reactions}
+10_10 (4) 
+
+[09/25/2023 03:08] web3skid#0348
+I sent you a FR @0xbuzzlightyear @0xBugsy
+
+
+[09/25/2023 03:34] wangxx2026
+This audit competition is fierce, and there are few projects recently
+
+
+[09/25/2023 03:39] zhaojie
+Will be 1k+
+
+
+[09/25/2023 04:02] web3skid#0348
+May I understand the difference between a signed / non-signed TX?
+
+
+[09/25/2023 04:16] 0xstalin
+A lot a lot of false positives, it’s quite easy to get lost in the execution’s flow 😅
+
+{Reactions}
+👍 (7) 
+
+[09/25/2023 04:19] zhaojie
+You are right
+
+
+[09/25/2023 04:33] web3skid#0348
+@0xbuzzlightyear 1. Do we need to add a token to the root environment first to be able to deposit/withdraw that token in branch ports?
+
+2. Also what is meant by "multicall"? Does it refer to sending a batch of calls/transactions in order to save gas or something?
+
+{Reactions}
+👍 
+
+[09/25/2023 05:05] web3skid#0348
+So you're saying if i bridged my 100 global hUSDC_Polygon to the mainnet, I won't be able to withdraw anything from the polygon port which was originally holding the 100 usdc tokens? Is that what you meant?
+
+Okay if I had 1000 usdc on polygon and bridged only 100 tokens to the mainnet. I will still be able to withdraw the remaining 900 usdc on polygon normally? Is my understanding correct?
+
+
+[09/25/2023 05:13] 0xstalin
+I believe he ment that if your bridged the hUSDC_Polygon to mainnet, you can't withdraw USDC in the Mainnet Port using those hTokens... But if you bridge back those hUSDC_Polygon to Polygon, now you should be able to withdraw the USDC in the Polygon Port
+
+{Reactions}
+👍 (3) checkmark 
+
+[09/25/2023 05:14] 0xstalin
+Answering your second question, yes, you should be able to withdraw all the remaining hUSD_Polygon tokens you left in the PolygonPort
+
+
+[09/25/2023 05:22] web3skid#0348
+Ah thanks for your response. After re-reading what he read, I think you're right.
+
+However if you can't withdraw your USDC in Mainnet port, then what would be the use of moving the USDC to the mainnet in the first place? Would you do that so that you can swap the USDC for any other tokens on the mainnet? (Im aware swapping-related functionality is OOS)
+
+
+[09/25/2023 05:23] plamkata
+You can bridge hTokens but they are only withdrawable upon bridging them back
+
+{Reactions}
+👍 (2) 
+
+[09/25/2023 05:23] plamkata
+Othewise you can only use them for staking, lending, etc
+
+{Reactions}
+👍 (2) 
+
+[09/25/2023 05:23] web3skid#0348
+Got you, thanks!
+
+
+[09/25/2023 05:23] plamkata
+Np
+
+
+[09/25/2023 05:23] web3skid#0348
+Feels good to finally start making sense of the architecture. Super frustrating at the beginning
+
+
+[09/25/2023 05:24] plamkata
+True
+
+
+[09/25/2023 05:27] 0xstalin
+I'm not sure about this, but, I think there are swap function that would allow users to swap hUSDC_Polygon to hUSDC_Mainnet, and when you have hUSDC_Mainnet now you can withdraw USDC in mainnet, but either way, this portion of the system is OOS
+
+{Reactions}
+👍 (3) 
+
+[09/25/2023 06:09] web3skid#0348
+My understanding of the branch routers main functionality is as following:
+1. They allow users to add new tokens to the systems
+2. They are responsible for communication with bridge agents for sending & receiving cross-chain requests. And they allow implementing additional logic to the actions which are requested
+
+Can anybody confirm?
+
+
+[09/25/2023 06:18] web3skid#0348
+@0xBugsy @0xbuzzlightyear 
+1. Can you give an explanation of "settlements"? What are they? What are their use?
+
+2. Why do we have bridge agent factories? Why might we need more than 1 bridge agent on each chain?
+
+
+[09/25/2023 06:48] albertwh1te
+Is there any  implementation of `IPortStrategy` ?
+
+{Reactions}
+☝️ 
+
+[09/25/2023 06:48] albertwh1te
+Only interface?
+
+
+[09/25/2023 06:50] web3skid#0348
+There is an implementation, check BranchPort.sol
+
+
+[09/25/2023 06:51] web3skid#0348
+Nvm, apparently there isn't
+
+
+[09/25/2023 06:57] 0xdemonnn
+i think there is a `withdraw` function in the `replenishReserves` function in `BranchPort` which implements `IPortStrategy`
+
+
+[09/25/2023 06:58] web3skid#0348
+Nah, this `withdraw` function is referring to the `withdraw` in the branchport interface
+
+
+[09/25/2023 06:58] web3skid#0348
+not `IPortStrategy`
+
+
+[09/25/2023 06:59] albertwh1te
+I know. I believe that is called "call" but not "implementation"
+```
+        IPortStrategy(msg.sender).withdraw(address(this), _token, _amount);
+```
+
+
+[09/25/2023 06:59] web3skid#0348
+yep, that's not an implementation
+
+
+[09/25/2023 07:01] web3skid#0348
+The `replenishReserves` functions is described as "allow approved address to repay borrowed reserves with reserves"
+
+Question is, where is the function responsible for lending reserves in the first place? 🤔
+
+
+[09/25/2023 07:02] albertwh1te
+good question
+
+
+[09/25/2023 07:02] 0xdemonnn
+ahh i see @albertwhite @web3skid
+
+
+[09/25/2023 07:04] 0xdemonnn
+im looking to that function too :psyduck:
+
+
+[09/25/2023 08:12] sp1cymeatball
+RootForkTest.t.sol is super slow, is it just me or are you guys  facing the same issue?
+
+
+[09/25/2023 08:14] devabdee
+manage()
+
+{Reactions}
+checkmark 
+
+[09/25/2023 08:51] franklin4121
+@0xbuzzlightyear sent a FR
+
+
+[09/25/2023 09:17] web3skid#0348
+Interesting, thank you
+
+{Reactions}
+👍 
+
+[09/25/2023 09:18] web3skid#0348
+This protocol just keeps getting bigger and bigger, fml
+
+{Reactions}
+😂 (4) 
+
+[09/25/2023 09:36] web3skid#0348
+Same thing here
+
+
+[09/25/2023 09:58] audityourcontracts
+Feels faster with `via_ir = false` in foundry.toml
+
+
+[09/25/2023 10:03] jovemjeune
+It is same for me setting via_ir to false accelarates the compilation process.
+
+
+[09/25/2023 10:05] castle_chain
+how the users can get out of the system and get beck his underlying tokens ? according to the docs , branch router is the entry and exit point of the system , but there is not withdraw function to perform this action in the branchRouter and BaseBranchRouter
+
+
+[09/25/2023 10:24] web3skid#0348
+apparently you can do so from the BranchPort
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-25_at_1.24.23_PM-DBA5D.png
+
+
+[09/25/2023 10:25] web3skid#0348
+But yeah great question, like why is this functionality not in the router instead?
+
+
+[09/25/2023 10:38] web3skid#0348
+Nevermind, this function is used to "convert" an underlying/native token into the Port in exchange of the virtualized local hToken
+
+
+[09/25/2023 10:38] web3skid#0348
+The naming is confusing though.
+
+
+[09/25/2023 10:48] 0xbugsy
+Precisely and any of these global tokens can be imported to new branch chains via `addGlobalToken` function flow allowing us to have `hUSDC_Ethereum` on OP for example
+
+
+[09/25/2023 11:06] alcueca (pinned)
+Hi all, I thought in dropping how I judge exploits that require a permissioned account to do something first. It depends on how common would be for the permissioned account to do the prerequisite action, and how logically far the exploit is from the permissioned action:
+
+- Governance needs to be malicious, and the effects are logical -> Analysis
+- Governance needs to be malicious, but can enable the exploit with an apparently innocent action -> One degree in severity down from zero-day
+- Governance enters an obviously wrong parameter, and the logical governed function is broken -> QA grade-b
+- Governance enters an obviously wrong parameter, and something unrelated is broken -> QA grade-a
+- Governance enters a parameter that would be expected under special circumstances, and something is broken -> One degree in severity down from zero-day
+- Governance enters a parameter that would be expected under normal conditions, and something is broken -> Severity as usual
+
+Note that sponsors usually assume governance to be not malicious, otherwise judging would be different.
+
+{Reactions}
+🫡 (8) 👍 (6) 
+
+[09/25/2023 11:16] japy69
+Why only take the last 7 bits of the flag byte ?
+In BranchBridgeAgent.sol :
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-E822F.png
+
+
+[09/25/2023 11:19] web3skid#0348
+In `BranchPort` - What does it mean to "Bridge in" and "Bridge out"? (and obviously their "BridgeIn/OutMultiple" counterparts?)
+
+
+[09/25/2023 11:28] sp1cymeatball
+First bit is a fallback flag
+
+{Reactions}
+👍 (2) checkmark 
+
+[09/25/2023 11:38] jovemjeune
+I think _bridgeOut sends hTokens and underlying tokens  from depositor address(probably bridge address) to BranchPort contract while _bridgeIn mints hTokens  for bridge. If I got it right.
+
+
+[09/25/2023 11:39] 0xbuzzlightyear
+here: https://discord.com/channels/810916927919620096/1153743259965857873/1155487043854532741
+
+cc: @eeshenggoh (Added to the answer of your question)
+
+
+[09/25/2023 11:43] jovemjeune
+Users will withdraw their funds by BranchPort contract if I read the codebase correctly.
+
+
+[09/25/2023 11:44] 0xbuzzlightyear
+1. Yes, the root needs to be updates with each Branch's state
+2. Yes, it is exactly that. Also, more specifically Multicall is a contract from MakerDAO, specifically Multicall2 which we use you can find an implementation in our tests: https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/test/ulysses-omnichain/mocks/Multicall2.sol. You will notice that VirtualAccount contract is very similar to that.
+
+
+[09/25/2023 11:45] castle_chain
+the function `withdraw` on branch port should be called by the branch agent only
+
+{Reactions}
+👍 (2) 
+
+[09/25/2023 11:47] albertwh1te
+same question here
+
+
+[09/25/2023 11:48] 0xbuzzlightyear
+Just want to add that you cannot swap with the codebase in the repo alone. Would need for an EOA, router or virtual account to interact with an external LP
+
+
+[09/25/2023 11:48] castle_chain
+what does the `retreiveDeposit` function do in the branch agent ? @0xbuzzlightyear
+
+
+[09/25/2023 11:50] 0xbuzzlightyear
+Yes, exactly. 
+Core Routers handle "1." and adding new bridge agents as well.
+Other Routers do exactly "2."
+
+
+[09/25/2023 11:58] 0xbuzzlightyear
+retrieve sends a layerzero message to the root environment to set the execution status of the deposit nonce as `STATUS_RETRIEVE` so it cannot be executed in the root chain and sends a Fallback layerzero message back with the nonce to set it as failed, so the user can call `redeemDeposit` to withdraw their deposited tokens. This is useful when you do not put the fallbackToggled flag or fallback message did not execute for some reason, and want to get your tokens back.
+
+
+[09/25/2023 12:05] 0xbuzzlightyear
+1. Settlements are the same as deposits, but from the root chain, if you want to withdraw tokens from ports that are in the root environment.
+2. So each bridgeAgent can have it's custom router that handles their calls in their own way. Since calldata is the most expensive thing with messaging layers and L2s, being able to add to the system new routers that are function specific (like swapping) is essential. Instead of needing to pass the router address you wish to use in calldata of every crosschain call, you only need to specify the destination address that is mandatory
+
+
+[09/25/2023 12:06] castle_chain
+so the user should call the `retrieveDeposit` function before the deposit has been executed on the root chain to get his tokens back ?
+
+
+[09/25/2023 12:08] 0xbuzzlightyear
+Only a simple Mock, that does nothing with the tokens and implements the `withdraw` function. that sends the tokens back to the Port in RootForkTest: https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/test/ulysses-omnichain/RootForkTest.t.sol#L2954-L2958
+
+
+[09/25/2023 12:17] albertwh1te
+Thanks
+
+{Reactions}
+pepehandshake 
+
+[09/25/2023 12:24] castle_chain
+I want to ask about the flow of receiving messages from the root on the brach agent in case of deposit . 
+the flow that I see on the codeBase : 
+1) the root agent call the branch agent with flag `0x00` so the branch agent will call the function `executeNoSettlement` on the executor contract . 
+2) the executor contract call the function `executeNoSettelement` on the router contract and passes the payload . 
+3) the `coreRouter` has 7 functions to perform upon receiving messages from the executor , all of them is admin functions to add/ remove some tokens and strategies . 
+
+so , my question is which function of those the router will execute after receive the call from the executor contract ? https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/src/CoreBranchRouter.sol#L86-L149 .
+
+
+[09/25/2023 12:25] castle_chain
+@0xbuzzlightyear
+
+
+[09/25/2023 12:29] noro9954
+@0xbuzzlightyear Dm sent 🙂
+
+{Reactions}
+checkmark 
+
+[09/25/2023 12:32] 0xbuzzlightyear
+Yes, because of layerzero messaging ordering, the first call will be executed first so it needs to fail or else it will be set as `STATUS_DONE` and won't be retrievable, due to the tokens being already used.
+
+
+[09/25/2023 12:34] sp1cymeatball
+@0xbuzzlightyear sent you DM ser
+
+{Reactions}
+checkmark 
+
+[09/25/2023 12:38] 0xbuzzlightyear
+BranchCoreRouters are only linked to the bridgeAgent of the CoreRootRouter. That is the custom implementation of that router. The function `executeNoSettlement` means that it is a simple layerzero message with no kind of deposits attached to it. This is the case for all CoreRootRouter functions, that don't have any deposits, like adding new tokens and bridgeAgents.
+In our example implemenations of BranchRouters, we do not have that function implemented, but anyone can create a router that allows it. It would be something similar to `MulticallRootRouter` that would decode cross-chain data/payload and call a `Multicall` contract
+
+
+[09/25/2023 12:38] 0xdemonnn
+i sent a dm :gummy_wink:  @0xbuzzlightyear
+
+{Reactions}
+checkmark 
+
+[09/25/2023 12:44] sp1cymeatball
+@0xbuzzlightyear so there can be multiple agent-router-port contracts on each chain, with different router and port implementations?
+
+
+[09/25/2023 12:56] nmirchev8
+Is it true that we have one Port, BridgeAgent and Router per chain?
+
+
+[09/25/2023 13:00] albertwh1te
+On arb there is two , root and arb port /agent/router
+
+{Reactions}
+👍 
+
+[09/25/2023 13:02] nmirchev8
+Yeah, but for the supported branches all ERCs are deposited in the corresponding branch port?
+
+
+[09/25/2023 13:07] 0xbuzzlightyear
+You need to update the Root environment in order to withdraw the underlying from the Port. So you send a request to the Root and deposit your hTokens along with a request to bridgeOut to the original chain with amount == deposit. In arbitrum it is instant, but in other chains there is the delay of 2 layerzero calls.
+
+
+[09/25/2023 13:08] nmirchev8
+How are new ERC20 supported tokens added?
+
+
+[09/25/2023 13:13] 0xbuzzlightyear
+There is 1 BranchPort per branch, 1 CoreBranchRouter (with 1 Branch Bridge Agent) and there can be multiple BranchBridgeAgentFactories and each have multiple BranchBridgeAgents. For the current factories, each BridgeAgent is attached to 1 branch router.
+Branch includes ArbitrumBranch as well.
+
+Root, only exists in Arbitrum. Has 1 RootPort with 1 CoreRootRouter (with 1 RootBridgeAgent). There can also be multiple RootBridgeAgentFactories and each have multiple RootBridgeAgents. For the current factories, each BridgeAgent is attached to 1 root router.
+
+cc: @nmirchev8 @SpicyMeatball
+
+{Reactions}
+thankyou (6) 
+
+[09/25/2023 13:13] castle_chain
+and then after I bridged hTokens out to the original chain , and now the hTokens in the port that they had been deposited into , how can I get them from the BranchPort ?
+
+
+[09/25/2023 13:14] 0xbuzzlightyear
+clear tokens is called on the message from root to branch, which will transfer the tokens to your address
+
+
+[09/25/2023 13:14] 0xbuzzlightyear
+In each branchs' CoreBranchRouter: `addGlobalToken`
+
+
+[09/25/2023 13:16] castle_chain
+so the only way to exit the market is by interacting with the root chain , there is no way to be done on one of the branch agents ?
+
+
+[09/25/2023 13:17] web3skid#0348
+@0xbuzzlightyear Thanks for your answers to my questions so far, very helpful.
+
+I want to ask about the BridgeIn and BridgeOut and their "Multiple" counterparts in `BranchPort` - Can you please give me an explanation of the "Bridging In/Out" functionality? What is that supposed to do?
+
+
+[09/25/2023 13:18] web3skid#0348
+The natspec isn't very helpful on those functions
+
+
+[09/25/2023 13:52] web3skid#0348
+Question answered in DM, thanks : )
+
+
+[09/25/2023 14:03] castle_chain
+DMed you @0xbuzzlightyear ,please check
+
+
+[09/25/2023 14:06] _3agle
+can you pls share
+
+
+[09/25/2023 14:10] web3skid#0348
+I dm'ed you : -)
+
+{Reactions}
+👍 
+
+[09/25/2023 14:11] hisoul22
+@web3skid can you share it? thanks
+
+
+[09/25/2023 14:12] hisoul22
+shot a DM @0xbuzzlightyear
+
+
+[09/25/2023 14:12] web3skid#0348
+Here was my question & buzzlight's response
+
+
+[09/25/2023 14:12] web3skid#0348
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-25_at_5-A8F3B.png
+
+
+[09/25/2023 14:12] web3skid#0348
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-25_at_5-F2D79.png
+
+{Reactions}
+🫡 (2) 
+
+[09/25/2023 14:33] noro9954
+what are the chains that the protocol will be deployed on ?
+
+
+[09/25/2023 14:36] dimulski
+why did you decide to introduce modified rules for this contest?
+
+
+[09/25/2023 14:42] alcueca
+These are not modified rules, these are the rules I've always used to judge governance related vulnerabilities.
+
+
+[09/25/2023 14:43] alcueca
+I'm making them clear now, and taking a bit of a more approachable stance in the chat, because I think that there will be a lot of competitors this time, and if I get you to submit better reports, the judging will be easier.
+
+
+[09/25/2023 14:45] alcueca
+Same goes with the other information in the pinned comment. Nothing is new, I'm just making it clear and trying to get you to submit better reports.
+
+{Reactions}
+🫡 (7) 🔥 (7) hi5 (2) 
+
+[09/25/2023 14:51] dimulski
+I feel like this is specifically about veRWA issue 62, just to clarify in this contest it should be considered Severity as usual as well right?
+
+
+[09/25/2023 15:06] alcueca
+Not specifically about any issue, but that's an excellent example of governance doing something that is completely expected, and something breaking as a result.
+
+https://github.com/code-423n4/2023-08-verwa-findings/issues/62
+
+{Reactions}
+👍 
+
+[09/25/2023 15:11] chaduke3730
+where can I find the LayerZeroEndpoint contract? Thanks
+
+
+[09/25/2023 15:12] 0xtendency
+https://vscode.blockscan.com/arbitrum-one/0x3c2269811836af69497e5f486a85d7316753cf62
+
+
+[09/25/2023 15:13] .satyam_
+https://github.com/LayerZero-Labs/LayerZero/blob/main/contracts/Endpoint.sol
+
+
+[09/25/2023 15:13] chaduke3730
+Thanks, this is very helpful
+
+
+[09/25/2023 15:13] chaduke3730
+@0xsload
+
+{Reactions}
+🤝 
+
+[09/25/2023 15:14] 0xbuzzlightyear
+Yes, you always need too interact with the root chain to make any withdraws from a port. While it is the BranchBridgeAgent that will manage the withdrawal, the request needs to come from the root environment
+
+{Reactions}
+👍 (2) 
+
+[09/25/2023 15:16] 0xbuzzlightyear
+Root: Arbitrum
+Branch: Arbitrum, Ethereum Mainnet, Optimism, Base, Polygon, Binance Smart Chain, Avalanche, Fantom, Metis
+
+{Reactions}
+👍 (4) 
+
+[09/25/2023 15:24] web3skid#0348
+@0xbuzzlightyear check dms please : - )
+
+{Reactions}
+checkmark 
+
+[09/25/2023 16:29] bloqarl
+Hi @0xbuzzlightyear, I've DMed you, please let me know when you've got a moment to check
+
+{Reactions}
+checkmark 
+
+[09/25/2023 16:30] 0xfried
+one deg down from 0 day is just high risk? or medium?
+
+
+[09/25/2023 16:32] viraz4331
+@0xbuzzlightyear the docs say branch agents communicates with the router but in the interface https://github.com/code-423n4/2023-09-maia/blob/main/src/interfaces/IBranchBridgeAgent.sol#L31 it says branch agents communicates with layer 0 contracts too so just wanted to check on this
+
+
+[09/25/2023 16:33] sovaslava9
+will project be deploy to bsc?
+
+
+[09/25/2023 16:35] 0xbuzzlightyear
+yes: https://discord.com/channels/810916927919620096/1153743259965857873/1155885472908849294
+
+
+[09/25/2023 16:37] 0xbuzzlightyear
+BridgeAgents, both branch and root. Communicate with layerzero, port and routers.
+The exception is ArbitrumBranchBridgeAgent that does not communicate with layerzero (because it is in the same chain as the root) and communicates directly with the root environment instead
+
+{Reactions}
+👍 (5) 
+
+[09/25/2023 16:42] viraz4331
+dm'ed @0xbuzzlightyear
+
+{Reactions}
+checkmark 
+
+[09/25/2023 17:12] 0xstalin
+Pin ?
+
+
+[09/25/2023 17:20] itsmetechjay
+Pinned a message.
+
+{Reactions}
+thankyou (2) 
+
+[09/25/2023 17:23] mrpotatomagic
+@0xbuzzlightyear dmed you
+
+
+[09/25/2023 17:43] alcueca
+0-day means no preconditions. So  one degree down means that an issue that would be a High becomes a Medium, and a Medium a QA.
+
+
+[09/25/2023 17:47] 0xfried
+Understood. Thanks.
+
+
+[09/25/2023 19:08] dimulski
+Can you clarify what do you mean under BranchBridgeAgentFactories
+
+
+[09/25/2023 19:17] avik_saikat
+Hi, what is the meaning of `Root chain` here ?
+
+
+[09/25/2023 20:06] sandnallani
+The MaiaDao discord that just ended townhall was very useful. Anyone here brave enough to produce sequence diagrams? 😝
+
+
+[09/25/2023 20:10] 0xbuzzlightyear
+Factories to deploy new BranchBridgeAgents:
+https://github.com/code-423n4/2023-09-maia/blob/main/src/factories/BranchBridgeAgentFactory.sol
+
+
+[09/25/2023 20:11] 0xbuzzlightyear
+It is in Arbitrum, where we keep record of all branch chains states 
+https://discord.com/channels/810916927919620096/1153743259965857873/1155885472908849294
+
+{Reactions}
+👍 
+
+[09/25/2023 20:43] sandnallani
+Came across these notion doc videos on the Maia Ecosystem that might be useful for anyone looking for the contract walkthrough. https://maiaeco.notion.site/Code4rena-Code-Overview-3f455e66c457427ab3650a73a614641c#d6e7c8cbd18648678006a079bd51a4e0
+
+{Reactions}
+hi5 (3) 
+
+[09/25/2023 21:15] sovaslava9
+I cant find right flow of calls for addLocalToken.. could you help me pls? I finaly go to..bridgeIn oO its wrong way..
+
+
+[09/25/2023 21:15] sovaslava9
+CoreBranchRouter.addLocalToken - 0x02
+    BranchBridgeAgent._performCall - abi.encode(2, payload
+        lzEndpointAddress.send(destChainId, RootBridge)
+    
+    LZ
+
+RootBrdigeAgent.lzReceive
+    RootBrdigeAgent.lzReceive.lzReceiveNonBlocking
+         if (_payload[0] == 0x02   ( Call with Deposit )
+            _execute(RootBridgeAgentExecutor.executeSignedWithDeposit.selector,...
+                RootBridgeAgentExecutor.call(RootBridgeAgentExecutor.executeSignedWithDeposit.selector,...
+                    executeSignedWithDeposit
+                        _bridgeIn .... ????
+
+
+[09/25/2023 22:02] 0xbuzzlightyear
+The issue is that the flag `0x02` is for the router, in callOutSystem the flag for bridgeAgent is added `0x00`
+
+
+[09/25/2023 22:02] 0xbuzzlightyear
+Call starts in CoreBranchRouter addLocalToken - FUNC ID: bytes1(0x02)
+https://github.com/code-423n4/2023-09-maia/blob/main/src/CoreBranchRouter.sol#L62-L79
+
+BranchBridgeAgent callOutSystem - DEPOSIT FLAG: bytes1(0x00)
+https://github.com/code-423n4/2023-09-maia/blob/main/src/BranchBridgeAgent.sol#L179-L192
+
+RootBridgeAgent lzReceiveNonBlocking - DEPOSIT FLAG is 0x00 so call executeSystemRequest
+https://github.com/code-423n4/2023-09-maia/blob/main/src/RootBridgeAgent.sol#L443-L464
+
+RootBridgeAgentExecutor executeSystemRequest
+https://github.com/code-423n4/2023-09-maia/blob/main/src/RootBridgeAgentExecutor.sol#L43-L57
+
+CoreRootRouter executeResponse - FUNC ID is 0x02 so call _addLocalToken
+https://github.com/code-423n4/2023-09-maia/blob/main/src/CoreRootRouter.sol#L306-L311
+
+{Reactions}
+🙏🏼 (3) 👍 (3) 🫡 (2) 
+
+[09/25/2023 22:16] avik_saikat
+sorry for the dumb question. What would be the easiest way to pass this modifier check in tests?
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-5452C.png
+
+
+[09/25/2023 22:19] bowtiedvirus
+You've gotta do
+
+```
+address addressOfApprovedCaller = // probably a bridge agent
+vm.prank(addressOfApprovedCaller)
+callFunctionThatUsesThatModifier()
+```
+
+{Reactions}
+🤟 (2) 
+
+[09/25/2023 22:21] bowtiedvirus
+`vm.prank(address)` tells the Forge test that the next call you make to anything that isn't setup stuff should use `address` as msg.sender.
+
+
+[09/25/2023 22:22] 0xbuzzlightyear
+exactly! you prank the user or an approved address. Or you can also mock the call to the port
+https://book.getfoundry.sh/cheatcodes/prank
+https://book.getfoundry.sh/cheatcodes/mock-call?highlight=mockCall#mockcall
+
+
+[09/25/2023 22:23] avik_saikat
+One more thing. as a normal user we should be able to use the virtual account contract ?
+
+
+[09/25/2023 22:24] avik_saikat
+to setup a virtual account for the diff chains ?
+
+
+[09/25/2023 22:32] 0xbuzzlightyear
+Yes, anyone can create and then use their own virtual account. It is like their own "omnichain wallet" so they can interact with its balances from multiple chains
+
+
+[09/25/2023 22:32] 0xbuzzlightyear
+There is only 1 virtual account per user and it is in the root chain: arbitrum
+
+{Reactions}
+👀 
+
+[09/25/2023 22:34] avik_saikat
+So I can create a virtual account by calling this contract
+
+
+[09/25/2023 22:35] 0xbuzzlightyear
+yes, here:
+https://github.com/code-423n4/2023-09-maia/blob/main/src/RootPort.sol#L350-L353
+
+
+[09/25/2023 22:38] avik_saikat
+how can I fund this account ? what the methods I can call as a user ?
+
+
+[09/25/2023 22:51] 0xbuzzlightyear
+If you are in arbitrum, you can interact with it directly: just transfer funds, approve and transferFrom using the "call" function.
+
+If you are in another chain, you can use callOutSignedAndBridge or callOutSignedAndBridgeMultiple (BranchBridgeAgent)
+
+{Reactions}
+👍 (2) 
+
+[09/26/2023 02:18] 0xdemonnn
+Sent a dm  :gummy_wink:  @0xbuzzlightyear
+
+
+[09/26/2023 03:50] coffiasd
+@0xbuzzlightyear  send a fr request
+
+
+[09/26/2023 06:14] alcueca
+So it seems that since I was clear that I would explicitly reward PoCs I started quite a discussion:
+
+https://x.com/HollaWaldfee100/status/1706427969609089456
+
+My advice is to not think that you must write PoCs for all your H/M, but to write them as a way of boosting your rewards. Code PoCs for the submissions that were harder to find first, since the more subtle a vulnerability, the less duplicates it will have, and the bigger the boost from a PoC.
+
+Obviously, code PoCs for Highs before you do for Mediums.
+
+Also, please consider that writing PoCs is a very useful skill, and the more you write the better you'll get at it. That'll pay off not only in future contests, but also if you end having coding jobs in the future.
+
+{Embed}
+HollaDieWaldfee (@HollaWaldfee100)
+https://twitter.com/HollaWaldfee100/status/1706427969609089456
+There's currently a debate going on whether all @code4rena submissions must include a POC to be eligible for a full payout.
+
+Will be interesting to see what comes out of this.
+
+https://t.co/BFhGc5UOGs
+Twitter
+
+{Reactions}
+🫡 (7) 👍🏻 (4) 🙏 (3) thankyou (2) 
+
+[09/26/2023 06:30] alcueca
+Also, in case you don't follow me on Twitter and you didn't see it, how to use chatGPT to write better submissions:
+
+https://x.com/alcueca/status/1705457482720514152
+
+{Embed}
+alcueca (@alcueca)
+https://twitter.com/alcueca/status/1705457482720514152
+🚨 Security Researchers: Please use AI in your bug reports and contest sumissions* 🚨
+
+* to make your writing readable.
+
+🧵
+Twitter
+
+{Reactions}
+🫡 (5) 💯 (3) 
+
+[09/26/2023 06:56] coffiasd
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/1695711378595-1CA34.png
+
+
+[09/26/2023 06:57] coffiasd
+why flag 567 is diff with other flag ?
+
+
+[09/26/2023 07:13] __melonwater
+they can be fallbacktoggled or not
+
+{Reactions}
+checkmark 
+
+[09/26/2023 10:20] jaimebarrancos
+what is the stategyTokenDebt?
+
+
+[09/26/2023 10:27] varun2791
+what does _hasFallbackToggled boolean signify in the branchbridgeAgent
+
+
+[09/26/2023 10:31] alexxander
+Any tips on speeding up test execution ?
+
+
+[09/26/2023 10:33] zdravkohr
+Have you disabled via_ir
+
+{Reactions}
+🔥 
+
+[09/26/2023 10:37] alexxander
+Saved me, thanks :thankyou:
+
+{Reactions}
+✅ (2) 
+
+[09/26/2023 10:50] nobody2018
+@0xbuzzlightyear dmed you
+
+
+[09/26/2023 11:31] 0xbuzzlightyear
+In order to get what a strategy is:
+https://discord.com/channels/810916927919620096/1153743259965857873/1155088518926843977
+https://discord.com/channels/810916927919620096/1153743259965857873/1155100290836611202
+https://discord.com/channels/810916927919620096/1153743259965857873/1155100290836611202
+
+stategyTokenDebt is the amount of a token that a strategy has withdrawn from a BranchPort
+
+
+[09/26/2023 11:33] 0xbuzzlightyear
+If the call in BridegAgentExecutors fails, then a fallback is immediately initiated. Making the call not retryable in the destination (branch/root) and making it redeemable in the source (root/branch) without the need to call any retrieve function.
+
+{Reactions}
+👍 (2) 
+
+[09/26/2023 11:39] varun2791
+So if the settlement call fails and the _hasFallbackToggled is true then what would happen?
+
+
+[09/26/2023 11:43] varun2791
+Then the assets would be redeemable without calling the retrive function as we change the status to STATUS_RETRIEVE, correct me if i'm wrong
+
+{Reactions}
+checkmark 
+
+[09/26/2023 13:53] nmirchev8
+Anyone idea why this test throws such error?
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-26_at_16.53.08-5445E.png
+
+
+[09/26/2023 13:54] nmirchev8
+(I have set my infura key)
+
+
+[09/26/2023 14:36] 0xbuzzlightyear
+https://github.com/code-423n4/2023-09-maia/tree/f5ba4de628836b2a29f9b5fff59499690008c463#tests
+Add an infura key or another RPC to .env
+
+{Reactions}
+🤔 
+
+[09/26/2023 14:53] sovaslava9
+Why user could be want deploy new bridge agent from factory?
+
+
+[09/26/2023 14:57] noro9954
+why `_amount - _deposit` of  htokens are burned when deposited by a user ?
+
+
+[09/26/2023 15:07] josephdara
+Hi @0xbuzzlightyear I sent a DM
+
+
+[09/26/2023 15:13] 0xbuzzlightyear
+To have a customized router attached to it, so save gas for example
+
+
+[09/26/2023 15:14] 0xbuzzlightyear
+The `_amount - _deposit` is how many hTokens you are already have and want to use for this deposit. If you have 5 hTokens and 5 Tokens, and you wish to use all 10 in the same tx: you pass 10 as _amount and 5 as _deposit. So `_amount - _deposit` is 5, the number of hTokens you wish to use.
+
+{Reactions}
+👍 
+
+[09/26/2023 15:21] alcueca (pinned)
+Given the amount of noise, lack of a PoC won't automatically mean a 50% anymore. However, as I am on my right, I will heavily favor submissions with a PoC.
+
+https://github.com/code-423n4/org/issues/90
+
+@Jeeber, pls pin
+
+{Embed}
+https://github.com/code-423n4/org/issues/90
+Penalty / Award Standardization - Duplicate Report PoC Thoroughness...
+Hello everyone, I would like to discuss today an issue w/ regard to penalty / award standardization for duplicate reports. Description Currently, there is no strict guideline in the C4 documentatio...
+
+{Reactions}
+🫡 (10) 🙏 (3) chefskiss (2) praisethesun cheers_badger 
+
+[09/26/2023 15:36] sovaslava9
+How it could be customized, if user can specify only root router address, while deploy it? Contract code takes from imported file.
+
+
+[09/26/2023 15:39] 0xbuzzlightyear
+For a RootBridgeAgent, the router is specificed by the user here:
+https://github.com/code-423n4/2023-09-maia/blob/main/src/factories/RootBridgeAgentFactory.sol#L48
+
+For a BranchBridgeAgent, the router is specificed by the user here:
+https://github.com/code-423n4/2023-09-maia/blob/main/src/CoreRootRouter.sol#L106
+
+
+[09/26/2023 15:42] sovaslava9
+Yes, I try to understant this function) User should deploy rootRouter address? or.. for what user should specify address of it
+
+
+[09/26/2023 15:44] sunosuporno
+hey @0xbuzzlightyear sent you a dm
+
+{Reactions}
+checkmark 
+
+[09/26/2023 15:47] 0xbuzzlightyear
+Yes, the user should deploy a root and branch router. This is only useful for anyone that wishes to add new routers either optimized or with added functionality, if not, users can use existing routers
+
+{Reactions}
+🙏🏼 
+
+[09/26/2023 15:59] zdravkohr
+When we create a deposit in a branch bridge (using **callOutAndBridge**), the token is the token that we want to deposit, right? Also, which token is the hToken?
+
+
+[09/26/2023 16:16] 0xbuzzlightyear
+It is a wrapped version (receipt) of a deposit into a BranchPort, that can be bridged to any chain. Please go over this and let us know if you want any further context:
+https://discord.com/channels/810916927919620096/1153743259965857873/1155478170296926228
+https://discord.com/channels/810916927919620096/1153743259965857873/1155563446226669570
+https://discord.com/channels/810916927919620096/1153743259965857873/1156247462013579415
+
+
+[09/26/2023 16:19] zdravkohr
+The only way to get such an hToken is by creating a settlement on the root chain, right?
+
+
+[09/26/2023 16:24] sovaslava9
+In docs describes swap flow: "User Request: The user submits a swap request to the Branch Bridge Agent,"  its BranchBridgeAgent.depositToPort() ?
+
+
+[09/26/2023 16:29] varun2791
+I have query that if a user is deposting 5 tokens then corresponding to it there would be 5 htokens as well then does here amount = 10 implies the 5 htokens the user already had and 5 extra that he will have when he deposits 5 tokens?
+
+{Reactions}
+checkmark 
+
+[09/26/2023 16:30] varun2791
+And if so how can a user earn more htokens,is it by participating as strategytokens?
+
+
+[09/26/2023 17:37] 0xbuzzlightyear
+yes, you can also have the global hToken in the root environment/chain
+
+
+[09/26/2023 17:38] 0xbuzzlightyear
+That would be a `callOutSignedAndBridge` with swap calls in `_params`
+
+
+[09/26/2023 17:39] 0xbuzzlightyear
+BranchPort strategies yield does not go directly to the user, it is handled by the strategy itself. Only way to earn yield is to use those tokens, you can add liquidity, etc.
+
+{Reactions}
+👍 
+
+[09/26/2023 18:08] viraz4331
+@0xbuzzlightyear dm'ed
+
+
+[09/26/2023 18:42] sovaslava9
+Why deposit to port is available only in Arbitrum?
+
+
+[09/26/2023 18:59] zdravkohr
+In **RootBridgeAgent.sol** will the getBranchBridgeAgent[localChainId] be the RootBridgeAgent or the ArbitrumBridgeAgent?
+
+
+[09/26/2023 19:40] tamayonft
+So ports only will be deployed on arbitrum  each port a different token
+
+
+[09/26/2023 19:48] pabloeksdi
+I thought it's only one port per branch
+
+
+[09/26/2023 19:49] web3skid#0348
+There is only one port per branch
+
+
+[09/26/2023 19:49] plamkata
+Ports are like token vaults
+
+
+[09/26/2023 19:50] web3skid#0348
+Yeah and the balances of all ports exists in the root environment (root environment is in Arbitrum)
+
+
+[09/26/2023 19:50] plamkata
+And I guess there are no usage fees, since the strategies earn yield with user funds, but the results go to the protocol not the user
+
+
+[09/26/2023 19:50] plamkata
+A pretty cool design choice
+
+{Reactions}
+pepehandshake 
+
+[09/26/2023 20:25] c4jeeber
+Pinned a message.
+
+
+[09/26/2023 22:27] 0xfried
+Can some of the bot findings be discussed here or not? Since they're public?
+
+
+[09/26/2023 22:30] 0xfried
+Because I clearly see some were removed as not valid while there is still others that do not seem valid.
+
+
+[09/26/2023 22:44] 0xfried
+Many protocols do this for yield strategies. On-investment fees are generally not well received since people will just choose variants without entry fees.
+
+
+[09/27/2023 01:09] sandnallani
+❓ Question regarding the settlement in the `BridgeAgentExecutor`: For a single settlement, when the payload data is greater than `129`,  a call is made to the branch router's  `executeSettlement` , which in the current implementation reverts with ` UnrecognizedFunctionId()`.  What was the intention behind this?
+
+
+[09/27/2023 02:47] __melonwater
+The current router do nothing, so it is intended payload < 128. Custom router can be added to handle it.
+
+{Reactions}
+👍🏾 (2) 
+
+[09/27/2023 03:13] tamayonft
+Question there is way to communicate between differents  in different chains or all the call going from BranchBridgeAgent to ArbitrumBranchBridgeAgent
+
+
+[09/27/2023 04:04] magu1225
+how do I resolve this error ?
+
+Encountered 1 failing test in test/ulysses-omnichain/RootForkTest.t.sol:RootForkTest
+[FAIL. Reason: Setup failed: Could not instantiate forked environment with fork url: https://avalanche-mainnet.infura.io/v3/YOUR_KEY_HERE] setUp() (gas: 0)
+
+
+[09/27/2023 04:21] sandnallani
+populate your infura api key in the env.sample (enable arbitrum) . Rename it to .env
+
+{Reactions}
+👍 
+
+[09/27/2023 06:17] magu1225
+thanks,resolved
+
+
+[09/27/2023 06:21] viraz4331
+Hi,
+is root chain gonna be eth mainnet since branch is arb ?
+
+
+[09/27/2023 06:59] aamirusmani1552
+I think arbitrum is going to be the root chain, and it can also have branch chains as well. Not sure about that. let's see what team has to say
+
+{Reactions}
+☝️ 
+
+[09/27/2023 07:09] 0xnevi
+The only root chain is arbitrum. Mainnet is a branch chain
+
+{Reactions}
+👍 (2) checkmark 
+
+[09/27/2023 07:27] magu1225
+which contract is layerzeroendpoint?
+
+
+[09/27/2023 07:31] albertwh1te
+RootBridgeAgent and BranchBridgeAgent
+
+
+[09/27/2023 08:01] 0xtendency
+Hi
+
+
+[09/27/2023 08:01] 0xtendency
+Anyone have a link to layer zero messaging library?
+
+
+[09/27/2023 08:09] magu1225
+thankyou for replying. I have a different feeling. The 'send' function does not seem to be implemented in those two. I will check the LayerZero documentation. It's likely that the 'layerzeroendpoint' uses the 'send' function to call 'rootbridgeagent' or 'branchbridgeagent'.
+
+
+[09/27/2023 08:11] albertwh1te
+The "layerzeroendpoint" will transmit information to "ILayerZeroReceiver", which refers to either "rootbridgeagent" or "branchbridgeagent".
+
+{Reactions}
+🫡 
+
+[09/27/2023 08:37] web3skid#0348
+Does `addGlobalToken` just set the global token's local address to the destination chain's hToken?
+
+
+[09/27/2023 08:37] web3skid#0348
+Can anybody confirm?
+
+
+[09/27/2023 09:26] franklin4121
+https://layerzero.gitbook.io/docs/faq/layerzero-endpoint
+
+{Embed}
+https://layerzero.gitbook.io/docs/faq/layerzero-endpoint
+LayerZero Endpoint
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/https%253A%252F%252F1064219394-files.gitbo-D5C9E
+
+
+[09/27/2023 09:49] 0xtendency
+Thank you for this, the problem is I couldn't find the implementation only the interface
+
+
+[09/27/2023 09:50] wangxx2026
+Can a user manage assets cross-chain without using a virtual account?
+
+
+[09/27/2023 10:02] viktor_cortess
+Hey guys, maybe there is any additional documentation with the flow? 
+What does root stand for? Is root chain an arbitrum ? I.e. if we send a message from ehtereum to polygon all the messages go through the root chain  and root router/bridge deployed in Arbitrum?
+
+
+[09/27/2023 10:02] jovemjeune
+Root chain is Arbitrum
+
+
+[09/27/2023 10:03] wangxx2026
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Ulysses_Omnichain_Layout-b9046666831696b46-1D1E7.png
+
+
+[09/27/2023 10:12] viktor_cortess
+Branch = chain?
+
+
+[09/27/2023 10:12] jovemjeune
+yes all branches signifie different chains
+
+{Reactions}
+👍 
+
+[09/27/2023 10:14] viktor_cortess
+Thanks, I got used to chainOn, chainOff. So I got mixed up in the terms.
+
+{Reactions}
+👍 
+
+[09/27/2023 10:15] jovemjeune
+You are wellcome
+
+
+[09/27/2023 10:33] zdravkohr
+If global tokens are root chain representation of a token in a branch chain, does that mean that global tokens in branch chains are representation of a representation of a token in a branch chain
+
+{Reactions}
+🤯 (2) 😆 (3) checkmark 
+
+[09/27/2023 11:11] hisoul22
+I believe this function adds a global token to a branch.
+
+{Reactions}
+✅ 
+
+[09/27/2023 11:20] web3skid#0348
+That's what I initially thought as well
+
+
+[09/27/2023 11:21] web3skid#0348
+But when i took a look at the code, it seems that it just updates the global token's local token address to the destination chain's local hToken's address
+
+
+[09/27/2023 11:27] 0xfried
+there are global tokens outside of root?
+
+
+[09/27/2023 11:28] hisoul22
+Additionally, it updates the mapping of `getGlobalTokenFromLocal` and `getLocalTokenFromGlobal` in the root environment.
+
+
+[09/27/2023 11:29] web3skid#0348
+`getLocalTokenFromGlobal` "it seems that it just updates the global token's local token address to the destination chain's local hToken's address"
+
+
+[09/27/2023 11:29] web3skid#0348
+that's what im talking about
+
+
+[09/27/2023 11:31] zdravkohr
+maybe i got it wrong
+
+
+[09/27/2023 11:32] web3skid#0348
+no
+
+
+[09/27/2023 11:33] zdravkohr
+I tried to make a diagram of the addGlobalToken when called on the branch
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-9612A.png
+
+
+[09/27/2023 11:34] 0xfried
+2 should be in specific lzReceive
+
+
+[09/27/2023 11:34] web3skid#0348
+you are in a branch, say Polygon, and you have an underlying token, let's say USDC
+
+You first need to add that underlying asset to the system, so you do so using `addLocalToken` in `CoreBranchRouter`
+
+When you do so, your token will have now two representations, a local branch virtualized representation "hUSDC_Polygon" and a global representation "hUSDC_Polygon" which exists only in the root environment
+
+
+[09/27/2023 11:35] web3skid#0348
+That's my understanding
+
+
+[09/27/2023 11:37] hisoul22
+I agree
+
+
+[09/27/2023 11:39] hisoul22
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-27_at_19.39.32-5B3BA.png
+
+{Reactions}
+❤️ (14) cyberheart (3) 
+
+[09/27/2023 11:41] web3skid#0348
+At the very last line, the local token's address should be pointing to the new chain's hToken address. Is that right?
+If so, what happens to the original/source-chain's hToken's address though? Is it just left behind?
+
+
+[09/27/2023 11:42] web3skid#0348
+Also, nice diagram, great job
+
+
+[09/27/2023 11:51] 0xbuzzlightyear
+because it can call it directly, without using layerzero, since it is in the same chain
+
+
+[09/27/2023 11:54] 0xbuzzlightyear
+It will verify if the caller is equal to it's ArbitrumBridgeAgent. if it is, then it means that the call is not coming from layerzero and it can revert it's execution
+
+{Reactions}
+👍 
+
+[09/27/2023 11:57] 0xbuzzlightyear
+yes, we use layerzero in both BridgeAgent Contracts: `BranchBridgeAgent` and `RootBridgeAgent`
+https://layerzero.gitbook.io/docs/evm-guides/master
+
+
+[09/27/2023 12:02] 0xbuzzlightyear
+This is the endpoint, messaging libraries are the UltraLightNodes
+https://github.com/LayerZero-Labs/LayerZero/blob/main/contracts/Endpoint.sol
+
+
+[09/27/2023 12:05] 0xbuzzlightyear
+yes, but for security reasons in case chained deposits and settlements fail, we did not implement router functions to allow deposits with non-signed txs. But anyonce can create a router that supports them
+
+{Reactions}
+🫡 
+
+[09/27/2023 13:36] supernovahs
+@0xbuzzlightyear dmed
+
+
+[09/27/2023 14:58] noro9954
+can you explain this line please : https://github.com/code-423n4/2023-09-maia/blob/main/src/RootBridgeAgent.sol#L577
+
+
+[09/27/2023 15:11] zdravkohr
+It basically checks if the first byte of the payload is 0x05 and if so, it executes the if statement's body
+
+
+[09/27/2023 15:11] gawr201
+I have also a question about the lines to check Deposit Flag. Why are you using bitwise when Flag is gte 5?
+This contest is my first one. 🙂
+https://github.com/code-423n4/2023-09-maia/blob/main/src/RootBridgeAgent.sol#L577
+https://github.com/code-423n4/2023-09-maia/blob/main/src/RootBridgeAgent.sol#L617
+https://github.com/code-423n4/2023-09-maia/blob/main/src/RootBridgeAgent.sol#L657
+
+{Embed}
+https://github.com/code-423n4/2023-09-maia/blob/main/src/RootBridgeAgent.sol
+2023-09-maia/src/RootBridgeAgent.sol at main · code-423n4/2023-09-m...
+Contribute to code-423n4/2023-09-maia development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/4b4c860f-0a03-4a05-8611-8ed7356aab79-2C343
+
+
+[09/27/2023 15:15] zdravkohr
+I think it's used to catch both toggled and not toggled callbacks
+
+{Reactions}
+10_10 
+
+[09/27/2023 15:25] noro9954
+why it doesn't use this instead ? `else if (_payload[0] == 0x05)`
+
+
+[09/27/2023 15:35] zdravkohr
+Only the functions with 0x05 and above that use _hasFallbackToggled boolean. These functions set the call flag to 0x85 (if toggled) and 0x05 (if not toggled), 0x86 and 0x06 and etc... 0x80 is 10000000 in binary and 0x7f is 01111111. When you apply bitwise AND to both of them, you are basically ignoring the callback flag because 10000000 & 01111111 = 0, 10000101 & 01111111 = 5, 10000110 & 01111111 = 6 and etc
+
+
+[09/27/2023 15:36] zdravkohr
+Or, said in other words, the flag of the callback is the 8-th bit in the byte, when we apply and with 0x7f, it will always be 0-ed
+
+{Reactions}
+❤️ (5) 🔥 (3) 
+
+[09/27/2023 15:37] noro9954
+okay, its clear now thank you
+
+{Reactions}
+✅ 
+
+[09/27/2023 15:41] gawr201
+thank you, I have learned how to catch toggle/no toggle using bitwise operator.
+
+{Reactions}
+✅ 
+
+[09/27/2023 17:31] grobelr
+@0xbuzzlightyear, sent you a DM
+
+
+[09/27/2023 18:40] aamirusmani1552
+anybody facing this issue in VirtualAccount.sol?
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-9A4A4.png
+
+
+[09/27/2023 18:40] aamirusmani1552
+```bash
+Invalid type for argument in function call. Invalid implicit conversion from contract VirtualAccount to contract VirtualAccount requested
+```
+error
+
+
+[09/27/2023 18:41] aamirusmani1552
+so passing VirtualAccount type to an argument of VirtualAccount is showing error? Maybe it's the extension fault
+
+
+[09/27/2023 18:44] 0xfried
+All of that compiles for me.
+
+
+[09/27/2023 18:44] 0xfried
+It might just be your IDE chosen solc version.
+
+
+[09/27/2023 18:45] web3skid#0348
+a simple diagram i created to help understand the connections between different components
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Untitled-2023-09-27-2053-454A0.png
+
+
+[09/27/2023 18:45] web3skid#0348
+It's for branch, but it should be very similar to how root operates as well.
+
+
+[09/27/2023 18:46] 0xbugsy
+Previous mapping will continue to exist. What is happening there is the same global token ( root representation ) now has a branch representation ( local token ) in a new branch chain.
+
+Using your example from previous messages, hUSDC-Polygon, assuming initially there is only the root and the polygon branch representations, after that final step you were referring to on your message we now have a third branch chain representation for AVAX branch for example. Meaning we now can have bridge to AVAX  a 'receipt' of a token deposited in Polygon's branch port
+
+
+[09/27/2023 18:46] web3skid#0348
+excellent, thank you
+
+
+[09/27/2023 18:47] aamirusmani1552
+yeah i think that is the issue
+
+
+[09/27/2023 18:48] lsaudit
+@0xBugsy I've DMed you on a group chat
+
+
+[09/27/2023 18:50] web3skid#0348
+let me know if it's an accurate representation 🙂 As far as I know, the bridge agent doesn't reach out to the branch router directly, it does so through the bridge agent executor @0xBugsy
+
+
+[09/27/2023 18:59] web3skid#0348
+`executeSystemRequest` and `executeNoDeposit` in `RootBridgeAgentExecutor`
+
+I'm trying to understand the difference between those two functions
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-27_at_10.58.50_PM-5D432.png
+
+
+[09/27/2023 19:00] web3skid#0348
+`executeSystemRequest` -> execute a system request from a remote chain
+`executeNoDeposit` -> execute a remote request from a remote chain
+
+
+[09/27/2023 19:00] web3skid#0348
+What's the difference between a "system request" and a "remote request"?
+
+
+[09/27/2023 19:00] web3skid#0348
+Like what functionality uses which?
+
+
+[09/27/2023 19:12] zdravkohr
+Remote request can be initiated by anyone
+
+
+[09/27/2023 19:12] zdravkohr
+System request is a result of some other action, afaik
+
+
+[09/27/2023 19:17] web3skid#0348
+Interesting 🤔 🤔
+
+
+[09/27/2023 19:27] sp1cymeatball
+system request - do some admin stuff, change router, add tokens, strategies etc
+remote request - execute a payload, used in multiRouter to send a settle request from the root chain to the branch
+
+{Reactions}
+✅ 
+
+[09/27/2023 19:30] sandnallani
+To understand this, checkout the test `ArbitrumBranchTest.t.sol::testAddLocalToken` 
+Just run `forge test --match-contract ArbitrumBranchTest --match-test testAddLocalToken -vvvv` and enjoy reading the call trace that shows how a local token is added.
+P.S: this is an example of a `system request`
+
+{Reactions}
+👍 
+
+[09/27/2023 19:31] web3skid#0348
+thanks!
+
+
+[09/27/2023 19:32] web3skid#0348
+bro that's some genius shit. using foundry test command with max verbosity to see the function call trace
+
+
+[09/27/2023 19:32] web3skid#0348
+9999 iq move 😂
+
+{Reactions}
+😂 
+
+[09/27/2023 19:34] sandnallani
+It's very much needed for this protocol, as there are calls within calls with layer zero messages. Quite a complex protocol that has me scratching my head at times.
+
+
+[09/27/2023 19:35] sp1cymeatball
+you guys should try RootForkTest.t.sol, that's where real magic is happening 😀
+
+{Reactions}
+👍🏾 
+
+[09/27/2023 19:35] web3skid#0348
+I agree. I get really happy when I understand something new about the system because barely understanding anything is the norm in a system like this haha
+
+
+[09/27/2023 19:36] web3skid#0348
+I really haven't moved to tests yet. Trying to solidify my understanding of all the features and components first
+
+
+[09/27/2023 19:36] web3skid#0348
+But I will try to move to the tests asap. They do help solidify your understanding
+
+
+[09/27/2023 19:39] web3skid#0348
+Is there somehow an option in foundry to show decoded calldata when viewing the calltrace?
+
+
+[09/27/2023 19:39] web3skid#0348
+Like look at all these zeroes
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-27_at_11.39.25_PM-ADD07.png
+
+
+[09/27/2023 19:39] web3skid#0348
+can be distracting abit
+
+
+[09/27/2023 20:09] sandnallani
+Best way is to put console.log statements in the code so you can make quick sense of where the call is landing. But mostly it's only useful to know the first few bytes, as they indicate the nonce or function id.
+
+{Reactions}
+👍 
+
+[09/27/2023 21:06] 0xtendency
+@0xBugsy I sent a dm, I will appreciate a response when you are less busy
+
+
+[09/27/2023 21:24] 0xstalin
+Are Root and ArbitrumBranch identified with the same ChainId in the system?
+
+
+[09/27/2023 21:30] web3skid#0348
+Yes
+
+
+[09/27/2023 21:31] web3skid#0348
+@0xStalin
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-28_at_1.30.41_AM-AF247.png
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-28_at_1.30.57_AM-3C49D.png
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-28_at_1.31.07_AM-D44A0.png
+
+{Reactions}
+thankyou 
+
+[09/27/2023 21:31] web3skid#0348
+from test files
+
+
+[09/27/2023 21:42] 0xstalin
+Interesting, thanks for sharing this sir 🫡
+
+
+[09/27/2023 21:44] web3skid#0348
+@Jorgect whenever you see a function with the word "Signed" in it, then this function is initiated by a virtual account. That's the only difference between it and its non-"signed" counterpart. So if you figured out what `callOut` does, `callOutSigned` is almost exactly the same but this one is initiated from a virtual account rather than multicall2
+
+
+[09/27/2023 21:47] tamayonft
+Thank so much, for example if I call callOutSystem that call go to the root chain right?
+
+
+[09/27/2023 21:47] web3skid#0348
+Correct
+
+
+[09/27/2023 21:48] web3skid#0348
+`callOutSystem` is called when you want to add an underlying token to the system (`addLocalToken` `CoreBranchRouter`)
+It's also called when you want to add a global token to a new branch (`addGlobalToken` `CoreBranchRouter`)
+
+
+[09/27/2023 21:50] web3skid#0348
+It's also called when a branch router wants to let the root environment that it has added a new bridge agent.
+`_receiveAddBridgeAgent` in `CoreBranchRouter`
+
+
+[09/27/2023 21:51] web3skid#0348
+In all of those 3 cases, `callOutSystem` is called and a call is sent to the system / root
+
+
+[09/27/2023 21:54] sovaslava9
+What does parameter _hasFallbackToggled mean? in  BranchBridgeAgent.callOutSignedAndBridge
+
+
+[09/27/2023 22:17] web3skid#0348
+"_hasFallbackToggled" is a flag you set on a deposit or a settlement. If it is toggled, then if the TX fails, a fallback function will be triggered
+
+{Reactions}
+🙏🏼 
+
+[09/27/2023 22:17] web3skid#0348
+That's my understanding of the fallback mechanism
+
+
+[09/27/2023 22:17] web3skid#0348
+@SovaSlava
+
+
+[09/27/2023 23:12] sovaslava9
+In RootBridgeAgent._performFallbackCall function send native token(address(this).balance ) to layerZero. In normal cases, from what this function should have native tokens , for sending them to layerZero?  receive() payable its I understand, but its not normal case.
+
+
+[09/27/2023 23:15] __melonwater
+This
+
+
+[09/28/2023 00:13] sovaslava9
+May be you didnt understand my question.. RootBridgeAgent._performFallbackCall function send all his balannce, but it could be zero? or always above 0? if above, so who send native tokens to this function before? becasue.. lzReceive() not payable function
+
+
+[09/28/2023 00:15] __melonwater
+layerzero airdrop native token  before calling lzreceive
+
+
+[09/28/2023 00:16] sovaslava9
+ok....
+
+
+[09/28/2023 00:27] sovaslava9
+Why someone would like set _hasFallbackToggled as false..?
+
+
+[09/28/2023 04:59] _3doc_
+If I got this right. If the transaction fails remotely they have the option to retry remotely or redeem locally. If they know upfront that their option will be retrying the auto fallback is an obstacle
+
+{Reactions}
+👍 (2) checkmark 
+
+[09/28/2023 09:42] rvierdiiev
+@0xbuzzlightyear pls, check DM
+
+
+[09/28/2023 09:55] 0xsurena
+Is there a diagram that shows the overview of the system and how the contracts interact with each other ? Thanks 🙏
+
+
+[09/28/2023 10:19] 0xtendency
+@0xbuzzlightyear
+
+
+[09/28/2023 10:52] mrpotatomagic
+@0xbuzzlightyear @0xBugsy pls check dms whenever possible
+
+
+[09/28/2023 10:54] audinarey
+@0xbuzzlightyear sent you a DM
+
+
+[09/28/2023 11:27] bluesky_hope_01029
+@0xbuzzlightyear , please check DM.
+
+
+[09/28/2023 11:46] aycozy
+If you have a diagram nicely detailing the contract interactions, please DM.
+
+
+[09/28/2023 12:11] 0xdemonnn
+i send a dm :gummy_wink: @0xbuzzlightyear
+
+
+[09/28/2023 12:15] sovaslava9
+If user call BridgeAgent.callOutSignedAndBridge() and  specify _hasFallbackToggled as false, and tx fail in remote branch, so..user could not recover his funds?
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-B747A.png
+
+
+[09/28/2023 12:16] mert_eren.
+@0xbuzzlightyear  hey can u look dm.
+
+
+[09/28/2023 12:20] nmirchev8
+Why do we need globalAddress for an asset?
+
+
+[09/28/2023 12:26] sp1cymeatball
+It will revert, therefore STATUS_DONE will never be set and user can call retry or retrieve later
+
+
+[09/28/2023 12:32] hisoul22
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Screenshot_2023-09-28_at_20.32.01-2BB27.png
+
+{Reactions}
+🔥 
+
+[09/28/2023 13:00] 0xfuje
+Not my diagram, all credit goes to @peakbolt: https://twitter.com/peak_bolt/status/1705926057797321093
+
+{Embed}
+peakbolt (@peak_bolt)
+https://twitter.com/peak_bolt/status/1705926057797321093
+For those participating in @code4rena @MaiaDAOEco contest, here is an diagram that I drew based on my old notes.
+
+I'm using this to refresh my memory and remember the key interactions between the routers/agents/executors/ports. 
+
+Hope you like it. Enjoy! 👍
+Likes
+101
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/F6yp_jLXEAAH30q-D58D4.jpg
+Twitter
+
+{Reactions}
+🔥 (7) ❤️ (2) 
+
+[09/28/2023 13:28] ladboy233
+the diagram above is indeed a great way to see where is the entry point of the function call
+
+
+[09/28/2023 13:28] ladboy233
+love it
+
+
+[09/28/2023 13:37] peritoflores
+Hi guys...Are you having any difficulties in compiling?.. It is taking a lot of time
+
+
+[09/28/2023 13:40] zdravkohr
+open foundry.toml and set via_ir to false
+
+{Reactions}
+👍 (2) 
+
+[09/28/2023 14:26] audinarey
+It serves as a tracker in the virtual account for each unique underlying asset on a particular branch chain
+
+{Reactions}
+❤️ 
+
+[09/28/2023 14:26] devabdee
+via_ir = true, helps in optimisation? 🤔
+
+
+[09/28/2023 14:27] devabdee
+I mean, why it compiles slower with that on
+
+
+[09/28/2023 14:28] zdravkohr
+I am not quite sure, but as far as I understand it first translates the solidity code into yul and that takes additional time
+
+{Reactions}
+👍 
+
+[09/28/2023 14:51] sovaslava9
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-101E7.png
+
+{Reactions}
+🔥 (5) 💯 (3) 
+
+[09/28/2023 15:10] 0xkral
+Are statuses set by layerZero?
+
+
+[09/28/2023 15:37] blutorque
+dmed ser @0xbuzzlightyear
+
+
+[09/28/2023 16:24] anirruth
+@0xbuzzlightyear sent a dm
+
+
+[09/28/2023 17:04] sovaslava9
+Why when owner remove bridge agent , contract calls _addGlobalToken ?
+
+
+[09/28/2023 17:18] mike_bello90
+guys I get lost in the contracts flow of the core contracts, anyone know how is the calls flow in the core root router?
+
+
+[09/28/2023 17:19] mike_bello90
+is the CoreRootRouter calling the RootBridgeAgent contract to execute toggleBranchBridgeAgentFactory function? or the RootBridgeAgent contract calls the CoreRootRouter to execute the calls?
+
+
+[09/28/2023 17:20] mike_bello90
+what's the core contracts utility? @0xBugsy @0xbuzzlightyear
+
+
+[09/28/2023 19:32] ladboy233
+Is it just me or the contract takes a long time to compile
+
+
+[09/28/2023 19:34] zdravkohr
+https://discord.com/channels/810916927919620096/1153743259965857873/1156948498219008100
+
+
+[09/28/2023 19:38] ladboy233
+Thanks
+
+
+[09/28/2023 21:44] 0xbugsy
+Hey if you are referring to the executionStatus mapping that is managed by us in the Bridge Agent's `_execute` function
+
+{Reactions}
+🫡 
+
+[09/29/2023 04:25] anirruth
+@0xBugsy sent a dm
+
+
+[09/29/2023 05:25] mussucal
+When and how does flow reaches MultiCallRootRouter ??
+
+
+[09/29/2023 06:30] coffiasd
+@0xBugsy sent a FT request
+
+
+[09/29/2023 10:04] p4y4b13
+@0xBugsy  sent a FT request
+
+
+[09/29/2023 11:19] 0xadrii
+@0xbuzzlightyear DM'ed you
+
+
+[09/29/2023 11:19] 0xbuzzlightyear
+Core contracts handle system/admin calls. They talk with it's bridge agent to talk with another Core Router. Branch chains only communicate with the Root chain, so calls from Core Routers are from CoreRootRouter to CoreBranchRouter or the other way around.
+
+{Reactions}
+chefskiss ❤️ 
+
+[09/29/2023 11:19] 0xbuzzlightyear
+CoreRootRouter is the one which calls the RootBridgeAgent that then sends a layerzero message to a CoreBranchRouter's BranchBridgeAgent.
+
+{Reactions}
+✨ 
+
+[09/29/2023 11:19] 0xbuzzlightyear
+Please look at the contract's natspec for further context:
+https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/src/interfaces/ICoreBranchRouter.sol#L9-L12
+https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/src/CoreRootRouter.sol#L22-L25
+
+{Reactions}
+🤝 
+
+[09/29/2023 11:20] 0xbuzzlightyear
+When you call a BranchBridgeAgent that is connected to a RootBridgeAgent that has a MultiCallRootRouter as it's router
+
+
+[09/29/2023 11:29] anirruth
+what is `replenishReserves` used for?
+
+
+[09/29/2023 12:04] mussucal
+In that case which router handles the system/admin calls ?
+
+
+[09/29/2023 14:19] marchev
+@0xbuzzlightyear sent a dm
+
+
+[09/29/2023 14:39] zdravkohr
+Why do all the execute with deposit functions in the RootRouter revert?
+
+{Reactions}
+👍 
+
+[09/29/2023 14:39] zdravkohr
+The router does not support depositing?
+
+
+[09/29/2023 15:43] 0xsurena
+The `CoreRootRouter.sol` and `RootPort.sol` contracts will get deploy on all chains ?
+
+
+[09/29/2023 15:46] zdravkohr
+Only on Arbitrum
+
+{Reactions}
+❤️ (2) 
+
+[09/29/2023 16:21] minh___
+What does TKN stand for in the constants? token?
+
+
+[09/29/2023 17:02] web3skid#0348
+yes
+
+
+[09/29/2023 18:08] pxng0lin
+This is super helpful, thanks for sharing
+
+{Reactions}
+🙏🏼 👍 
+
+[09/30/2023 05:35] 0xnevi
+Respect to anybody that is auditing this codebase gawd damnn is this challenging 
+
+🐇🕳️🐇
+
+{Reactions}
+🫡 (19) 4739_Skeletor (5) 🦅 
+
+[09/30/2023 08:33] zdravkohr
+What is wrappedNativeToken in the token factories?
+
+
+[09/30/2023 09:28] _3doc_
+It should be the address of the weth contract in the same chain as the factory
+
+
+[09/30/2023 09:36] zdravkohr
+Thanks
+
+
+[09/30/2023 10:20] zdravkohr
+Why can't we use just underlying tokens and no hTokens?
+
+
+[09/30/2023 10:23] 0xtendency
+This is like saying why not use eth instead of weth
+
+
+[09/30/2023 10:26] 0xtendency
+For clarity, assuming you want to bridge 100 USDC to another chain, and you already have 60hUSDC, you will now only pay 40 USDC(this is the underlying token)
+Now the amount will be 100USDC and your input deposit will be 40 USDC, htokens to bridge will be 100 - 40 ==> 60hUSDC
+
+
+[09/30/2023 10:29] 0xtendency
+You don't have to pay the complete 100 USDC when you already have the wrapped version(hToken)
+
+{Reactions}
+👍 (3) 
+
+[09/30/2023 10:30] zdravkohr
+Okay, but why is it that i cannot bridge 40 USDC if i do not have hUSDC
+
+
+[09/30/2023 10:31] 0xtendency
+You can bridge 40USDC if you don't have hUSDC, the input amount have to == the deposit amount, hereby making hToken amount = 0
+
+
+[09/30/2023 10:32] 0xtendency
+For e.g, i want to bridge 40USDC, my input amount will be 40 USDC and deposit amount will be 40 USDC, in this case I will not be paying any hUSDC
+
+{Reactions}
+❤️ (3) 
+
+[09/30/2023 10:36] zdravkohr
+I don't know what i was thinking up until now 😄 Thank you so much
+
+{Reactions}
+🙏 (2) 
+
+[09/30/2023 10:38] 0xtendency
+Don't worry, it's all of us
+
+
+[09/30/2023 10:39] hisoul22
+@Tendency sent a FT request
+
+{Reactions}
+✅ 
+
+[09/30/2023 11:03] pxng0lin
+Hi Team,
+
+What's the reason that the gas limit needs to be higher than the remote gas in this struct
+```
+struct GasParams {
+    uint256 gasLimit; // gas allocated for the cross-chain call.
+    uint256 remoteBranchExecutionGas; //gas allocated for remote branch execution. Must be lower than `gasLimit`.
+}
+```
+
+
+[09/30/2023 11:04] zdravkohr
+You mean the opposite?
+
+{Reactions}
+🤦‍♂️ 
+
+[09/30/2023 11:04] pxng0lin
+sorry, yes the opposite
+
+
+[09/30/2023 11:17] marchev
+I was wondering the same. It's a bit confiusing tbh. `GasParams` is used to construct the `_adapterParams` for a `ILayerZeroEndpoint#send()` call:
+
+```sol
+ILayerZeroEndpoint(lzEndpointAddress).send{value: msg.value}(
+            rootChainId,
+            rootBridgeAgentPath,
+            _payload,
+            payable(_refundee),
+            address(0),
+            abi.encodePacked(uint16(2), _gParams.gasLimit, _gParams.remoteBranchExecutionGas, rootBridgeAgentAddress)
+        );
+```
+
+They are using the v2 format which allows you to airdrop native gas to an address on the destination chain. But as per LZ's doc (https://layerzero.gitbook.io/docs/evm-guides/advanced/relayer-adapter-parameters#airdrop), one is gas amount and the other one is native gas (e.g. wei).
+
+{Reactions}
+💪 
+
+[09/30/2023 11:18] marchev
+Even in the LZ doc, the native gas value is larger than the gasLimit
+
+{Reactions}
+💪 
+
+[09/30/2023 11:19] zdravkohr
+I can't understand what the gasLimit is
+
+
+[09/30/2023 11:24] marchev
+As far as I know, the "gasLimit" is the parameter set for the remote execution.
+
+In LayerZero, during cross-chain execution, two transactions occur. First, on Chain A, the execution terminates at the endpoint. Then, a process involving oracles and relayers ensures that the endpoint on Chain B receives instructions to "resume" the execution. This resumption initiates a new transaction on Chain B, and the "gasLimit" determines the maximum gas for this transaction.
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/0cksIVOjLJEpf9ai2-F63E6.png
+
+
+[09/30/2023 11:33] zdravkohr
+Hmm, in the layerzero docs, the parameter is named gasAmount. Really confusing 😄
+
+
+[09/30/2023 11:45] marchev
+They use it kind of interchangeably:
+> If your message logic on the destination if very gas intense you may be required to pay more than the default of 200k gasLimit.
+
+
+[09/30/2023 11:48] zdravkohr
+Thanks
+
+{Reactions}
+👍 
+
+[09/30/2023 11:52] 0xbuzzlightyear
+We apologize for that, it is an outdated comment because of the previous architecture
+
+{Reactions}
+👍 (3) 
+
+[09/30/2023 12:02] pxng0lin
+Ok thanks
+
+
+[09/30/2023 12:53] viktor_cortess
+Hi guys. What's the difference between local and global tokens? Local is hToken for every branch and global?
+
+
+[09/30/2023 13:03] 0xtendency
+global token is the root bridge hToken
+
+{Reactions}
+👍 (2) 
+
+[09/30/2023 13:10] viktor_cortess
+Thanks, I thought the same, but wanted to check😀  Something is root, something is global, something is core. Easy to mess terms here
+
+
+[09/30/2023 13:10] 0xtendency
+yeah 🤯
+
+
+[09/30/2023 13:11] viktor_cortess
+First, when I started reading docs I thought that root was a route😀  I.e. we send the token so it should have a route
+
+{Reactions}
+😂 
+
+[09/30/2023 13:55] zdravkohr
+What's the idea behind ecosystem tokens in RootPort
+
+
+[09/30/2023 14:50] 0xtendency
+@0xbuzzlightyear @0xBugsy I Dm'd
+
+
+[09/30/2023 15:28] 0xbuzzlightyear
+Ecosystem tokens are tokens that our governance adds to the system and don't have underlying token address in any branch only the global representation exists, when they are bridged from root to branch they are stored in rootPort and receipt is provided in branch
+
+{Reactions}
+👍 (4) 
+
+[09/30/2023 23:05] jayusjay
+@0xbuzzlightyear what is the entry point function to depositing tokens on a branch other than the root branch?
+
+
+[09/30/2023 23:34] zdravkohr
+I think the router has such a function too
+
+
+[10/01/2023 00:48] irving6969
+In createSettlement , deposits have to be less than amount , So we can’t createSettlments with 40Usdc alone, im really confused right now
+
+
+[10/01/2023 00:51] audityourcontracts
+Who are the admins/operators of port strategies? Are they separate entities?
+
+
+[10/01/2023 06:12] 0xtendency
+The settlement amount should not be less than deposit
+
+
+[10/01/2023 06:20] zdravkohr
+Somehow i was confused by that as well, but if you think about it, if you set both the variables equal to 40, when you subtract one from another, the result will be 0. Which means that you can use only 40 usdc if you set both the variables to 40
+
+
+[10/01/2023 06:31] irving6969
+why can't we deposit 100 usdc with amount 0?why can't we create settlement like that?
+
+
+[10/01/2023 07:00] zdravkohr
+Because the amount is the total
+
+
+[10/01/2023 07:00] zdravkohr
+I dont know why not just using two different variables 😄
+
+
+[10/01/2023 07:05] 0xtendency
+You can deposit 100 usdc(underlying token), for this scenario, the amount will be 100 usdc and the deposit will be 100 usdc.
+The deposit can not be higher than the amount, since the user hToken deposit + underlying deposit will equal the input amount
+
+{Reactions}
+10_10 (2) 
+
+[10/01/2023 07:08] irving6969
+Thanks for explanation
+
+{Reactions}
+🙏 
+
+[10/01/2023 11:10] 0xbuzzlightyear
+each port strategy can be unique. they can be managed in BranchPorts by the CoreBranchRouter from messages received by the CoreRootRouter. Only governance is able to call these CoreRootRouter functions
+
+
+[10/01/2023 11:19] audityourcontracts
+To clarify are they managed by maiadao/ulysses or third parties?
+
+
+[10/01/2023 11:30] 0xbuzzlightyear
+They are managed by Hermes Protocol Severity 5 Governance Contracts: https://v2-docs.maiadao.io/protocols/Hermes/governance/overview#severity-5
+
+{Reactions}
+🙏 
+
+[10/01/2023 12:08] gr34t.l4k3#1626
+@0xbuzzlightyear sent dm
+
+
+[10/01/2023 17:37] aamirusmani1552
+anyone from team online?
+
+
+[10/01/2023 21:00] 0xstalin
+shot your question here,  prob more than one warden has the answer you are looking for
+
+
+[10/01/2023 21:01] 0xstalin
+wellp, unless the question is about a specific potential finding, then just ask the sponsor, but if your question is about something you don't understand, no prob sending it here 🫡
+
+
+[10/01/2023 21:08] 0xsimeon
+Hello, @0xStalin I appreciate the fact that you help out wardens with questions. I have a question: 
+
+- Since Ulysses is omnichain, Are all user assets stored in the RootPort in the root chain (Arbirtrum). 
+
+For instance, I'm currently have my assets on polygon and goto Ulysses, do I or the protocol need to move the asset to the rootPort? or it is stored in the branchPort of Ulysses on Polygon?
+
+
+[10/01/2023 21:16] hisoul22
+The branchPort stores tokens.
+
+{Reactions}
+✅ (2) 
+
+[10/01/2023 21:30] 0xstalin
+correct, the BranchPort stores/locks the underlyingTokens when users are bridgingOut/Depositing their tokens from a Branch to Root
+
+
+[10/01/2023 22:20] 0xsimeon
+@Soul22 @0xStalin nothing gets stored/managed in rootPort?
+
+
+[10/02/2023 00:46] 0xstalin
+globalTokens are managed in RootPort
+
+
+[10/02/2023 01:15] 0xsimeon
+Thank you
+
+
+[10/02/2023 04:31] marchev
+Hi. Don't know if it's just me or reproducible for others as well but the Submission page for the Maia contest is broken. This is what I get when I click on "Submit Finding"
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-327FA.png
+
+
+[10/02/2023 09:34] yanchuan1
+@0xbuzzlightyear @0xBugsy   All chain ids used in Ulysees are layerzero chain ids, not block chain ids. right?
+
+
+[10/02/2023 09:40] marchev
+Correct. https://layerzero.gitbook.io/docs/technical-reference/mainnet/supported-chain-ids
+
+
+[10/02/2023 09:41] marchev
+> Note:  chainId values are not related to EVM ids. Since LayerZero will span EVM & non-EVM chains the chainId are proprietary to our Endpoints
+
+
+[10/02/2023 09:42] coffiasd
+Is rootBridgeAgent deploy on any test network already?
+
+{Reactions}
+wrong 
+
+[10/02/2023 12:25] marchev
+From a user PoV, what is the point of having a `BaseBranchRouter#callOutAndBridge()` function? It's more expensive compared to `BranchBridgeAgent#callOutAndBridge()` (as funds must first be transferred to the router) and it's less flexible since it automatically sets `msg.sender` as `_refundee` wheres the same function in `BranchBridgeAgent` gives you the flexibility to choose.
+
+Am I missing something?
+
+{Reactions}
+👍🏼 
+
+[10/02/2023 14:10] _3doc_
+I believe there is a certain level of convenience because the tokens are withdrawn from the port (agents don't handle ERC-20s, ports do). 
+
+If you use the router, it will transfer to itself, approve the port, and call the agent. If you use directly the agent, you have to approve the port and call the agent yourself which is somewhat counter-intuitive
+
+
+[10/02/2023 15:05] gumgumzum
+If you use the router, you still have to approve the router to transfer to itself as well no ?
+
+
+[10/02/2023 15:06] _3doc_
+yup, but it's better UX to approve A and call A, rather than approve A and call B
+
+
+[10/02/2023 15:08] gumgumzum
+I'm probably missing something, but I think you'd be approving A and calling A in both cases
+
+
+[10/02/2023 16:19] nirh
+In the Ulysses documentation there's a reference to the Delta algorithm that balances the liquidity in multiple bridged branches. It doesnt seem to be implemented in the audit code though, or did I miss it?
+
+
+[10/02/2023 16:36] devabdee
+Thats out of scope. Its part of the ulysses AMM
+
+
+[10/02/2023 17:47] stormreckson
+Why are tokens locked in BranchPort?
+
+
+[10/02/2023 17:50] aamirusmani1552
+hey what is this fallback in settlements?
+
+
+[10/02/2023 17:54] stormreckson
+Is the locked underlying tokens serving as collateral to create debt?
+
+
+[10/02/2023 18:09] irving6969
+noob question , Can we send message from rootbridgeagent to branchbridgeagent?
+
+
+[10/02/2023 18:12] gumgumzum
+Not directly I think
+
+
+[10/02/2023 18:13] zdravkohr
+Isn't that achieveable with callOut?
+
+
+[10/02/2023 18:13] gumgumzum
+Only router can call that on the root bridge agent
+
+
+[10/02/2023 18:13] zdravkohr
+A fallback to be executed if a settlement fails on the destination chain, I think
+
+
+[10/02/2023 18:53] 0xstalin
+to backup 1:1 the bridged tokens in Root
+
+
+[10/02/2023 18:54] 0xstalin
+aaam, that's one way to think about it, each underlying token is represented as a 1:1 globalToken in Root
+
+
+[10/02/2023 20:04] stormreckson
+Thank you for the clarification 🙏 
+Basically the underlying token lock is represented by the global token in the Root
+
+{Reactions}
+✅ 
+
+[10/02/2023 20:21] 33audits
+Why does the ERC20hTokenBranch come into play then? confused between the difference in hTokens
+
+
+[10/02/2023 20:33] 33audits
+This is my current understanding
+
+USDC -underlying
+hUSDC- Global
+hUSDC_Polygon - local
+
+in this case my assumption is the ERC20hTokenLocal would be to mint hUSDC_Polygon which represents USDC deposited in the but my confusing is do I also get hUSDC on the root by depositing in Polygon?
+
+
+[10/02/2023 21:05] marchev
+My understanding is that `ERC20hTokenBranch` is used to represent the underlying tokens in the source chain. Locked funds can only be withdrawn on their source chain but could be used in protocols such as Uni, Aave etc. on the root chain as well
+
+
+[10/02/2023 21:12] 0xstalin
+aaam, underlying or hTokens (localTokens) can both be used to get globalTokens on Root
+
+hTokens(localTokens) are also backed up 1:1 with underlying, but as for how are they minted I think its OOS, as for this contest we could think that globalTokens can be obtained by either using their underlyingToken or their hToken(localToken) version in a SourceBranch
+
+
+[10/02/2023 21:13] 0xstalin
+this might help to understand what I'm trying to explain
+
+
+[10/02/2023 21:14] 33audits
+I guess my confusion is if I deposit in a branch port I get a local hToken, but I don't also get a root hToken for that deposit, if I wanted that root hToken for whatever reason I'd have to burn my local hToken to get it?
+
+
+[10/02/2023 21:15] 0xstalin
+correct, if you want to get the globalToken, the localToken will be burnt in the SourceBranch
+
+
+[10/02/2023 21:16] 0xstalin
+one thing is depositing underlying to get localTokens, and other thing is bridgingOut to root, when bridgingOut to root, you can use underlying or localTokens
+
+{Reactions}
+👍 
+
+[10/02/2023 21:17] 33audits
+but if I use underlying its storing them in the port and minting htoken on root, if I use local htokens and bridge to root its burning on local and then minting on root
+
+{Reactions}
+✅ 
+
+[10/02/2023 21:17] 33audits
+correct?
+
+
+[10/02/2023 21:18] 33audits
+Thanks @0xStalin
+
+
+[10/02/2023 21:20] 0xtendency
+This is how it happens, when a user starts using the protocol for the first time, the user will not have any local htoken, on first deposit, the user will be depositing with only underlying tokens, this tokens will be stored at the branch port, when you trace the logic further, global htokens will be minted to the user here, https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/src/RootPort.sol#L277
+
+The user will only get local hToken when bridging from the root chain back to a branch.
+Note, when bridging back, the user global tokens will be burnt, when you trace the call further, local hTokens will be minted to the user when `_clearToken` function is called
+
+
+[10/02/2023 21:32] 0xnevi
+Yes basically everything needs to go through the root
+
+{Reactions}
+✅ (5) 
+
+[10/03/2023 00:33] 0xsimeon
+If I understand this correctly, when a user wants to bridge from a chain other than root, the user has to first call a function on the branchBridgeAgent on the source chain and the branchBridgeAgent will call `bridgeToRoot`  (https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/src/RootPort.sol#L277) on RootPort (Because of the modifier that requires caller to be a BridgeAgent)?
+
+{Embed}
+https://github.com/code-423n4/2023-09-maia/blob/f5ba4de628836b2a29f9b5fff59499690008c463/src/RootPort.sol
+2023-09-maia/src/RootPort.sol at f5ba4de628836b2a29f9b5fff594996900...
+Contribute to code-423n4/2023-09-maia development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/4b4c860f-0a03-4a05-8611-8ed7356aab79-2C343
+
+
+[10/03/2023 00:40] 0xtendency
+Using a branch, `callOutSignedAndBridge`function
+this will be the route:
+```
+BranchBridgeAgent::callOutSignedAndBridge
+ILayerZeroEndpoint::send
+ILayerZeroEndpoint::receivePayload
+RootBridgeAgent::lzReceive
+RootBridgeAgent::lzReceiveNonBlocking
+RootBridgeAgent::_execute 
+RootBridgeAgentExecutor::executeSignedWithDeposit
+RootBridgeAgentExecutor::_bridgeIn
+RootBridgeAgent::bridgeIn
+RootPort::bridgeToRoot
+```
+
+{Reactions}
+👍 (2) 
+
+[10/03/2023 00:42] 0xtendency
+I have omitted some internal function calls, so just follow up, use the modifiers to know who should be calling the functions
+
+
+[10/03/2023 00:48] 0xsimeon
+Muchas gracias! This will do just fine for now. 
+
+Side note: If anyone has diagram(s) of the entry points that a user interacts with for the protocol, I'd appreciate it.
+
+
+[10/03/2023 00:51] 0xsimeon
+drew this based on my understanding initially. 
+
+PS: I recently found out that there are branches of everything (routers, bridgeAgents, etc.) for the root chain as well - ArbitrumBranchBridgeAgent etc.
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/ulysses_with_liquidity-23C60.png
+
+
+[10/03/2023 01:26] hisoul22
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/Maia_Dao.drawio_1-8B88E.png
+
+{Reactions}
+10_10 (2) thankyou 
+
+[10/03/2023 02:53] nailkhalimov
+guys, why compling of file takes so long time? Is there any tips to make it quicker?
+
+
+[10/03/2023 03:19] tamayonft
+thank so much, i think that root chain has a loca branch port too, isn´t that right @0xStalin
+
+
+[10/03/2023 03:43] devabdee
+https://discord.com/channels/810916927919620096/1153743259965857873/1156176761156010064
+
+
+[10/03/2023 03:47] 0xstalin
+Yup, ArbtirumBranch contracts are used for that local branch
+
+
+[10/03/2023 04:53] tamayonft
+sorry guys how did you get the AVAX_RPC_URL when running the test
+
+
+[10/03/2023 04:54] devabdee
+infura `Avalanche C-Chain`
+
+
+[10/03/2023 05:07] nailkhalimov
+Thank you!
+
+{Reactions}
+👍 
+
+[10/03/2023 05:12] tamayonft
+i got it but i still have an error, i dont know why appear a ] at the final of my key when i run the test
+
+
+[10/03/2023 05:16] aamirusmani1552
+what's the error?
+
+
+[10/03/2023 05:54] aamirusmani1552
+can someone tell me where is this `IMulticall2` interface used?
+
+
+[10/03/2023 06:19] zdravkohr
+In the multicall router i think
+
+
+[10/03/2023 06:23] aamirusmani1552
+ok found it. it is used in Multicall2 mock contract. But I am confused now, why we will use this contract?
+
+
+[10/03/2023 06:24] aamirusmani1552
+it says in the natspace `Aggregate results from multiple read-only function calls`. But why we need that in first place?
+
+
+[10/03/2023 07:11] stormreckson
+Do anyone know the eason why CoreRootRouter execute with deposit functions revert when called by the RootBridgeAgentExecutor?
+
+
+[10/03/2023 07:15] gumgumzum
+The mock is just for testing purposes, the multicall address will be set accordingly depending on where the MulticallRootContract is deployed
+
+
+[10/03/2023 07:16] aamirusmani1552
+i don't think it reverts. The only reason `executeWithDeposit`  revert is when payload sent is more than the required length. or am i missing something
+
+
+[10/03/2023 07:18] 0xnevi
+Custom routers can be added depending on logic intended
+
+https://discord.com/channels/810916927919620096/1153743259965857873/1155845676010311732
+
+{Reactions}
+✅ (2) 
+
+[10/03/2023 07:18] gumgumzum
+My understanding is that it will depend on the router implementation used by the RootBridgeAgent
+
+{Reactions}
+✅ (2) 
+
+[10/03/2023 07:46] stormreckson
+Understood thank you guys 👍
+
+
+[10/03/2023 09:24] pfapostol
+Does the usage of `call` and `payableCall` methods by user in `VirtualAccount` expected? If so, could someone provide an example for reference?
+
+
+[10/03/2023 09:28] gumgumzum
+`call` is used in MulticallRootRouter
+
+
+[10/03/2023 09:30] pfapostol
+It is called by executor. I mean direct call by user.
+
+
+[10/03/2023 09:32] nmirchev8
+Sorry if it was discussed before but what are strategy tokens?
+
+
+[10/03/2023 09:38] _3doc_
+tokens that allow for part of the RootPort balance to be transferred ("managed") by a strategy -> https://discord.com/channels/810916927919620096/1153743259965857873/1156191348483965009
+
+{Reactions}
+❤️ (2) 
+
+[10/03/2023 09:42] gumgumzum
+Thought that was the question, sorry. But yeah, nothing preventing users from interacting with their virtual account.
+
+
+[10/03/2023 12:07] aamirusmani1552
+hey a question, this `_minimumReservesRatio` is the ratio that each strategy should be able to withdraw right?
+
+
+[10/03/2023 12:32] zdravkohr
+I think its minimum assets that need to be in the port in order for a strategy to be able to withdraw
+
+
+[10/03/2023 13:47] aamirusmani1552
+hmm.. 🤔 . if this is true then why it must in between these two values: `3e3` and `1e4` . 
+```Javascript
+        if (_minimumReservesRatio >= DIVISIONER || _minimumReservesRatio < MIN_RESERVE_RATIO) {
+            revert InvalidMinimumReservesRatio();
+        }
+```
+
+
+[10/03/2023 14:10] gumgumzum
+I believe that means it has to be a minimum of 30% and max 100%
+
+{Reactions}
+💯 
+
+[10/03/2023 15:25] aamirusmani1552
+sorry but I still didn't understand 😅. I am getting dumber day by day. You said minimum assets that needs to be present in strategy to be able to withdraw. Do you mean 30% to 100 % percent can be withdrawable?
+
+
+[10/03/2023 15:28] aamirusmani1552
+I don't know if that even make sense what i just said. All I want to say is, can you plz give an example
+
+
+[10/03/2023 15:33] aamirusmani1552
+oh okk. now i understand i think. do you mean that 30 to 100 percent of strategy tokens from total amount needs to be in the port and rest can be used by the strategy
+
+
+[10/03/2023 16:09] pxng0lin
+Hi Team,
+
+Where can i find the part of the code that refunds  if too much gas is supplied in msg.value, is this part of the LayerZero implementation or part of your contracts functionality?
+```
+     *   @param _refundee address to return excess gas deposited in `msg.value` to.
+```
+
+
+[10/03/2023 16:40] _3doc_
+LayerZero does it https://layerzero.gitbook.io/docs/evm-guides/interfaces/evm-solidity-interfaces/ilayerzeroendpoint
+
+{Embed}
+https://layerzero.gitbook.io/docs/evm-guides/interfaces/evm-solidity-interfaces/ilayerzeroendpoint
+ILayerZeroEndpoint
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/https%253A%252F%252F1064219394-files.gitbo-D5C9E
+
+{Reactions}
+👍 ❤️ 
+
+[10/03/2023 17:30] aamirusmani1552
+hey another question, the strategy tokens will be underlying tokens of the branch right? I mean when user bridgeOut his token to the root chain, these tokens will be deposited in the branch port and a strategy can use these tokens.
+
+
+[10/03/2023 17:41] gumgumzum
+I think it's possible for strategies to be using multiple tokens and tokens to be used by multiple strategies
+
+
+[10/03/2023 17:43] aamirusmani1552
+ok. but there is no difference in strategy tokens and underlying tokens right?
+
+
+[10/03/2023 17:50] gumgumzum
+As far as I can tell and if I understood your question correctly, no, not necessarily. It is not strictly enforced. It's up to the owner of CoreRootRouter to decide
+
+
+[10/03/2023 17:52] aamirusmani1552
+okk thanks ser for the info 🙂
+
+{Reactions}
+👍 
+
+[10/03/2023 20:08] tamayonft
+the contract is not test it with the LZEndpointMock.sol contract right?
+
+
+[10/03/2023 20:57] gumgumzum
+I don't think so, LzForkTest directly calls the LayerZero Endpoint on the forked chains
+
+
+[10/03/2023 21:48] trustone_
+Could you explain about the difference between  addGlobalToken and addLocalToken of CoreBranchRouter?
+
+
+[10/03/2023 23:00] 0xhals
+Hi @0xbuzzlightyear ,,sent you a DM,
+
+
+[10/04/2023 03:24] radcet_
+can i ask u what tool u used to draw this graph ❤️
+
+{Reactions}
+🔥 
+
+[10/04/2023 04:08] bughunterlabs
+From the filename it looks like draw.io (https://app.diagrams.net/) 🖊️
+
+{Reactions}
+❤️ 
+
+[10/04/2023 04:47] devblixt_
+under what circumstances would a user have to call retrieveDeposit or redeemDeposit from BranchBridgeAgent?
+
+
+[10/04/2023 05:01] irving6969
+user send a message to root via retrieveDeposit .If it's not executed yet , status will change to Status_retrieve .then user can call RedeemDeposit . that's my understaning. correct me if i am wrong
+
+{Reactions}
+🔥 
+
+[10/04/2023 05:22] 0xnevi
+When cross-chain deposit call to root bridge agent fails and user choose to not retry deposit using the fallback flag, allowing them to redeem deposits on origin branch chain
+
+{Reactions}
+🔥 
+
+[10/04/2023 06:23] 0xc86
+@0xbuzzlightyear DMed you ser!
+
+
+[10/04/2023 06:42] devblixt_
+Thank you, @OMEN and @0xnev !
+
+{Reactions}
+👍 (2) 
+
+[10/04/2023 07:10] aamirusmani1552
+What's the purpose of this calculation in `BranchPort::_checkTimeLimit()`. Wouldn't it set the same value as block.timestamp and even lesser? 
+
+```Javascript
+            unchecked {
+                lastManaged[msg.sender][_token] = (block.timestamp / 1 days) * 1 days;
+            }
+```
+
+
+[10/04/2023 07:12] wangxx2026
+chat GPT can tell you the answer
+
+{Reactions}
+👍 
+
+[10/04/2023 07:16] radcet_
+Ty 🥰
+
+
+[10/04/2023 07:21] zdravkohr
+It will round it to exact days
+
+
+[10/04/2023 07:22] aamirusmani1552
+got it thanks
+
+
+[10/04/2023 08:06] jaimebarrancos
+what is the kernal space?
+
+
+[10/04/2023 08:29] pascal9476
+Must the POC be with foundry 
+Can’t we lay out the exact attack vector ?
+
+
+[10/04/2023 08:44] alcueca
+It is preferred if the PoC is with code, where it's foundry, hardhat or something else it doesn't matter. If coding a PoC is not possible for whatever reason, then a detailed textual description should suffice.
+
+Note that PoCs are not compulsory, only that they may affect grading of submissions when the submission is in a group of duplicates.
+
+{Reactions}
+🫡 (5) 
+
+[10/04/2023 12:47] nmirchev8
+Why all root routers revert, when the transaction is meant for another chain? (depositSingle() for example)
+
+
+[10/04/2023 12:59] 0xbuzzlightyear
+We don't have a router with that implementation, neither `CoreRootRouter` or `MulticallRootRouter`/`MulticallRootRouterLibZip`, but anyone can create a router that implemenats those functions
+
+
+[10/04/2023 13:00] nmirchev8
+So currently if I want to bridge tokens from avax chain to ftm, how is this achived?
+
+
+[10/04/2023 13:04] joshuajee
+Is the `localChainId` the same with the chain Id from layerzero
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-484E4.png
+
+{Reactions}
+checkmark 
+
+[10/04/2023 13:07] 0xbuzzlightyear
+you must use the `callOutAndSigned` functions on an AVAX `BranchBridgeAgent` that is connected to a `RootBridgeAgent` that has a `MulticallRootRouter`. You must pass encodedData to the `MulticallRootRouter` for it to then bridge to FTM, for example using a `multicallSingleOutput` router function Id (0x02)
+
+{Reactions}
+❤️ (2) 
+
+[10/04/2023 13:08] 0xbuzzlightyear
+yes!
+
+{Reactions}
+👍 
+
+[10/04/2023 13:32] nmirchev8
+Thank you. Could you summerize what exactly "signed" stands for?
+
+
+[10/04/2023 14:10] aamirusmani1552
+I think when you send msg.sender info along with the message
+
+{Reactions}
+❤️ (3) checkmark 
+
+[10/04/2023 20:28] 0xnevi
+Signed means interacting with a virtual account directly using a multicallrootrouter attached to a root bridge agent or a custom root router that supports virtual account interactions
+
+{Reactions}
+❤️ 
+
+[10/05/2023 03:52] audityourcontracts
+Does anyone know what the strikethrough of text means in the bot report? https://github.com/code-423n4/2023-09-maia/blob/main/bot-report.md
+
+
+[10/05/2023 04:11] aamirusmani1552
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/image-E6B06.png
+
+{Reactions}
+🙏 
+
+[10/05/2023 04:33] audityourcontracts
+Thank you Ser.  I am not totally up to date with bot races 👍
+
+{Reactions}
+👍 
+
+[10/05/2023 05:12] audityourcontracts
+Is it correct to assume that all round trips from Branch Bridge Agent to Root Bridge Agent and back are all multi-block? For example user transaction on Branch in block x, the settlement cannot be in block x and has to be in block x+n. n being the number of blocks on the Branch chain before the response comes back from the root bridge agent?
+
+
+[10/05/2023 06:19] _3doc_
+The arbitrum branch may be an exception to that. It’s still a branch but it’s on the same chain as the root contracts
+
+{Reactions}
+👍 (3) 
+
+[10/05/2023 06:48] 0xnevi
+Great question. I presume it is the same block on the origin chain until the cross-chain LZ message is initiated then falls on a different block (could be same from coincidence?)  on the destination chain since it involves different chains. Not too sure tho
+
+
+[10/05/2023 07:17] aamirusmani1552
+should all LQAG findings be in one file or there should be different ones for Gas and Non critical one?
+
+
+[10/05/2023 07:30] devabdee
+1 file which includes all the Low, Non-Criticals and informationals: QA Report. And 1 for all the Gas optimizations
+
+
+[10/05/2023 07:30] aamirusmani1552
+ok thanks
+
+{Reactions}
+👍 
+
+[10/05/2023 10:09] audityourcontracts
+Yeah I was thinking ETH to Arbitrum. The ETH block on send would be x but the ETH block for the response would be x+n.
+
+{Reactions}
+checkmark 👍 
+
+[10/05/2023 10:32] dimulski
+hey what is the flow to withdraw your tokens, on the same chain you deposited them
+
+
+[10/05/2023 10:44] zdravkohr
+You create a settlement, I think
+
+
+[10/05/2023 10:46] dimulski
+on the root chain or on the chain where I initiated the deposit
+
+
+[10/05/2023 10:47] zdravkohr
+on the root
+
+{Reactions}
+👍 
+
+[10/05/2023 12:03] hisoul22
+Wait, I don't think we can create a settlement on the root chain because there is no entry point for it, right?
+
+
+[10/05/2023 12:05] 0xkral
+What will be the `localRouterAddress` in RootbridgeAgent ?
+
+
+[10/05/2023 12:08] 0xkral
+Like how does the process flow reach the multicallRouter.
+
+By using a `RootbridgeAgent ` that has `multicallRouter` set as its localRouter?
+
+
+[10/05/2023 12:21] zdravkohr
+You are actually right
+
+
+[10/05/2023 12:21] zdravkohr
+Where is the entry point then 😄
+
+
+[10/05/2023 12:21] zdravkohr
+I think yes
+
+
+[10/05/2023 12:23] hisoul22
+To withdraw funds, users can call `callOutSigned()`, `callOutSignedAndBridge()`, or `callOutSignedAndBridgeMultiple()` on the desired branch chain. They should provide the appropriate `_params` for the transaction. Subsequently, the `MulticallRootRouter` contract on the root chain will invoke either `_approveAndCallOut()` or `_approveMultipleAndCallOut` to initiate a settlement and transfer tokens from the user's virtual account to the `RootPort` contract.
+
+{Reactions}
+👍 (3) 
+
+[10/05/2023 12:24] 0xkral
+So there must be multiple rootBridgeAgents right?👀
+
+
+[10/05/2023 12:25] hisoul22
+If I understand correctly, users must transfer their funds to their virtual accounts before they can withdraw them.
+
+
+[10/05/2023 12:26] zdravkohr
+I wouldn't say "must", but yes, they can be multiple agents
+
+{Reactions}
+👍 
+
+[10/05/2023 12:31] zdravkohr
+@dimulski
+
+{Reactions}
+👍 
+
+[10/05/2023 12:31] zdravkohr
+Sorry  for the confusion
+
+
+[10/05/2023 13:45] nmirchev8
+[FAIL. Reason: Setup failed: Could not instantiate forked environment with fork url: https://endpoints.omniatech.io/v1/fantom/mainnet/public]
+
+
+[10/05/2023 13:46] nmirchev8
+Somebody with same error?
+
+
+[10/05/2023 13:47] lourenslinde
+Yep, endpoint seems to be down.
+
+{Reactions}
+🥲 (3) 
+
+[10/05/2023 13:48] nmirchev8
+The end is near :0
+
+{Reactions}
+4739_Skeletor (5) 
+
+[10/05/2023 13:53] zdravkohr
+@0xbuzzlightyear, sent a dm
+
+
+[10/05/2023 14:23] c3phas.
+@0xbuzzlightyear , sent a request
+
+
+[10/05/2023 14:24] gumgumzum
+Replaced it with another one for now
+
+
+[10/05/2023 14:30] nmirchev8
+Which one?
+
+
+[10/05/2023 14:33] gumgumzum
+Picked one randomly from chainlist
+
+{Reactions}
+✅ 
+
+[10/05/2023 15:19] zdravkohr
+Are CoreRootRouter and MulticallRootRouter meant to be used as routers directly or there are for custom routers to inherit from?
+
+
+[10/05/2023 17:13] lsaudit
+hey @0xbuzzlightyear  - i've sent DM
+
+
+[10/05/2023 18:11] putricioo
+i used this https://rpc.ankr.com/fantom
+
+{Embed}
+https://rpc.ankr.com/fantom
+Build on Fantom With Instant RPC Endpoint
+Call the Fantom chain with Ankr's free public RPC endpoint
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/logo-EE9ED.png
+
+{Reactions}
+❤️ (2) 
+
+[10/06/2023 04:48] 0xnevi
+Hi @0xBugsy @0xbuzzlightyear while this is not related to the contest, wanted to give u guys props for building this sophisticated protocol!
+
+https://x.com/0xnevi/status/1710154422687560189?s=20
+
+{Embed}
+0xnevi (@0xnevi)
+https://twitter.com/0xnevi/status/1710154422687560189?s=20
+Wrapping up the @MaiaDAOEco Ulysses Omnichain audit on @code4rena. Irregardless of the result, i wanted to give props to the devs @0xbuzzlightyear @0x_bugsy
+
+Understanding an omni-chain system is no easy feat, let alone building it. Well done and thanks for teaching me so much!
+Twitter
+
+{Reactions}
+🔥 (15) 👏 (11) ❤️ (9) pepoloveleaf (2) flustered (3) 
+
+[10/06/2023 08:52] pfapostol
+Are there any ways to run `forge build` on multiple cores? because it takes me 30 minutes on one with `via-ir` and I was going to test each of gas savings individually
+
+
+[10/06/2023 08:55] zdravkohr
+Stop the via-ir
+
+
+[10/06/2023 08:57] 0xnevi
+Go to foundry.toml and set via-ir to false
+
+
+[10/06/2023 09:01] pfapostol
+Why test at all then? The project will be deployed with `via-ir`. Without it, the data on gas will not be accurate; you can just as easily come up with random data, or simply tell in words why gas will be saved.
+
+
+[10/06/2023 09:05] pfapostol
+It's much faster using cache
+
+
+[10/06/2023 09:06] 0xnevi
+Opps mb didn’t see u wanted to test gas, then im not too sure what to do
+
+
+[10/06/2023 09:54] 0xtendency
+sent a dm @0xBugsy
+
+
+[10/06/2023 10:41] mrpotatomagic
+@0xbuzzlightyear dmed
+
+
+[10/06/2023 11:46] stormreckson
+This contest made me understand how Ominichain works .. it's fun learning this from the Maia team ..they know their stuff!
+
+{Reactions}
+🔥 (3) 
+
+[10/06/2023 15:06] backd00r104
+[FAIL. Reason: Setup failed: Could not instantiate forked environment with fork url: https://endpoints.omniatech.io/v1/fantom/mainnet/public]
+
+Is anybody getting this error? I've been getting it while writing a PoC
+
+
+[10/06/2023 15:07] nmirchev8
+@backdoor101
+
+
+[10/06/2023 15:07] backd00r104
+Another chain url in the ".env" list?
+
+
+[10/06/2023 15:09] nmirchev8
+Yes. If you are using RootForkTest, you should remove all set up related to ftm chain
+Also if you want to use different. See LzForkTest. There are set ups for all other chains inside ".env"
+
+
+[10/06/2023 15:10] backd00r104
+Okay. Thank you.
+
+
+[10/06/2023 15:10] nmirchev8
+You welcome.
+If you can't configure it, just DM me your finding and I will write the PoC ;))
+
+{Reactions}
+😂 (4) 
+
+[10/06/2023 15:10] nmirchev8
+😄
+
+
+[10/06/2023 15:11] web3skid#0348
+@backdoor101 using this URL fixed it for me: https://rpc.ankr.com/fantom, putting it out there bcz thats a common issue
+
+{Embed}
+https://rpc.ankr.com/fantom,
+Decentralized Infrastructure to Build and Earn in Web3
+Get faster, more reliable multi-chain development tools
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/logo-EE9ED.png
+
+
+[10/06/2023 15:12] backd00r104
+😂 Man this contest is bruuuutal. I only managed to come up with one finding after a while of searching.
+
+{Reactions}
+😬 (2) 
+
+[10/06/2023 15:12] backd00r104
+Thank you @web3skid, I'll try it out
+
+
+[10/06/2023 15:13] backd00r104
+@nmirchev8 Were you able to come up with any finding?
+
+
+[10/06/2023 15:13] backd00r104
+I want to feel like I'm not alone finding just one bug. 😂
+
+
+[10/06/2023 15:14] nmirchev8
+Same as you. But write PoC on this project is a gold mine of learning
+
+
+[10/06/2023 15:14] backd00r104
+Agreed.
+
+
+[10/06/2023 15:19] acegawd
+I DMed you @0xBugsy
+
+{Reactions}
+checkmark 
+
+[10/06/2023 17:58] yanchuan1
+Can users deploy RootBridgeAgent? customized RootBridgeAgent?
+
+
+[10/06/2023 18:24] hisoul22
+yes
+
+
+[10/06/2023 18:24] hisoul22
+RootBridgeAgentFactory.createBridgeAgent()
+
+
+[10/06/2023 19:25] backd00r104
+No. Users can not deploy customized RootBridgeAgents. They can deploy the pre-built RootBridgeAgents only.
+
+
+[10/06/2023 19:28] mrpotatomagic
+custom Routers coupled with a new RootBridgeAgent (pre-built)
+
+
+[10/06/2023 19:32] yanchuan1
+thanks @backdoor101 @MrPotatoMagic @Soul22
+
+
+[10/06/2023 20:00] hunter_w3b
+https://tenor.com/view/despicable-me-gru-almost-over-its-almost-over-its-almost-finished-gif-9707781365812094138
+
+{Embed}
+https://tenor.com/view/despicable-me-gru-almost-over-its-almost-over-its-almost-finished-gif-9707781365812094138
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/despicable-me-gru-FEEEE.png
+
+
+[10/06/2023 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺wardens The **Maia DAO - Ulysses** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the audit is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a Contest-Admin if you have questions along the way!
+
+{Reactions}
+🤗 (13) 🧑🏻‍🍳 (12) pepehandshake (12) ❤️ (5) hi5 (3) 
+
+[10/06/2023 20:02] minh___
+thanks to @0xbuzzlightyear and @0xBugsy for being available and responsive during the audit 🙂
+
+{Reactions}
+pepoloveleaf (5) 🫡 (5) 
+
+[10/06/2023 20:03] bronze_pickaxe
+@0xbuzzlightyear @0xBugsy huge thanks to you! you were always ready to answer questions, an amazing experience.
+
+{Reactions}
+pepoloveleaf (4) 
+
+[10/06/2023 20:04] gumgumzum
+Very interesting code base, learned a ton and thanks @0xbuzzlightyear & @0xBugsy for your assistance. Gl everyone.
+
+{Reactions}
+pepoloveleaf (4) 
+
+[10/06/2023 20:06] 0xkral
+This was the hardest contest that I participated in:10_10: ,  learned a lot and a huge thanks to @0xbuzzlightyear and @0xBugsy for answering my dumb questions patiently🫡 .
+
+{Reactions}
+pepoloveleaf (4) 
+
+[10/06/2023 20:09] mrpotatomagic
+Thanks @0xbuzzlightyear @0xBugsy for prompt responses during these 14 days :thankyou:
+
+{Reactions}
+pepoloveleaf (4) 
+
+[10/06/2023 20:51] irving6969
+thanks @0xbuzzlightyear @0xBugsy for answering my dumb questions ,I learned  a lot from this contest
+
+{Reactions}
+pepoloveleaf (4) 
+
+[10/06/2023 21:02] 0xstalin
+Huge thanks to@0xbuzzlightyear  @0xBugsy for being an incredible sponsor and for coming back to C4 to allow us to dig in your code to find those hidden bugs and take them out of production
+
+My best wishes for all your future endeavors, Maia will def be a big player in the DeFi ecosystem :chefskiss:
+
+{Reactions}
+pepoloveleaf (10) 10_10 (2) 
+
+[10/07/2023 02:59] 0xdemonnn
+Big thanks to both of you @0xbuzzlightyear @0xBugsy , very helpful from the start until the contest closed 😁
+
+{Reactions}
+pepoloveleaf 
+
+[10/07/2023 06:54] pascal9476
+How many submissions on this one ?😅
+
+
+[10/07/2023 07:47] 0xtendency
+867
+
+{Reactions}
+4739_Skeletor (11) 
+
+[10/07/2023 08:29] devblixt_
+Thank you so much @0xbuzzlightyear and @0xBugsy for solving even the slightest of questions!!
+
+{Reactions}
+pepoloveleaf (2) 
+
+[10/22/2023 21:06] 7a4raf
+any updates? or should I give it a couple more weeks ?
+
+
+[10/22/2023 21:15] 0xstalin
+looks like post-judging will start anytime soon, prob awarding will be in 1 or 2 weeks 🙂
+
+{Reactions}
+🔥 (7) 
+
+[10/23/2023 11:44] neumoxx
+@alcueca may I dm?
+
+
+[10/23/2023 12:26] alcueca
+It's against the rules, sorry. If you disagree with anything I've judged so far, the post-judging QA is the place for it.
+
+
+[10/23/2023 12:28] neumoxx
+Then I write it here, I was asked yesterday for a PoC, just wanted to let you know I'm on it, but haven't finished it yet.
+
+
+[10/23/2023 12:50] alcueca
+Thanks, I also asked the sponsor for their view, and they said:
+> ... the warden seems to have missed the fact that our execution is encapsulated by an excessivelySafeCall and as such the revert being described would not bubble up until  the LayerZeroEndpoint and would be caught by the bridge agent.
+
+
+[10/23/2023 13:09] neumoxx
+Yes, I saw it, I think they're wrong (at least I could make the message block the queue in my tests, just need to prove a call to `retryPayload` fails and I'm done). Thank you.
+
+{Reactions}
+👍 
+
+[10/23/2023 22:22] _paperparachute
+Thank you for respecting judge DMs @neumo :chefskiss:
+
+{Reactions}
+👍 (2) 
+
+[10/31/2023 22:00] chaduke3730
+Hey friends, is it ok to have  two global tokens point mapped one local token? Any document about this?
+
+
+[11/02/2023 16:12] lsaudit
+any chances for results coming this week? Seems escalation phase has ended
+
+{Reactions}
+10_10 code4rena (3) 
+
+[11/03/2023 06:58] 0xstalin
+I don;t think so, prob mid november
+
+
+[11/03/2023 08:08] ayo#6131
+don't think so, think it comes out either this wk or the next
+
+
+[11/03/2023 08:18] ihtishamsudo
+@thebrittfactor | C4 is the right guy to estimate this thing with gif :thisisfine:
+
+
+[11/03/2023 10:20] _paperparachute
+https://tenor.com/view/itll-take20years-to-get-through-it-ace-trainer-liam-its-going-to-take-so-long-itll-take-a-while-its-so-time-consuming-gif-21784564
+
+{Embed}
+https://tenor.com/view/itll-take20years-to-get-through-it-ace-trainer-liam-its-going-to-take-so-long-itll-take-a-while-its-so-time-consuming-gif-21784564
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/itll-take20years-to-get-through-it-ace-tra-3CE40.png
+
+{Reactions}
+4739_Skeletor (12) 
+
+[11/03/2023 13:14] thebrittfactor
+I'd say sometime later next week is *potentially* possible 😊
+
+{Reactions}
+👍 (6) C4Keycap (4) 
+
+[11/05/2023 19:41] petrichor0961
+Can anyone  answer 
+Why do ducks have feathers?
+🙃
+
+
+[11/05/2023 20:48] hunter_w3b
+https://tenor.com/view/lils-silly-duck-lilsduck-ducky-duck-duck-riri-the-duck-gif-19719423
+
+{Embed}
+https://tenor.com/view/lils-silly-duck-lilsduck-ducky-duck-duck-riri-the-duck-gif-19719423
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/lils-silly-duck-lilsduck-B98F6.png
+
+{Reactions}
+😄 (2) 
+
+[11/06/2023 01:59] petrichor0961
+🦆
+
+
+[11/06/2023 20:20] _k42
+https://tenor.com/view/duck-ducks-swing-cute-animals-gif-15449339
+
+{Embed}
+https://tenor.com/view/duck-ducks-swing-cute-animals-gif-15449339
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/duck-ducks-CDD8F.png
+
+
+[11/06/2023 21:13] ladboy233
+Soon
+
+{Reactions}
+🫡 (9) 
+
+[11/07/2023 14:47] 7a4raf
+https://tenor.com/view/kyriostsahs-lonely-waiting-quarantine-life-gif-18073672
+
+{Embed}
+https://tenor.com/view/kyriostsahs-lonely-waiting-quarantine-life-gif-18073672
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/kyriostsahs-lonely-F7D56.png
+
+
+[11/07/2023 17:14] invitedtea
+so funny 🙂
+
+
+[11/08/2023 05:59] xyzbtchunt
+When
+
+
+[11/08/2023 13:09] hunter_w3b
+https://tenor.com/view/space-nation-spacenationol-spacenationolnft-gif-5697587515974543331
+
+{Embed}
+https://tenor.com/view/space-nation-spacenationol-spacenationolnft-gif-5697587515974543331
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/space-nation-spacenationol-9ACBD.png
+
+
+[11/08/2023 14:53] _paperparachute
+https://tenor.com/view/when-i-say-so-kyra-vashenko-chao-alex-rider-whenever-i-say-on-my-mark-gif-25041727
+
+{Embed}
+https://tenor.com/view/when-i-say-so-kyra-vashenko-chao-alex-rider-whenever-i-say-on-my-mark-gif-25041727
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/when-i-say-so-kyra-vashenko-chao-E1E93.png
+
+
+[11/08/2023 15:11] hunter_w3b
+https://tenor.com/view/ok-alright-then-fine-great-okay-gif-23114127
+
+{Embed}
+https://tenor.com/view/ok-alright-then-fine-great-okay-gif-23114127
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/ok-alright-then-E311E.png
+
+{Reactions}
+dance_vibe (4) 
+
+[11/08/2023 16:08] lsaudit
+https://tenor.com/view/detective-pikachu-pokemon-pikachu-just-say-it-ryan-reynolds-gif-14460010
+
+{Embed}
+https://tenor.com/view/detective-pikachu-pokemon-pikachu-just-say-it-ryan-reynolds-gif-14460010
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/detective-pikachu-pokemon-FFE4D.png
+
+
+[11/08/2023 16:09] _paperparachute
+https://tenor.com/view/when-today-tomorrow-in50years-confused-gif-16929382
+
+{Embed}
+https://tenor.com/view/when-today-tomorrow-in50years-confused-gif-16929382
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/when-today-EE201.png
+
+
+[11/08/2023 16:11] 7a4raf
+https://tenor.com/view/you-are-getting-on-my-nerves-right-now-annoyed-bothered-over-it-done-gif-14422493
+
+{Embed}
+https://tenor.com/view/you-are-getting-on-my-nerves-right-now-annoyed-bothered-over-it-done-gif-14422493
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/you-are-getting-on-my-nerves-right-now-ann-AA8C9.png
+
+{Reactions}
+😂 
+
+[11/08/2023 16:12] _paperparachute
+Probably today, tomorrow latest!
+
+{Reactions}
+C4Keycap (14) 🫡 (5) 
+
+[11/08/2023 16:13] 7a4raf
+https://tenor.com/view/today-ryan-fluff-bruce-riffs-beards-and-gear-nowadays-at-present-gif-22576497
+
+{Embed}
+https://tenor.com/view/today-ryan-fluff-bruce-riffs-beards-and-gear-nowadays-at-present-gif-22576497
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/today-ryan-fluff-bruce-49721.png
+
+
+[11/08/2023 16:34] 0xstalin
+https://tenor.com/view/curly-gif-3150847328052340860
+
+{Embed}
+https://tenor.com/view/curly-gif-3150847328052340860
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/curly-AF2C2.png
+
+
+[11/08/2023 16:40] hunter_w3b
+https://tenor.com/view/kpop-bigbang-watchout-badass-gif-13033418
+
+{Embed}
+https://tenor.com/view/kpop-bigbang-watchout-badass-gif-13033418
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/kpop-bigbang-1160D.png
+
+{Reactions}
+😂 
+
+[11/08/2023 16:46] ihtishamsudo
+https://tenor.com/view/calculator-bills-calculadora-gif-25596100
+
+{Embed}
+https://tenor.com/view/calculator-bills-calculadora-gif-25596100
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/calculator-bills-DCAF3.png
+
+{Reactions}
+😂 (12) 🤣 (4) 💯 
+
+[11/08/2023 17:40] ladboy233
+https://tenor.com/view/today-james-pumphrey-donut-media-on-this-day-this-moment-gif-20028518
+
+{Embed}
+https://tenor.com/view/today-james-pumphrey-donut-media-on-this-day-this-moment-gif-20028518
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/today-james-pumphrey-CC0B1.png
+
+{Reactions}
+😂 (6) 
+
+[11/08/2023 21:11] hunter_w3b
+https://tenor.com/view/nope-baby-not-today-gif-13138782
+
+{Embed}
+https://tenor.com/view/nope-baby-not-today-gif-13138782
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/nope-baby-C7524.png
+
+{Reactions}
+😮‍💨 
+
+[11/08/2023 21:13] gumgumzum
+https://tenor.com/view/cat-changing-the-clock-changing-the-time-kitty-cat-cute-gif-17202806
+
+{Embed}
+https://tenor.com/view/cat-changing-the-clock-changing-the-time-kitty-cat-cute-gif-17202806
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/cat-changing-the-clock-changing-the-time-29D10.png
+
+{Reactions}
+❤️ (2) 
+
+[11/08/2023 21:22] ladboy233
+https://tenor.com/view/game-of-thrones-arya-stark-not-today-worried-gif-14445287
+
+{Embed}
+https://tenor.com/view/game-of-thrones-arya-stark-not-today-worried-gif-14445287
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/game-of-thrones-arya-stark-4312B.png
+
+
+[11/08/2023 21:23] alexxander
+https://tenor.com/view/hasbula-hasbulla-hasbula-eat-hasbula-eating-hasbula-food-gif-5530483184432807661
+
+{Embed}
+https://tenor.com/view/hasbula-hasbulla-hasbula-eat-hasbula-eating-hasbula-food-gif-5530483184432807661
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/hasbula-hasbulla-72D47.png
+
+
+[11/08/2023 22:13] lsaudit
+https://tenor.com/view/tomorrow-night-okay-cynthia-night-of-the-creeps-what-about-tomorrow-night-tomorrow-evening-okay-gif-21691060
+
+{Embed}
+https://tenor.com/view/tomorrow-night-okay-cynthia-night-of-the-creeps-what-about-tomorrow-night-tomorrow-evening-okay-gif-21691060
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/tomorrow-night-okay-cynthia-AF4E9.png
+
+
+[11/08/2023 22:34] 0xtendency
+@PaperParachute | C4 any chance it's happening tonight?🫠 
+I have been waiting all night lol
+
+
+[11/08/2023 22:53] _paperparachute
+Sorry guys! This one is going to be announced tomorrow. We have a technical issue with award calculation so need to wait on a fix. We don't want to announce any incorrect awards so thanks for your patience!
+
+{Reactions}
+👍 (13) 4739_Skeletor (2) 
+
+[11/09/2023 08:27] hunter_w3b
+https://tenor.com/view/today-is-gonna-be-different-guy-ryan-reynolds-free-guy-today-is-going-to-be-something-else-gif-22054177
+
+{Embed}
+https://tenor.com/view/today-is-gonna-be-different-guy-ryan-reynolds-free-guy-today-is-going-to-be-something-else-gif-22054177
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/today-is-gonna-be-different-guy-A8C3B.png
+
+
+[11/09/2023 11:08] 7a4raf
+https://tenor.com/view/hyper-dance-happy-mickey-mickey-mouse-gif-15803142
+
+{Embed}
+https://tenor.com/view/hyper-dance-happy-mickey-mickey-mouse-gif-15803142
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/hyper-dance-D3895.png
+
+
+[11/09/2023 12:37] xyzbtchunt
+https://tenor.com/view/coming-home-incoming-wait-waitforme-gif-20389686
+
+{Embed}
+https://tenor.com/view/coming-home-incoming-wait-waitforme-gif-20389686
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/coming-home-8865E.png
+
+
+[11/09/2023 13:11] petrichor0961
+Another one 
+Why don't scientists trust atoms?
+🦖
+
+
+[11/09/2023 13:13] its_basu
+why
+
+
+[11/09/2023 14:11] invitedtea
+wait in patiently
+
+
+[11/09/2023 14:22] unique0x0
+https://tenor.com/view/im-very-excited-happy-ready-for-it-cant-wait-gus-kenworthy-gif-16319432
+
+{Embed}
+https://tenor.com/view/im-very-excited-happy-ready-for-it-cant-wait-gus-kenworthy-gif-16319432
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/im-very-excited-happy-59EB2.png
+
+
+[11/09/2023 14:26] pfapostol
+It's always bad to announce the expected  timing of the rewards. Very often this leads to unnecessary panic and anxiety.
+
+
+[11/09/2023 14:32] unique0x0
+the whole life is panic and anxiety.
+
+{Reactions}
+👍 (3) 😄 (2) 
+
+[11/09/2023 14:33] pfapostol
+mine is a bit different, but only after the therapy
+
+{Reactions}
+😄 
+
+[11/09/2023 15:19] ladboy233
+yeap, the whole life is panic and anxiety
+
+
+[11/09/2023 15:20] ladboy233
+https://tenor.com/view/im-about-to-create-world-without-rules-manish-dayal-shashi-dhar-fast-and-furious-spy-racers-new-world-gif-16621642
+
+{Embed}
+https://tenor.com/view/im-about-to-create-world-without-rules-manish-dayal-shashi-dhar-fast-and-furious-spy-racers-new-world-gif-16621642
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/im-about-to-create-world-without-rules-man-5259C.png
+
+
+[11/09/2023 15:24] unique0x0
+https://tenor.com/view/well-its-just-not-that-simple-difficult-hard-challenging-not-easy-gif-16415970
+
+{Embed}
+https://tenor.com/view/well-its-just-not-that-simple-difficult-hard-challenging-not-easy-gif-16415970
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/well-its-just-not-that-simple-difficult-952BE.png
+
+{Reactions}
+👍 
+
+[11/09/2023 15:45] 0xstalin
+https://tenor.com/view/chill-relax-nervous-penguin-break-gif-14131040566236170493
+
+{Embed}
+https://tenor.com/view/chill-relax-nervous-penguin-break-gif-14131040566236170493
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/chill-relax-7CE82.png
+
+
+[11/09/2023 15:52] gumgumzum
+https://tenor.com/view/mr-bean-calendar-check-schedule-check-calendar-gif-19062732
+
+{Embed}
+https://tenor.com/view/mr-bean-calendar-check-schedule-check-calendar-gif-19062732
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/mr-bean-calendar-ED380.png
+
+
+[11/09/2023 16:21] lsaudit
+https://tenor.com/view/cat-cute-kitten-kitty-pussy-cat-gif-16474868
+
+{Embed}
+https://tenor.com/view/cat-cute-kitten-kitty-pussy-cat-gif-16474868
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/cat-cute-AB56E.png
+
+
+[11/09/2023 16:58] 0xstalin
+https://tenor.com/view/itscoming-elf-buddytheelf-gif-10397134
+
+{Embed}
+https://tenor.com/view/itscoming-elf-buddytheelf-gif-10397134
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/itscoming-elf-AA964.png
+
+
+[11/09/2023 16:58] thebrittfactor
+🤑 🎉  Awards for **Maia DAO**:
+
+$8,485.24 USDC » @alexxander 
+$7,750.97 USDC » @0xStalin 
+$7,014.86 USDC » @nobody2018 
+$6,739.11 USDC » @3DOC 
+$6,614.46 USDC » @rvierdiiev 
+$5,981.43 USDC » @MrPotatoMagic 
+$5,707.71 USDC » @Arz 
+$3,912.33 USDC » @0xladboy | Sparkware 
+$3,886.65 USDC » @hals 
+$2,232.29 USDC » @Bauchibred 
+$1,654.47 USDC » @bin2chen 
+$1,541.54 USDC » @ether_sky 
+$1,343.77 USDC » @jasonxiale 
+$1,278.56 USDC » @Koolex 
+$1,269.83 USDC » Udsen 
+$1,167.23 USDC » @Tendency 
+$965.75 USDC » @QiuhaoLi 
+$852.83 USDC » @peakbolt 
+$455.94 USDC » @kodyvim 
+$426.41 USDC » lsaudit 
+$347.31 USDC » @pfapostol 
+$347.20 USDC » @Sathish9098 
+$332.99 USDC » @K42 Ψ 
+$310.94 USDC » @minhtrng 
+$309.02 USDC » 33BYTEZZZ ( @zuhaibmohd, @33audits and @hexbyte)
+$306.81 USDC » @LokiThe5th 
+$269.01 USDC » 0xSmartContract 
+$261.05 USDC » @hunter_w3b 
+$246.87 USDC » @Kow 
+$243.45 USDC » @klau5 
+$243.33 USDC » @catellatech 
+$243.33 USDC » @invitedtea 
+$243.33 USDC » @ICP 
+$206.75 USDC » @0xnev 
+$178.73 USDC » @ast3ros 
+$163.01 USDC » chaduke 
+$145.41 USDC » @windhustler 
+$119.61 USDC » @perseverancesuccess 
+$119.61 USDC » @gumgumzum 
+$118.42 USDC » @0xadrii 
+$113.04 USDC » SpicyMeatball 
+$113.04 USDC » @ayden
+
+{Reactions}
+🔥 (15) 
+
+[11/09/2023 17:00] 0xstalin
+Aaaaaah, so close from that top1 😮‍💨
+
+{Reactions}
+👏 (15) 
+
+[11/09/2023 17:00] thebrittfactor
+$89.28 USDC » @ZdravkoHr 
+$79.33 USDC » @Limbooo 
+$78.52 USDC » @ciphermarco 
+$78.30 USDC » marqymarq10 
+$78.30 USDC » Pessimistic ( @PavelCore, @yhtyyar and @olegggatttor)
+$78.19 USDC » @oualidpro 
+$78.19 USDC » @Rolezn 
+$78.19 USDC » @0xAnah 
+$78.19 USDC » @SM3_SS 
+$78.19 USDC » DavidGiladi 
+$78.19 USDC » @none 
+$78.19 USDC » @Raihan 
+$78.19 USDC » @tabriz 
+$78.19 USDC » @dharma09 
+$78.19 USDC » @James 
+$78.19 USDC » @hihen 
+$78.19 USDC » 0xta 
+$78.19 USDC » @c3phas 
+$78.19 USDC » @JCK 
+$78.19 USDC » @zabihullahazadzoi 
+$78.19 USDC » SY_S 
+$64.29 USDC » @0xbrett8571 
+$64.29 USDC » 0xsagetony 
+$58.62 USDC » @ihtishamsudo 
+$57.72 USDC » @DevABDee 
+$50.08 USDC » @albertwhite 
+$50.08 USDC » @yongskiws 
+$46.91 USDC » @OMEN 
+$39.32 USDC » @T1MOH 
+$39.32 USDC » @KingNFT 
+$39.20 USDC » @wangxx2026 
+$38.61 USDC » @sha256(Saediek) 
+$38.61 USDC » Littlebeast 
+$38.61 USDC » @0xHelium 
+$38.61 USDC » jauvany 
+$38.61 USDC » @SAAJ 
+$29.29 USDC » @Aamir 
+$29.18 USDC » @ziyou- 
+$29.18 USDC » Eurovickk 
+$25.79 USDC » 0xWaitress 
+$25.79 USDC » @ustas 
+$25.79 USDC » @SovaSlava 
+$25.79 USDC » n1punp 
+$25.79 USDC » @Viktor_Cortess 
+$25.79 USDC » @0xfuje 
+$25.79 USDC » @0xDING99YA 
+$25.79 USDC » @Bitspinner 
+$25.79 USDC » @Yanchuan 
+$25.79 USDC » Inspecktor 
+$25.79 USDC » NoTechBG (@sorryNotsorry and @osmanozdemir1)
+$25.79 USDC » unsafesol (@Angry_Mustache_Man and @devblixt)
+$25.79 USDC » alexweb3 
+$25.79 USDC » @josephdara 
+$25.79 USDC » @imare
+
+
+[11/09/2023 17:00] thebrittfactor
+$25.68 USDC » @ptsanev 
+$25.68 USDC » @ABAIKUNANBAEV 
+$25.68 USDC » @saneryee 
+$25.68 USDC » @debo 
+$25.68 USDC » @Daniel526 
+$25.68 USDC » Topmark 
+$25.68 USDC » @Stormreckson⛈ 
+$25.68 USDC » @zhaojie 
+$25.68 USDC » 0xsurena 
+$25.68 USDC » @ABA 
+$25.68 USDC » Joshuajee 
+$25.68 USDC » @shaflow2 
+$25.68 USDC » @versiyonbir 
+$25.68 USDC » @audityourcontracts (AYC) 
+$25.68 USDC » @bronze_pickaxe 
+$25.68 USDC » DanielArmstrong 
+$25.68 USDC » @7ashraf 
+$25.68 USDC » @twcctop 
+$25.68 USDC » @nadin 
+$25.68 USDC » @Soul22 
+$25.68 USDC » nmirchev8 
+$25.68 USDC » @SanketKogekar 
+$25.68 USDC » @audinarey 
+$25.68 USDC » @0xAadi 
+$20.01 USDC » neumo 
+$17.82 USDC » @blutorque 
+$17.71 USDC » @ayo_dev 
+$17.71 USDC » koxuan 
+$17.71 USDC » clara 
+$17.71 USDC » @0x11singh99 
+$17.71 USDC » @sivanesh_808 
+$11.58 USDC » @orion 
+$11.58 USDC » Black_Box_DD 
+$11.58 USDC » @0xRstStn 
+$11.58 USDC » @Jorgect 
+$11.58 USDC » @mert_eren. 
+$11.58 USDC » @its_basu 
+$11.58 USDC » @MIQUINHO 
+$11.47 USDC » @lanrebayode77 
+$11.47 USDC » @Dinesh11G 
+$11.47 USDC » @V1235816  
+$11.47 USDC » @Zims 
+$11.47 USDC » @castle_chain 
+$11.47 USDC » @0xDemon 
+$11.47 USDC » Sentry 
+$11.47 USDC » @Franklin 
+$11.47 USDC » @niroh 
+$11.47 USDC » Myd 
+$11.47 USDC » @cartlex_ 
+$11.47 USDC » @Albahaca 
+$11.47 USDC » DanielTan_MetaTrust 
+$11.47 USDC » @terrancrypt 
+$11.47 USDC » Viraz 
+$11.47 USDC » @Minato 
+$11.47 USDC » c0pp3rscr3w3r 
+$11.47 USDC » @bareli
+$11.47 USDC » @te_aut 
+$11.47 USDC » 0xStriker 
+$11.47 USDC » jaraxxus
+
+
+[11/09/2023 17:01] thebrittfactor
+$0.15 USDC » @0xTheC0der 
+$0.11 USDC » @0x180db 
+$0.11 USDC » @Hama 
+$0.11 USDC » @HChang26 
+$0.11 USDC » @_eperezok 
+$0.11 USDC » TangYuanShen 
+$0.11 USDC » @zambody 
+$0.11 USDC » @stuxy 
+$0.11 USDC » oada 
+$0.11 USDC » @Vagner 
+$0.11 USDC » @joaovwfreire 
+$0.11 USDC » John_Femi 
+$0.11 USDC » @gztttt 
+$0.11 USDC » zzzitron 
+$0.11 USDC » @0xblackskull 
+$0.11 USDC » tank 
+$0.11 USDC » @0xTiwa 
+$0.11 USDC » @Noro 
+$0.11 USDC » @btk 
+$0.03 USDC » @peritoflores
+
+🏁 Findings summary
+--------------------------------------
+High risk findings: 3 unique (77 total)
+Med risk findings: 12 unique (74 total)
+Gas reports: 36 (Best: rvierdiiev)
+QA reports: 103 (Best: MrPotatoMagic)
+Advanced analysis reports: 28 (Best: MrPotatoMagic)
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🔥 (4) 
+
+[11/09/2023 17:01] irving6969
+Let’s go im on list
+
+{Reactions}
+4739_Skeletor (3) 
+
+[11/09/2023 17:02] gumgumzum
+Congrats everyone :clapclap:
+
+
+[11/09/2023 17:05] zims0690
+My first finding ever 🥳
+
+{Reactions}
+👏 (4) 🍻 
+
+[11/09/2023 17:06] viktor_cortess
+The weirdest judging I ever saw. I had 3 duplicates of mediums and in the result yesterday the judge reopened all my issues, so I have 29 bucks for other stuff that was downgraded to QA. I’m going to submit a complaint to the C4 stuff. If somebody wants to be part of this, write me a message. Especially it’s actual for people without backstage roles. Your findings could be in mediums, but mentioned as duplicates of duplicates and grade A-B.
+
+
+[11/09/2023 17:10] thebrittfactor
+Just noting the following teams - sorry I missed tagging y'all 🙂 
+
+Black_Box_DD (@p4y4b13, @shanb1605 and @Suzombie)
+Sentry (@jayus and @0xraiyan28)
+
+{Reactions}
+👍🏻 
+
+[11/09/2023 17:10] lourenslinde
+@Tendency I see you climbing the ranks here 🚀 well done! 🍻
+
+
+[11/09/2023 17:11] rvierdiiev
+be patient 😉
+
+{Reactions}
+😮‍💨 
+
+[11/09/2023 17:11] ladboy233
+distribution is flat
+
+
+[11/09/2023 17:12] lourenslinde
+Congrats everyone! :C4Keycap:
+
+
+[11/09/2023 17:12] 7a4raf
+Any idea of awards sending time?
+
+
+[11/09/2023 17:14] 0xtendency
+Thank you ser.
+Congratulations as well 🥳🥳
+
+{Reactions}
+🍻 
+
+[11/09/2023 17:17] invitedtea
+Omg!
+
+{Reactions}
+🎉 
+
+[11/09/2023 17:19] hunter_w3b
+they don't tag yoo  soo  :10_10:
+
+
+[11/09/2023 17:21] lsaudit
+Thanks! That tagging works weird. I was tagged today on venus contest, and I'm not tagged here on Maia :). Thanks for the info; 3-digits payout, yay!
+
+{Reactions}
+🫡 
+
+[11/09/2023 17:21] 0xstalin
+🫡
+
+
+[11/09/2023 17:21] 0xstalin
+Wise words 👌
+
+
+[11/09/2023 17:21] jvorex
+Gg!
+
+
+[11/09/2023 17:21] jvorex
+https://tenor.com/view/angry-mad-waving-brush-little-girl-baby-gif-12952554408829946762
+
+{Embed}
+https://tenor.com/view/angry-mad-waving-brush-little-girl-baby-gif-12952554408829946762
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/angry-mad-9310B.png
+
+
+[11/09/2023 17:24] jvorex
+Congrats guys! @alexxander @0xStalin @rvierdiiev gg!
+
+{Reactions}
+🫡 
+
+[11/09/2023 17:34] thebrittfactor
+@neumo > $20.01 USDC » neumo
+
+
+[11/09/2023 17:34] neumoxx
+yep, just saw it, don't know why it's not linked
+
+{Reactions}
+thankyou 
+
+[11/09/2023 17:35] neumoxx
+thx, I deleted the other message
+
+
+[11/09/2023 17:36] t1moh
+@0xStalin congrats man, will be hard to keep up with you soon
+
+{Reactions}
+🚀 (2) 
+
+[11/09/2023 17:36] thebrittfactor
+We have automated announcements, so if you haven't verified your discord, you unfortunately wont be tagged.
+
+
+[11/09/2023 17:37] neumoxx
+I was tagged in Venus earlier today
+
+
+[11/09/2023 17:40] neumoxx
+@thebrittfactor | C4
+
+
+[11/09/2023 17:46] lsaudit
+same, tagged in venus today
+
+
+[11/09/2023 17:48] 0xblackskull
+1 high and got 0.11$ 🙂
+
+
+[11/09/2023 17:52] t1moh
+@alexxander you're killing it, satisfying to see your wins with Voyvoda too
+
+{Reactions}
+🔥 🫡 
+
+[11/09/2023 18:02] udsen_
+@alexxander ,@0xStalin Congratulations !!!
+
+{Reactions}
+🫡 (3) 
+
+[11/09/2023 18:04] ladboy233
+https://tenor.com/view/get-in-money-gif-25017476
+
+{Embed}
+https://tenor.com/view/get-in-money-gif-25017476
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/get-in-AF18F.png
+
+{Reactions}
+😂 (8) 
+
+[11/09/2023 18:05] 0xstalin
+Can’t wait till next year to fully dedicate myself to this space 😮‍💨
+
+{Reactions}
+👍 (6) 
+
+[11/09/2023 18:39] petrichor0961
+Congrats to all:chefskiss: :code4rena: 🦖
+
+
+[11/09/2023 18:45] inspecktor
+I believe that, at a minimum, the calculation of payments was carried out incorrectly. How could a person who found 1 high error get $0.11? How many people had to send it? Are you sure you calculated everything correctly?
+
+
+[11/09/2023 18:47] ustas.eth
+Thanks to the team for their quick answers and patience, and to the judges!
+
+{Reactions}
+💯 
+
+[11/09/2023 18:47] 0xsimeon
+Congratulations @0xsagetony baby steps.
+
+
+[11/09/2023 18:48] 0xsorrynotsorry
+More than 60 wardens spotted the same high
+
+{Reactions}
+4739_Skeletor 😅 
+
+[11/09/2023 18:51] 0xsorrynotsorry
+As per the CoC, let's not go into the details prior to the audit report :hi5:
+
+{Reactions}
+👌 thankyou 
+
+[11/09/2023 18:51] inspecktor
+Ok. 100 * 0,11$ = 11$.  So it's only $11 per mistake?
+
+
+[11/09/2023 18:52] gumgumzum
+I don't think it works like that
+
+
+[11/09/2023 18:53] gumgumzum
+https://docs.code4rena.com/awarding/incentive-model-and-awards#high-and-medium-risk-bugs
+
+{Embed}
+https://docs.code4rena.com/awarding/incentive-model-and-awards
+Incentive model and awards
+
+{Reactions}
+👆 
+
+[11/09/2023 18:55] sp1cymeatball
+These days 1-2 highs is nothing, with all the people participating and amount of duplicates for each bug 4-5 findings is a bare minimum to be able to get a noticeable reward.
+
+
+[11/09/2023 19:07] thebrittfactor
+Award amounts are split and are determined based on how many duplicates there were of a particular finding. Hopefully, [this breakdown](https://docs.code4rena.com/awarding/incentive-model-and-awards#high-and-medium-risk-bugs) helps.
+
+
+[11/09/2023 19:08] inspecktor
+Ok. Thanks
+
+
+[11/09/2023 20:58] gumgumzum
+~~nvm, just remembered that the report is not public yet~~
+
+
+[11/09/2023 21:12] 0xstalin
+Leave some rewards for the rest of us sir, you are taking everything everywhere 😮‍💨
+
+{Reactions}
+🫡 ⭕ 🇰 4739_Skeletor 👍 (3) 
+
+[11/10/2023 00:23] olanre_waju
+@0xStalin killing it as usual 🫡  you have maiadao codebase in your hands🔥
+
+{Reactions}
+🫡 
+
+[11/10/2023 01:48] qiuhaoli
+@alexxander @0xStalin @nobody2018 Congrats 👏  Learned a lot from your reports!👍👍
+
+{Reactions}
+🤝 (4) 🔥 
+
+[11/10/2023 05:03] devabdee
+Alhumdulilah. Congrats everyone!!
+
+
+[11/10/2023 05:06] shaflow_
+I modified the address here a minute ago. Will the reward be sent to the new address?
+
+
+[11/10/2023 05:06] shaflow_
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2023 - maiadao-sep22 [1153743259965857873].txt_Files/S7KJJZDS9683U5K0AF17-D931A.png
+
+
+[11/10/2023 05:07] devabdee
+awards already sent https://discord.com/channels/810916927919620096/810929015509483554/1172345218016759860
+
+
+[11/10/2023 05:07] devabdee
+check your prev address. Future awards will be sent to your new address
+
+
+[11/10/2023 05:08] shaflow_
+Sorry, I didn't see it
+
+{Reactions}
+👍 
+
+[11/10/2023 06:16] stormreckson
+Steadily getting QAs 😅 soon I'll level up 💪
+
+{Reactions}
+🎉 (5) 👀 
+
+[11/10/2023 10:26] 0xhelium
+seems like profile and leader board have not been updated with this one
+
+{Reactions}
+➕ 🧐 
+
+[11/10/2023 12:21] thebrittfactor
+Looks like these are up now 🙂
+
+{Reactions}
+✅ 
+
+[11/10/2023 14:42] 0xhelium
+Still can't find Maïa dao in my activity. I got rewards prob from my analysis report and was expecting to see the grade ( B i guess ) .
+But i see nothing
+
+
+[11/10/2023 14:53] thebrittfactor
+It doesn't look like we pull Analysis reports into this data, so that's why it isn't showing. I've reached out to our team to see if we can get these added for future audits.
+
+{Reactions}
+👍 (3) 
+
+[11/11/2023 07:09] viraz4331
+@thebrittfactor | C4 have the rewards been sent out ?
+
+
+[11/11/2023 07:21] _3doc_
+Yup https://discord.com/channels/810916927919620096/810929015509483554/1172345218016759860
+
+
+[11/12/2023 13:51] 0xdemonnn
+Are the reports published yet?
+
+
+[11/12/2023 17:06] lsaudit
+When it will be published, you will find it at Code4rena website: /reports
+
+{Reactions}
+👍 
+
+[11/13/2023 00:06] lowk3v
+how do see the issue I submitted? I wanna see how to it is invalid
+
+
+[11/13/2023 06:36] lourenslinde
+If you don't have backstage access yet, you will have to wait until the report is made public to review your findings.
+
+More info about backstage can be found [here](https://docs.code4rena.com/roles/certified-contributors/backstage-wardens) :gummy_wink:
+
+{Embed}
+https://docs.code4rena.com/roles/certified-contributors/backstage-wardens
++Backstage wardens
+
+
+[11/30/2023 15:52] radcet_
+the report is public already, how can i know that my submit is received  ? 😢
+
+
+[11/30/2023 17:55] thebrittfactor
+You should be able to view it in the findings repo, as it is now public as well  🙂
+
+{Reactions}
+❤️ 
+
+[12/01/2023 02:38] radcet_
+oh i found that repo, ty ❤️
+
+
+[12/29/2023 12:45] ustas.eth
+That's what you get when you don't search for dups yourself 🥲 
+
+Unique M: https://github.com/code-423n4/2023-09-maia-findings/issues/187
+Same issue, but QA: https://github.com/code-423n4/2023-09-maia-findings/issues/759
+My report, dup of the QA: https://github.com/code-423n4/2023-09-maia-findings/issues/186
+
+{Reactions}
+🥲 (3) 
+
+[02/24/2024 02:40] itsmetechjay
+ℹ️ This channel is pending archive.  As a result, any private threads will be permanently deleted on Saturday, 02 March 2024. Please make sure to grab anything you might need from those before then.
+
+
+[02/29/2024 22:33] itsmetechjay
+ℹ️ Reminder: this channel will be deleted in 24 hours.
+
+
+==============================================================
+Exported 1,064 message(s)
+==============================================================
